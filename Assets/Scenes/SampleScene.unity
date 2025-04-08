@@ -7913,7 +7913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: 3
+  SceneName: MoleRoomMain
 --- !u!212 &1212453125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7957,7 +7957,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.10629988, g: 0, b: 1, a: 1}
   m_FlipX: 0

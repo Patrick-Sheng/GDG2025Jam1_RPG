@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Net.NetworkInformation;
 
 
@@ -268,10 +269,24 @@ public class DialogueManager : MonoBehaviour
         // loop thought each tag 
         foreach (string tag in currentTags)
         {
+
+            if(tag.Trim() == "GoToArcadeRoom")
+            {
+                SceneManager.LoadScene("TestArcade");
+                Debug.Log("niceTag has passed!");
+                continue; // Skip to next tag
+            }
+
+
+
+
+
+
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
                 Debug.LogError("Tag Could Not Be parsed: " + tag);
+                continue;
             }
 
             string tagKey = splitTag[0].Trim();

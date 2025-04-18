@@ -19,7 +19,7 @@ public class cameramovementscript : MonoBehaviour
     {
         if (BottomAreaBool == true)
         {
-            print("this is running");
+           
             gameObject.transform.position = new Vector3(gameObject.transform.position.x,   Player.transform.position.y, -1.85f);
         }
     }

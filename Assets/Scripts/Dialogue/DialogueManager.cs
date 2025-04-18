@@ -7,6 +7,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Net.NetworkInformation;
+using System.Linq;
 
 
 
@@ -48,7 +49,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-    private Story currentStory;
+    public Story currentStory;
 
     public bool dialogueIsPlaying { get; private set; }
 
@@ -94,11 +95,29 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        //chat gpt code LOL
+
+        // end of chat gpt code 
+
         //return when dialogue isnt playing
         if (!dialogueIsPlaying)
         {
             return;
         }
+
+        //if (dialogueIsPlaying && !currentStory.canContinue && !currentStory.currentChoices.Any())
+        //{
+        //    ExitDialogueMode();
+        //}
+
+        //cgpt
+        //if (dialogueIsPlaying &&
+        //!currentStory.canContinue &&
+        //!currentStory.currentChoices.Any() &&
+        // canContinueToNextLine)       // wait until the line has fully printed
+        //{
+        //    ExitDialogueMode();
+        //}
 
         //currentStory.currentChoices.Count == 0
         if (canContinueToNextLine && Input.GetKeyDown(KeyCode.C))
@@ -109,7 +128,23 @@ public class DialogueManager : MonoBehaviour
 
 
     }
+    public void EnterAtKnot(TextAsset inkJSON, string knotName)
+    {
+        currentStory = new Story(inkJSON.text);
+        currentStory.ChoosePathString(knotName);
 
+        dialogueIsPlaying = true;
+
+        // ——— UI boilerplate you had in EnterDialogueMode ———
+        displayNameText.text = "???";
+        portraitAnimator.Play("default");
+        layoutAnimator.Play("default");
+        dialoguePanel.SetActive(true);
+        Canvas.ForceUpdateCanvases();
+        // ————————————————————————————————————————————————
+
+        ContinueStory();
+    }
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         //LayoutRebuilder.ForceRebuildLayoutImmediate(dialoguePanel.GetComponent<RectTransform>());
@@ -272,6 +307,10 @@ public class DialogueManager : MonoBehaviour
 
             if(tag.Trim() == "GoToArcadeRoom")
             {
+                ExitDialogueMode();
+                dialogueIsPlaying = false;
+                dialoguePanel.SetActive(false);
+
                 SceneManager.LoadScene("TestArcade");
                 Debug.Log("niceTag has passed!");
                 continue; // Skip to next tag
@@ -354,6 +393,10 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
+
+            //chat gpt told me to add this guys
+            ContinueStory();
+
         }
 
     }

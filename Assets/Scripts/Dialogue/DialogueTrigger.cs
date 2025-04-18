@@ -1,6 +1,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -14,6 +15,22 @@ public class DialogueTrigger : MonoBehaviour
     private bool inputCooldown; // New flag
 
     private bool hasTriggered; // New flag to track if triggered
+
+    //makes it so it resets the canintact thing whenever you load a new scene
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StaticManager.resettrigger = false;
+    }
 
 
     private void Awake()

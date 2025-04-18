@@ -1,0 +1,1 @@
+So, what did you think of the latest politcs?

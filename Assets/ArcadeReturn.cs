@@ -5,6 +5,8 @@ public class ArcadeReturn : MonoBehaviour
     public GameObject Player;
     public cameramovementscript CamScript;
     public TextAsset winLoseDialogueInk;
+
+    public GameObject CoinCanvas;
     void Start()
     {
 
@@ -13,6 +15,12 @@ public class ArcadeReturn : MonoBehaviour
 
         if (StaticManager.YouLoseArcade || StaticManager.YouWinArcade)
         {
+            if (StaticManager.YouWinArcade == true)
+            {
+                StaticManager.NumDollars = StaticManager.NumDollars + 21;
+                CoinCanvas.SetActive(true);
+            }
+
 
             CamScript.BottomArea();
 

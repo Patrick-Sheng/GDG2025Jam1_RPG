@@ -131,6 +131,12 @@ public class DialogueManager : MonoBehaviour
     public void EnterAtKnot(TextAsset inkJSON, string knotName)
     {
         currentStory = new Story(inkJSON.text);
+        currentStory.BindExternalFunction("canlickcone",() => StaticManager.CanLick);
+        currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
+        currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
+        currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+
+
         currentStory.ChoosePathString(knotName);
 
         dialogueIsPlaying = true;
@@ -147,9 +153,18 @@ public class DialogueManager : MonoBehaviour
     }
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+
         //LayoutRebuilder.ForceRebuildLayoutImmediate(dialoguePanel.GetComponent<RectTransform>());
 
+        //PUT VARAIBLE CHECKS HERE
         currentStory = new Story(inkJSON.text);
+        currentStory.BindExternalFunction("canlickcone",() => StaticManager.CanLick);
+        currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
+        currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
+        currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+
+
+
         dialogueIsPlaying = true;
 
         displayNameText.text = "???";
@@ -315,7 +330,26 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("niceTag has passed!");
                 continue; // Skip to next tag
             }
-
+            if (tag.Trim() == "canlick")
+            {
+                StaticManager.CanLick = true;
+                continue;
+            }
+            if (tag.Trim() == "licked")
+            {
+                StaticManager.licked++;
+                continue;
+            }
+            if (tag.Trim() == "plus1dollar")
+            {
+                StaticManager.Plus1Dollar = true;
+                continue;
+            }
+            if (tag.Trim() == "plus1pancake")
+            {
+                StaticManager.Plus1Pancake = true;
+                continue;
+            }
 
 
 

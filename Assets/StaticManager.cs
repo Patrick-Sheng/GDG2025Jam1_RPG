@@ -1,11 +1,68 @@
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
-    // public static bool indio;
+
+    public static bool Plus1Pancake;
+    public static bool hasPancake;
+
+    public static bool canbuypancake;
+
+    public static int NumDollars;
+
     public static bool YouWinArcade;
     public static bool YouLoseArcade;
 
     public static bool resettrigger;
     public static string nextScene;
+
+    public static int licked;
+    public static bool CanLick;
+    public static bool licked6times;
+    public static bool Plus1Dollar;
+
+
+    private void Update()
+    {
+        if (Plus1Pancake)
+        {
+            NumDollars = NumDollars - 21;
+            if (NumDollars < 0)
+            {
+                NumDollars = 0;
+            }
+
+            GameObject Pancakecanvas = GameObject.FindGameObjectWithTag("pancakeholder");
+            foreach (Transform child in Pancakecanvas.transform)
+                child.gameObject.SetActive(true);
+
+
+            Plus1Pancake = false;
+            hasPancake = true;
+        }
+
+
+
+        if (licked > 5)
+        {
+            licked6times = true;
+        }
+        if (Plus1Dollar)
+        {
+            GameObject Moneycanvas = GameObject.FindGameObjectWithTag("moneyholder");
+            foreach (Transform child in Moneycanvas.transform)
+                child.gameObject.SetActive(true);
+            licked = 0;
+            CanLick = false;
+            licked6times = false;
+            NumDollars++;
+            Plus1Dollar = false;
+        }
+
+
+
+
+    }
 }

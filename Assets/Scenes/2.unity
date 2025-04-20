@@ -7834,7 +7834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee3f8935180f9c4c9768c2fe7d621d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1552627040}
+  dashSpeed: 15
+  dashTime: 0.1
+  transparency: 0.1
+  cooldown: 1
   moveSpeed: 2
 --- !u!50 &1552627038
 Rigidbody2D:
@@ -7901,7 +7904,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 0.9375, y: 1.375}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8016,6 +8019,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1552627037}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 129193f7-c4c3-4054-85c5-21aac30463d1
+    m_ActionName: 'Player/Dash[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

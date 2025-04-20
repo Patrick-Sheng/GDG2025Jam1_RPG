@@ -5,19 +5,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Dash")]
+    [SerializeField] private float dashspeed = 15f;
+    [SerializeField] private float dashTime = 0.1f;
+    [SerializeField] private float transparency = 0.1f;
 
-    
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+    //private PlayerActions actions;
 
     public static bool dodio;
 
     public Animator anim;
 
+    [Header("Config")]
     public float moveSpeed;
+
+    public float currentSpeed;
 
     private float x, y;
     private Vector2 input;
 
-    Rigidbody2D rb;
+    
 
     private bool moving;
 
@@ -57,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            input = context.ReadValue<Vector2>() * moveSpeed;
+            input = context.ReadValue<Vector2>().normalized * moveSpeed;
 
         }
         else

@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: 2
+  SceneName: DogHallway
 --- !u!61 &24599464
 BoxCollider2D:
   m_ObjectHideFlags: 0

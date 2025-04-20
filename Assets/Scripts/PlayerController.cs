@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            input = context.ReadValue<Vector2>().normalized * moveSpeed;
+            input = context.ReadValue<Vector2>().normalized * (moveSpeed*dashTime.fixedDeltaTime);
 
         }
         else

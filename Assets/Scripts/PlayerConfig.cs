@@ -8,8 +8,8 @@ public class PlayerConfig : ScriptableObject
     public Sprite icon;
 
     [Header("Value")]
-    public float CurrentHealth;
-    public float MaxHealth;
+    public int CurrentHealth;
+    public int MaxHealth;
     public float Energy;
 
 }

@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             if (anim != null) anim.SetBool("Moving", false);
         }
     }
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        rb.velocity = input.normalized * currentSpeed;
+        rb.linearVelocity = input.normalized * currentSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)

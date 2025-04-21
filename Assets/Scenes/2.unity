@@ -575,6 +575,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 696671830}
+  - {fileID: 1770593041}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8054,6 +8055,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerConfig: {fileID: 11400000, guid: d8128d0982447b043a304eb611c90cf8, type: 2}
+  heartDisplay: {fileID: 0}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1573972740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8751,6 +8756,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760169656}
   m_CullTransparentMesh: 1
+--- !u!1 &1770593040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770593041}
+  - component: {fileID: 1770593042}
+  - component: {fileID: 1770593043}
+  - component: {fileID: 1770593044}
+  m_Layer: 5
+  m_Name: HealthPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1770593041
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770593040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 78692849}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -40}
+  m_SizeDelta: {x: 100, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1770593042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770593040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 5
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &1770593043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770593040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69df48a949e4d242a6c1ff76036c98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  playerConfig: {fileID: 11400000, guid: d8128d0982447b043a304eb611c90cf8, type: 2}
+  heartPrefab: {fileID: 5226171532329330665, guid: e028d8235d9435f4eb56599a97c8de9b, type: 3}
+  fullHeartSprite: {fileID: 4606908045521496030, guid: dce1d1daaa6fb2947a7c471763f1a490, type: 3}
+  emptyHeartSprite: {fileID: 2881487131628484586, guid: 7a59f1854ef43284394c03e02fd491dc, type: 3}
+--- !u!114 &1770593044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770593040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69df48a949e4d242a6c1ff76036c98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  playerConfig: {fileID: 11400000, guid: d8128d0982447b043a304eb611c90cf8, type: 2}
+  heartPrefab: {fileID: 0}
+  fullHeartSprite: {fileID: 0}
+  emptyHeartSprite: {fileID: 0}
 --- !u!1 &1847383873
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,7 +9607,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 756885864}
   - {fileID: 1552627036}
-  - {fileID: 78692849}
   - {fileID: 548222491}
   - {fileID: 587849893}
   - {fileID: 965504842}
@@ -9512,3 +9614,4 @@ SceneRoots:
   - {fileID: 1111985226}
   - {fileID: 4581281}
   - {fileID: 24599462}
+  - {fileID: 78692849}

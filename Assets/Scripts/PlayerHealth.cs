@@ -1,32 +1,54 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Player")]
     [SerializeField] private PlayerConfig playerConfig;
+    [SerializeField] private HeartDisplay heartDisplay;
 
+    // Event that triggers when health changes
+    public UnityEvent<float> OnHealthChanged = new UnityEvent<float>();
+
+
+    private void Start()
+    {
+        // Initialize health
+        playerConfig.CurrentHealth = playerConfig.MaxHealth;
+    }
     private void Update()
     {
-        //TBD
-    }
-
-    private int middleground;
-
-    //public void RecoverHealth(int amount)
-    //{
-    //    middleground = amount + playerConfig.CurrentHealth;
-    //    if (middleground > )
-    //}
-
-    public void TakeDamage(int amount)
-    {
-        if (playerConfig.CurrentHealth > 0f)
+        // Health increase on Q
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            playerConfig.CurrentHealth -= amount;
+            TakeDamage(1);
+        }
+        // Health decrease on R
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            Heal(1);
         }
     }
+    public void TakeDamage(int amount)
+{
+    if (playerConfig.CurrentHealth > 0f)
+    {
+        playerConfig.CurrentHealth = Mathf.Max(0, playerConfig.CurrentHealth - amount);
+        heartDisplay.UpdateHearts(); // <--- added
+        //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
+    }
+}
+
+public void Heal(int amount)
+{
+    if (playerConfig.CurrentHealth < playerConfig.MaxHealth)
+    {
+        playerConfig.CurrentHealth = Mathf.Min(playerConfig.CurrentHealth + amount, playerConfig.MaxHealth);
+        heartDisplay.UpdateHearts(); // <--- added
+        //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
+    }
+}
+
 
     private void PlayerDead()
     {

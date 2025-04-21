@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
+    
+
+    public static bool gatetoheaven;
+    public static bool layDown;
+
+
+    public static bool runaway;
+    public static bool stealmoney;
+
+    public static bool stealpancakes;
+    public static bool hasmoney;
 
     public static bool Plus1Pancake;
     public static bool hasPancake;
@@ -26,6 +37,22 @@ public class StaticManager : MonoBehaviour
 
     private void Update()
     {
+
+
+
+
+
+        if (NumDollars > 0)
+        {
+            hasmoney = true;
+        }
+        else
+        {
+            hasmoney = false;
+        }
+
+
+
         if (Plus1Pancake)
         {
             NumDollars = NumDollars - 21;

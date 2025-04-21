@@ -135,6 +135,8 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
         currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+        currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
+        currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
 
 
         currentStory.ChoosePathString(knotName);
@@ -162,6 +164,8 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
         currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+        currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
+        currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
 
 
 
@@ -232,7 +236,8 @@ public class DialogueManager : MonoBehaviour
 
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
-            HandleTags(currentStory.currentTags);
+            //chat gpt told me to move this somewhere else 
+            //HandleTags(currentStory.currentTags);
 
 
             //dialogueText.text = nextLine;
@@ -300,6 +305,9 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
+        if (currentStory.currentTags.Count > 0)
+            HandleTags(currentStory.currentTags);
+
         DisplayChoices();
 
         canContinueToNextLine = true;
@@ -348,6 +356,28 @@ public class DialogueManager : MonoBehaviour
             if (tag.Trim() == "plus1pancake")
             {
                 StaticManager.Plus1Pancake = true;
+                continue;
+            }
+            if (tag.Trim() == "stealpancakes")
+            {
+                StaticManager.stealpancakes = true;
+                continue;
+            }
+            if (tag.Trim() == "stealmoney")
+            {
+                StaticManager.stealmoney = true;
+                continue;
+            }
+            if (tag.Trim() == "runaway")
+            {
+                StaticManager.runaway = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "laydown")
+            {
+                StaticManager.layDown = true;
+                Debug.Log("runawaynow");
                 continue;
             }
 

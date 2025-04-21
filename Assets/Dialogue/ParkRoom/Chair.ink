@@ -2,5 +2,5 @@
 
 ===main===
 
-This is a chair? #layout:default
+A perfect spot to rest. #layout:default
 -> END

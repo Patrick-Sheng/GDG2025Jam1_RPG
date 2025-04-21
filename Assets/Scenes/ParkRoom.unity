@@ -11711,7 +11711,7 @@ PrefabInstance:
     - target: {fileID: 7360803376240013539, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: ac29205f78d835c49a15dd6a8d8b6edf, type: 3}
+      objectReference: {fileID: 4900000, guid: faaedf4140bcf334587e4dc9142f64a3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11979,7 +11979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4585796667502441057, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Name
-      value: Slide_1
+      value: Swing_1
       objectReference: {fileID: 0}
     - target: {fileID: 4699335412734101662, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14314,7 +14314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4585796667502441057, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Name
-      value: Slide_2
+      value: Swing_2
       objectReference: {fileID: 0}
     - target: {fileID: 4699335412734101662, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14339,7 +14339,7 @@ PrefabInstance:
     - target: {fileID: 7360803376240013539, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: fa90eec3cb19dc744a284970d94d250e, type: 3}
+      objectReference: {fileID: 4900000, guid: 8798c3551a2d524488a50fc5490fc4da, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

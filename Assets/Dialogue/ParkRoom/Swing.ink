@@ -2,5 +2,5 @@
 
 ===main===
 
-This is a slide? #layout:default
+Oooh, a swing! #layout:default
 -> END

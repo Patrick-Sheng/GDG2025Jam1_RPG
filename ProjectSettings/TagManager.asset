@@ -49,5 +49,11 @@ TagManager:
   - name: Forground
     uniqueID: 1264486351
     locked: 0
+  - name: Buttons
+    uniqueID: 654853859
+    locked: 0
+  - name: Instruction
+    uniqueID: 1577660717
+    locked: 0
   m_RenderingLayers:
   - Default

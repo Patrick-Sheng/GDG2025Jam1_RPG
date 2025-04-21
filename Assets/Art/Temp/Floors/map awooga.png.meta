@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      map awooga_0: 6125494477988670370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,6 +8,7 @@ TagManager:
   - Fade
   - moneyholder
   - pancakeholder
+  - Enemy
   layers:
   - Default
   - TransparentFX

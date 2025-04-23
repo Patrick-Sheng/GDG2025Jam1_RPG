@@ -57,27 +57,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void AutoAim()
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, laserRange, enemyLayers);
-        float closestDist = Mathf.Infinity;
-        Transform closestEnemy = null;
-
-        foreach (Collider2D enemy in enemies)
-        {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < closestDist)
-            {
-                closestDist = dist;
-                closestEnemy = enemy.transform;
-            }
-        }
-
-        currentTarget = closestEnemy;
-
-        // Face the target or default direction
-        if (currentTarget != null)
-        {
-            spriteRenderer.flipX = currentTarget.position.x < transform.position.x;
-        }
+       
     }
 
     private void MeleeAttack()

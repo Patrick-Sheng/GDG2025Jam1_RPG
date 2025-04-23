@@ -7913,7 +7913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: MoleRoomMain
+  SceneName: MoleRoom1
 --- !u!212 &1212453125
 SpriteRenderer:
   m_ObjectHideFlags: 0

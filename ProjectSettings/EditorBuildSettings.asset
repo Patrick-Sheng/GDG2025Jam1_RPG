@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WordleRoom.unity
     guid: 5d92fa272f7dd154cb8d93b325cda53a
+  - enabled: 1
+    path: Assets/Scenes/WordleGame.unity
+    guid: 19d44b01544712c4ebed9ec0ff714045
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -18,7 +18,7 @@ TagManager:
   - UI
   - Room
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 
@@ -54,6 +54,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 724138601
+    locked: 0
+  - name: Player
+    uniqueID: 3336418005
     locked: 0
   m_RenderingLayers:
   - Default

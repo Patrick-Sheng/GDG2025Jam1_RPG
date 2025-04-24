@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Net.NetworkInformation;
+using System.Linq;
 
 
 
@@ -47,7 +49,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-    private Story currentStory;
+    public Story currentStory;
 
     public bool dialogueIsPlaying { get; private set; }
 
@@ -93,11 +95,29 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        //chat gpt code LOL
+
+        // end of chat gpt code 
+
         //return when dialogue isnt playing
         if (!dialogueIsPlaying)
         {
             return;
         }
+
+        //if (dialogueIsPlaying && !currentStory.canContinue && !currentStory.currentChoices.Any())
+        //{
+        //    ExitDialogueMode();
+        //}
+
+        //cgpt
+        //if (dialogueIsPlaying &&
+        //!currentStory.canContinue &&
+        //!currentStory.currentChoices.Any() &&
+        // canContinueToNextLine)       // wait until the line has fully printed
+        //{
+        //    ExitDialogueMode();
+        //}
 
         //currentStory.currentChoices.Count == 0
         if (canContinueToNextLine && Input.GetKeyDown(KeyCode.C))
@@ -108,12 +128,47 @@ public class DialogueManager : MonoBehaviour
 
 
     }
+    public void EnterAtKnot(TextAsset inkJSON, string knotName)
+    {
+        currentStory = new Story(inkJSON.text);
+        currentStory.BindExternalFunction("canlickcone",() => StaticManager.CanLick);
+        currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
+        currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
+        currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+        currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
+        currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
 
+
+        currentStory.ChoosePathString(knotName);
+
+        dialogueIsPlaying = true;
+
+        // ——— UI boilerplate you had in EnterDialogueMode ———
+        displayNameText.text = "???";
+        portraitAnimator.Play("default");
+        layoutAnimator.Play("default");
+        dialoguePanel.SetActive(true);
+        Canvas.ForceUpdateCanvases();
+        // ————————————————————————————————————————————————
+
+        ContinueStory();
+    }
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+
         //LayoutRebuilder.ForceRebuildLayoutImmediate(dialoguePanel.GetComponent<RectTransform>());
 
+        //PUT VARAIBLE CHECKS HERE
         currentStory = new Story(inkJSON.text);
+        currentStory.BindExternalFunction("canlickcone",() => StaticManager.CanLick);
+        currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
+        currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
+        currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+        currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
+        currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
+
+
+
         dialogueIsPlaying = true;
 
         displayNameText.text = "???";
@@ -181,7 +236,8 @@ public class DialogueManager : MonoBehaviour
 
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
-            HandleTags(currentStory.currentTags);
+            //chat gpt told me to move this somewhere else 
+            //HandleTags(currentStory.currentTags);
 
 
             //dialogueText.text = nextLine;
@@ -249,6 +305,9 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
+        if (currentStory.currentTags.Count > 0)
+            HandleTags(currentStory.currentTags);
+
         DisplayChoices();
 
         canContinueToNextLine = true;
@@ -268,10 +327,74 @@ public class DialogueManager : MonoBehaviour
         // loop thought each tag 
         foreach (string tag in currentTags)
         {
+
+            if(tag.Trim() == "GoToArcadeRoom")
+            {
+                ExitDialogueMode();
+                dialogueIsPlaying = false;
+                dialoguePanel.SetActive(false);
+
+                SceneManager.LoadScene("TestArcade");
+                Debug.Log("niceTag has passed!");
+                continue; // Skip to next tag
+            }
+            if (tag.Trim() == "canlick")
+            {
+                StaticManager.CanLick = true;
+                continue;
+            }
+            if (tag.Trim() == "licked")
+            {
+                StaticManager.licked++;
+                continue;
+            }
+            if (tag.Trim() == "plus1dollar")
+            {
+                StaticManager.Plus1Dollar = true;
+                continue;
+            }
+            if (tag.Trim() == "plus1pancake")
+            {
+                StaticManager.Plus1Pancake = true;
+                continue;
+            }
+            if (tag.Trim() == "stealpancakes")
+            {
+                StaticManager.stealpancakes = true;
+                continue;
+            }
+            if (tag.Trim() == "stealmoney")
+            {
+                StaticManager.stealmoney = true;
+                continue;
+            }
+            if (tag.Trim() == "runaway")
+            {
+                StaticManager.runaway = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "laydown")
+            {
+                StaticManager.layDown = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "justpancakerun")
+            {
+                StaticManager.justpancakerun = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+
+
+            
+
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
                 Debug.LogError("Tag Could Not Be parsed: " + tag);
+                continue;
             }
 
             string tagKey = splitTag[0].Trim();
@@ -339,6 +462,10 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
+
+            //chat gpt told me to add this guys
+            ContinueStory();
+
         }
 
     }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - test
   - Fade
+  - moneyholder
+  - pancakeholder
+  - gotohevenmain
   layers:
   - Default
   - TransparentFX

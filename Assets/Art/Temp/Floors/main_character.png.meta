@@ -1,37 +1,19 @@
 fileFormatVersion: 2
-guid: 6739b8176b55641448e81d6dbbbe00d4
+guid: 65ea4b39a6011bf4ea72698e7a44d961
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3803303778041938647
-    second: park_components_0
+      213: -9094734800969629820
+    second: main_character_0
   - first:
-      213: 7626757661005082502
-    second: park_components_1
+      213: 4345679706368398392
+    second: main_character_1
   - first:
-      213: -7471738592643611142
-    second: park_components_2
+      213: 7835032779756320859
+    second: main_character_2
   - first:
-      213: 5543339316766746016
-    second: park_components_3
-  - first:
-      213: 8217457941818815227
-    second: park_components_4
-  - first:
-      213: -920311011184876662
-    second: park_components_5
-  - first:
-      213: -944461156160216498
-    second: park_components_6
-  - first:
-      213: -2408098557442920703
-    second: park_components_7
-  - first:
-      213: -7287769431578440164
-    second: park_components_8
-  - first:
-      213: -4423401322981075442
-    second: park_components_9
+      213: 5923596788570943504
+    second: main_character_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -101,8 +83,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureFormat: 4
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,221 +109,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: park_components 1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd30373e301e4e043a7d90072808c608
-      internalID: 623798165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: park_components 1_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7319276b389b0c445a501646f1118b10
-      internalID: 2116062134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: park_components 1_2
+      name: main_character_0
       rect:
         serializedVersion: 2
         x: 0
         y: 96
-        width: 48
+        width: 16
         height: 32
-      alignment: 9
-      pivot: {x: 0.98299193, y: 0.44532204}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c3a94e889da37544eb6c96cb80f52ddb
-      internalID: -1902627669
+      spriteID: 48f72dd62e209c180800000000000000
+      internalID: -9094734800969629820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_3
+      name: main_character_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 96
-        width: 48
+        width: 16
         height: 32
-      alignment: 9
-      pivot: {x: 0.98119897, y: 0.48430872}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2f41603de79526b4cbecb11c495e30a1
-      internalID: -2140013396
+      spriteID: 83456b52ba4fe4c30800000000000000
+      internalID: 4345679706368398392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_4
+      name: main_character_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58bae82dc0abbc60800000000000000
+      internalID: 7835032779756320859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_character_3
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 48
+        width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5d434590d754f404c9eb732d594d6636
-      internalID: 1109145013
+      spriteID: 0107a6705e7d43250800000000000000
+      internalID: 5923596788570943504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_5
+      name: main_character_4
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 64
-        width: 48
+        width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4d879fb3ad28a3448d64a9e43b35d41
-      internalID: -896793888
+      spriteID: 3430d501364bfff478e447158e35a3f7
+      internalID: -1849316097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_6
+      name: main_character_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7563b9f5f51b18e4bba059d9041d0050
+      internalID: 107921875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_character_6
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 48
+        width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b93f67fa39ca09a4495cbf51d4566a87
-      internalID: 1049700709
+      spriteID: 6cddeb10200000745a15d11ac3c1bc72
+      internalID: -1200703655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_7
+      name: main_character_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 32
-        width: 48
+        width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 821fd709611b8514fb2c6e64d0fab930
-      internalID: 986729832
+      spriteID: 7ea9862d0976d40448f382c4114778a7
+      internalID: -1226513346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_8
+      name: main_character_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12121b3a555e804990e84e9883fdc80
+      internalID: 703646542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_character_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e135895d0468cf4493b964b19abe639
-      internalID: 1515007989
+      spriteID: 6167d0a27b6fdee49a4cf9eabb78838a
+      internalID: 975979575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_components 1_9
+      name: main_character_10
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 0
-        width: 48
+        width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16d27594dd310fc49a10eacffe16e7fc
-      internalID: 1778873066
+      spriteID: cfd7cdddf682d8a44ab495b1cef8190e
+      internalID: -141591957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_character_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6855389737fcf9c4d88601a3653d8717
+      internalID: 1854363346
       vertices: []
       indices: 
       edges: []
@@ -350,7 +376,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: dec0fc29fa6ac9d4bbf16eb74a7a8100
+    spriteID: 59687c9446a80a24aa3311da551295fa
     internalID: 0
     vertices: []
     indices: 
@@ -360,16 +386,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      park_components 1_0: 623798165
-      park_components 1_1: 2116062134
-      park_components 1_2: -1902627669
-      park_components 1_3: -2140013396
-      park_components 1_4: 1109145013
-      park_components 1_5: -896793888
-      park_components 1_6: 1049700709
-      park_components 1_7: 986729832
-      park_components 1_8: 1515007989
-      park_components 1_9: 1778873066
+      main_character_0: -9094734800969629820
+      main_character_1: 4345679706368398392
+      main_character_10: -141591957
+      main_character_11: 1854363346
+      main_character_2: 7835032779756320859
+      main_character_3: 5923596788570943504
+      main_character_4: -1849316097
+      main_character_5: 107921875
+      main_character_6: -1200703655
+      main_character_7: -1226513346
+      main_character_8: 703646542
+      main_character_9: 975979575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

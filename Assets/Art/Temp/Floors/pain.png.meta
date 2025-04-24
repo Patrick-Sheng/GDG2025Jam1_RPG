@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 91a1f84f61f140244bc22da853940138
+guid: 545bff16accfd0a43b351dc96b64a4c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8141859485350469647
-    second: main_character_lie_down_0
-  - first:
-      213: 1915938049506184640
-    second: main_character_lie_down_1
-  - first:
-      213: 5234112671435800164
-    second: main_character_lie_down_2
-  - first:
-      213: -2177234719059665484
-    second: main_character_lie_down_3
+      213: -2998101987992766890
+    second: pain_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_character_lie_down_0
+      name: pain_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 30
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 0
+        width: 750
+        height: 714
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4abea525c35e71f458ebdba7ce929c0d
-      internalID: -1769103099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: main_character_lie_down_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 30
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be0c9633c995dce4397000beb8625ae1
-      internalID: -224306689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: main_character_lie_down_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 30
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56275924923bd4249804897dca5d71a1
-      internalID: -1674590015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: main_character_lie_down_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 31
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5abfbfd74dfcc742b26ff8ed08f9f28
-      internalID: -659588034
+      spriteID: 6567c45602a9466d0800000000000000
+      internalID: -2998101987992766890
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c4ee57da0181d5d448d115ae5d6357b0
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -209,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      main_character_lie_down_0: -1769103099
-      main_character_lie_down_1: -224306689
-      main_character_lie_down_2: -1674590015
-      main_character_lie_down_3: -659588034
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

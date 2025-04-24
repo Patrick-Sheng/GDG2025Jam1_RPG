@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject laserImpactEffect;
 
     [Header("Melee Attack")]
+    [SerializeField] private GameObject melee;
     [SerializeField] private float meleeRange = 0.5f;
     [SerializeField] private int meleeDamage = 20;
     [SerializeField] private float meleeCooldown = 0.5f;
@@ -38,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
         laserAction = playerInput.actions["Ranged"];
         spriteRenderer = GetComponent<SpriteRenderer>();
         laserLine.enabled = false;
+        
     }
 
     private void Update()
@@ -46,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (meleeAction.triggered && Time.time >= lastMeleeTime + meleeCooldown)
         {
-            MeleeAttack();
+            StartCoroutine(MeleeAttack());
         }
 
         if (laserAction.triggered && Time.time >= lastLaserTime + laserCooldown)
@@ -59,17 +61,27 @@ public class PlayerAttack : MonoBehaviour
     {
        
     }
-
-    private void MeleeAttack()
+    private GameObject meleeObject;
+    private IEnumerator MeleeAttack()
     {
+      
         lastMeleeTime = Time.time;
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, meleeRange, enemyLayers);
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(meleeDamage);
-        }
+        meleeObject = Instantiate(melee, attackPoint);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(meleeObject);
+        // Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, meleeRange, enemyLayers);
+        // foreach (Collider2D enemy in hitEnemies)
+        // {
+        //     enemy.GetComponent<EnemyHealth>().TakeDamage(meleeDamage);
+        // }
     }
+    // private void MeleeAttack()
+    // {
+      
+    //     lastMeleeTime = Time.time;
+    //     Instantiate(melee, attackPoint);
+        
+    // }
 
     private IEnumerator LaserAttack()
     {

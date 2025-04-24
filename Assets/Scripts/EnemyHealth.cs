@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     [Header("Config")]
-    [SerializeField] private int Health = 100;
+    [SerializeField] private int Health = 50;
 
     private SpriteRenderer sprite;
     private int currentHealth;
@@ -13,9 +13,9 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 
     private void Awake()
     {
-        
         sprite = GetComponent<SpriteRenderer>();
     }
+    
     private void Start()
     {
         currentHealth = Health;
@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        ShowDamageColor();
         if (currentHealth <= 0)
         {
             Die();
@@ -33,7 +34,8 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 
     private void ShowDamageColor()
     {
-        if (colorCoroutine == null)
+        // Only stop the coroutine if it's actually running
+        if (colorCoroutine != null)
         {
             StopCoroutine(colorCoroutine);
         }

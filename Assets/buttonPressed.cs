@@ -9,6 +9,9 @@ public class buttonPressed : MonoBehaviour
     if (collision.gameObject.tag == "Player") {
       anim.Play("brownPressed");
 
+      // There is some bug over here, to be fixed
+      // Buttons will not clear "alreadyStepped" after confirmation
+
       if (gameObject.tag == "CorrectButton"){
         if (alreadyStepped == false){
           StaticManager.numberOfCorrect++;
@@ -19,10 +22,12 @@ public class buttonPressed : MonoBehaviour
       } else if (gameObject.tag == "ConfirmButton") {
         if (StaticManager.numberOfCorrect == 3) {
           print("You passed!");
+          print(StaticManager.numberOfCorrect);
         } else {
           print("You failed");
-          StaticManager.numberOfCorrect = 0;
+          print(StaticManager.numberOfCorrect);
         }
+        StaticManager.numberOfCorrect = 0;
       } else {
         StaticManager.numberOfCorrect = 999;
       }

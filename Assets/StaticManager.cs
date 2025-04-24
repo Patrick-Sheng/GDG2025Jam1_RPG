@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
-    
+    public static bool noguard;
+
+    public static bool DisableGuardOnRoomEntry;
+    public static bool justpancakerun;
 
     public static bool gatetoheaven;
     public static bool layDown;

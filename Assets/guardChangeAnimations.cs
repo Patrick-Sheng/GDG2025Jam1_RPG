@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class guardChangeAnimations : MonoBehaviour
 {
+    public gatediologue gatediologue;
+    public GameObject GuardNPC;
     private Animator anim;
     private bool done;
     private void Start()
@@ -17,11 +19,27 @@ public class guardChangeAnimations : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                StaticManager.DisableGuardOnRoomEntry = true;
+                gatediologue.NoGaurd();
                 anim.Play("runaway");
                 done = true;
+                Destroy(GuardNPC);
             }
 
         }
+
+        else if (StaticManager.justpancakerun && done == false)
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                StaticManager.DisableGuardOnRoomEntry = true;
+                gatediologue.NoGaurd();
+                anim.Play("RunawayNocoin");
+                done = true;
+                Destroy(GuardNPC);
+            }
+        }
+
         else if (done == false)
         {
             if (StaticManager.stealpancakes && StaticManager.stealmoney == false)

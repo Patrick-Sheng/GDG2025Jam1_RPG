@@ -380,10 +380,15 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "justpancakerun")
+            {
+                StaticManager.justpancakerun = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
 
 
-
-
+            
 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)

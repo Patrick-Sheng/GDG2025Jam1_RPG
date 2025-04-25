@@ -82,7 +82,19 @@ public class PlayerAttack : MonoBehaviour
     {
       
         lastMeleeTime = Time.time;
-        meleeObject = Instantiate(melee, attackPoint);
+        //meleeObject = Instantiate(melee, attackPoint);
+        meleeObject = Instantiate(melee, attackPoint.position, Quaternion.identity, attackPoint);
+        if (detection.EnemyTarget != null)
+        {
+            Vector3 dirToEnemy = detection.EnemyTarget.transform.position - attackPoint.position;
+            float angle = Mathf.Atan2(-dirToEnemy.y, -dirToEnemy.x) * Mathf.Rad2Deg;
+            meleeObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+        else // Default to player's facing direction
+        {
+            float facingAngle = playerSprite.flipX ? 180f : 0f;
+            meleeObject.transform.rotation = Quaternion.Euler(0, 0, facingAngle);
+        }
         yield return new WaitForSeconds(0.5f);
         Destroy(meleeObject);
         

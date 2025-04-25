@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [Header("Config")]
     [SerializeField] private float moveSpeed = 2f;
 
+    [SerializeField] private GameObject attackPoint;
+
     private Animator anim; // Now serialized for Inspector assignment
 
     private bool isInCooldown = false;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private PlayerDetection detection;
+    
     private Rigidbody2D rb;
     private Vector2 input;
     private bool moving;
@@ -41,7 +44,6 @@ public class PlayerController : MonoBehaviour
                 Debug.LogError("Animator component missing from player GameObject!");
             }
         }
-
         currentSpeed = moveSpeed;
         detection = GetComponentInChildren<PlayerDetection>();
     }
@@ -120,7 +122,7 @@ public class PlayerController : MonoBehaviour
         if (detection.EnemyTarget != null)
         {
             Vector3 dirToEnemy = detection.EnemyTarget.transform.position -
-                                 transform.position;
+                                 attackPoint.transform.position;
             anim.SetFloat("X", dirToEnemy.x);
             anim.SetFloat("Y", dirToEnemy.y);
         }

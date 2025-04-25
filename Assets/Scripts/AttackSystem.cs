@@ -87,6 +87,34 @@ public class PlayerAttack : MonoBehaviour
         Destroy(meleeObject);
         
     }
+    [Header("Laser Fade")]
+    [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private Gradient laserColorGradient;
+    private Material laserMaterial;
+
+
+        // Create material instance to avoid editing original
+    
+    
+
+
+    private IEnumerator FadeLaser()
+    {
+        float elapsed = 0f;
+        Color startColor = laserMaterial.GetColor("_Color");
+
+        while (elapsed < fadeDuration)
+        {
+            float t = elapsed / fadeDuration;
+            laserMaterial.SetColor("_Color", laserColorGradient.Evaluate(t));
+            laserLine.widthMultiplier = Mathf.Lerp(1f, 0f, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        laserLine.enabled = false;
+        laserMaterial.SetColor("_Color", startColor); // Reset color
+    }
     private void LaserAttack(Vector2 direction)
     {
         lastMeleeTime = Time.time;
@@ -117,9 +145,22 @@ public class PlayerAttack : MonoBehaviour
 
         float laserLength = hit.collider ? hit.distance : maxLaserLength;
 
-
+        laserMaterial = Instantiate(laserLine.material);
+        laserLine.material = laserMaterial;
+        laserLine.textureMode = LineTextureMode.Tile;
+        laserLine.colorGradient = new Gradient()
+        {
+            alphaKeys = new GradientAlphaKey[]
+            {
+            new GradientAlphaKey(1, 0),
+            new GradientAlphaKey(0, 1)
+            }
+        };
         laserLine.SetPosition(0, attackPoint.position);
         laserLine.SetPosition(1, (Vector2)attackPoint.position + direction * laserLength);
+        StopCoroutine("FadeLaser"); // Stop previous fade
+        laserMaterial.SetColor("_Color", laserColorGradient.Evaluate(0));
+        StartCoroutine(FadeLaser());
         laserLine.enabled = true;
 
         StartCoroutine(HideLaserAfterDelay(0.5f));

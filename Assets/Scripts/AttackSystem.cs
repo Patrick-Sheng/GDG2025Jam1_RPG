@@ -35,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
     private InputAction meleeAction;
     private InputAction laserAction;
     private PlayerDetection detection;
+    private PlayerController playerController;
 
 
     private void Awake()
@@ -46,6 +47,11 @@ public class PlayerAttack : MonoBehaviour
         laserLine.enabled = false;
         detection = GetComponentInChildren<PlayerDetection>();
 
+    }
+
+    private void Start()
+    {
+        playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -82,7 +88,6 @@ public class PlayerAttack : MonoBehaviour
     {
       
         lastMeleeTime = Time.time;
-        //meleeObject = Instantiate(melee, attackPoint);
         meleeObject = Instantiate(melee, attackPoint.position, Quaternion.identity, attackPoint);
         if (detection.EnemyTarget != null)
         {
@@ -92,8 +97,9 @@ public class PlayerAttack : MonoBehaviour
         }
         else // Default to player's facing direction
         {
-            float facingAngle = playerSprite.flipX ? 180f : 0f;
-            meleeObject.transform.rotation = Quaternion.Euler(0, 0, facingAngle);
+            Vector2 playerInput = playerController.GetInput();
+            float angle = Mathf.Atan2(-playerInput.y, -playerInput.x) * Mathf.Rad2Deg;
+            meleeObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
         yield return new WaitForSeconds(0.5f);
         Destroy(meleeObject);

@@ -144,4 +144,8 @@ public class PlayerController : MonoBehaviour
             FaceEnemy();
         }
     }
+    public Vector2 GetInput()
+    {
+        return input;
+    }
 }

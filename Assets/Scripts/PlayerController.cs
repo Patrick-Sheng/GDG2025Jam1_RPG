@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     
     private Rigidbody2D rb;
     private Vector2 input;
+    private Vector2 latestInput;
     private bool moving;
 
     public static bool dodio;
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             if (anim != null) anim.SetBool("Moving", false);
         }
+        if (input != null) { latestInput = input; }
     }
 
     private void FixedUpdate()
@@ -146,6 +148,6 @@ public class PlayerController : MonoBehaviour
     }
     public Vector2 GetInput()
     {
-        return input;
+        return latestInput;
     }
 }

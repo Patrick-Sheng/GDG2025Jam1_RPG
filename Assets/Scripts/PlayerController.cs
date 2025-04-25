@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float currentSpeed;
 
     private SpriteRenderer spriteRenderer;
+    private PlayerDetection detection;
     private Rigidbody2D rb;
     private Vector2 input;
     private bool moving;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
         }
 
         currentSpeed = moveSpeed;
+        detection = GetComponentInChildren<PlayerDetection>();
     }
 
     private void Update()
@@ -113,6 +115,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FaceEnemy()
+    {
+        if (detection.EnemyTarget != null)
+        {
+            Vector3 dirToEnemy = detection.EnemyTarget.transform.position -
+                                 transform.position;
+            anim.SetFloat("X", dirToEnemy.x);
+            anim.SetFloat("Y", dirToEnemy.y);
+        }
+    }
     private void Animate()
     {
         if (anim == null) return;
@@ -120,10 +132,14 @@ public class PlayerController : MonoBehaviour
         moving = input.magnitude > 0.1f;
         anim.SetBool("Moving", moving);
 
-        if (moving)
+        if (moving&& detection.EnemyTarget == null) // If no enemies, face in player input
         {
             anim.SetFloat("X", input.x);
             anim.SetFloat("Y", input.y);
+        }
+        else
+        {
+            FaceEnemy();
         }
     }
 }

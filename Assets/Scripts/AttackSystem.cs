@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private GameObject laserImpactEffect;
+    [SerializeField] private SpriteRenderer playerSprite;
+    
 
     [Header("Melee Attack")]
     [SerializeField] private GameObject melee;
@@ -31,20 +34,23 @@ public class PlayerAttack : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction meleeAction;
     private InputAction laserAction;
+    private PlayerDetection detection;
+
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         meleeAction = playerInput.actions["Melee"];
         laserAction = playerInput.actions["Ranged"];
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //playerSprite = GetComponent<SpriteRenderer>();
         laserLine.enabled = false;
-        
+        detection = GetComponentInChildren<PlayerDetection>();
+
     }
 
     private void Update()
     {
-        AutoAim();
+        //AutoAim();
 
         if (meleeAction.triggered && Time.time >= lastMeleeTime + meleeCooldown)
         {
@@ -56,11 +62,21 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(LaserAttack());
         }
     }
+    //private void AutoAim()
+    //{
+    //    if (detection.EnemyTarget != null)
+    //    {
+    //        Vector3 dirToEnemy = detection.EnemyTarget.transform.position -
+    //                             transform.position;
+    //        Rotate(dirToEnemy);
+    //    }
+    //}
+    //protected void Rotate(Vector3 direction)
+    //{
+    //    anim.SetFloat("X", direction.x);
+    //    anim.SetFloat("Y", direction.y);
+    //}
 
-    private void AutoAim()
-    {
-       
-    }
     private GameObject meleeObject;
     private IEnumerator MeleeAttack()
     {
@@ -69,19 +85,9 @@ public class PlayerAttack : MonoBehaviour
         meleeObject = Instantiate(melee, attackPoint);
         yield return new WaitForSeconds(0.5f);
         Destroy(meleeObject);
-        // Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, meleeRange, enemyLayers);
-        // foreach (Collider2D enemy in hitEnemies)
-        // {
-        //     enemy.GetComponent<EnemyHealth>().TakeDamage(meleeDamage);
-        // }
-    }
-    // private void MeleeAttack()
-    // {
-      
-    //     lastMeleeTime = Time.time;
-    //     Instantiate(melee, attackPoint);
         
-    // }
+    }
+    
 
     private IEnumerator LaserAttack()
     {

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -5,19 +6,13 @@ public class MeleeAttack : MonoBehaviour
 {
     [Header("Config")]   
     [SerializeField] private int damage;
-    [SerializeField] private GameObject detection;
-    public EnemyHealth EnemyTarget { get; set; }
-    private Animator anim;
+    [SerializeField] private float flipDuration;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        StartCoroutine(Flip());
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,17 +22,13 @@ public class MeleeAttack : MonoBehaviour
             enemy.TakeDamage(damage);
         }
     }
-    //private void Animate()
-    //{
+    private IEnumerator Flip()
+    {
+        while (spriteRenderer != null)
+        {
+            spriteRenderer.flipY = !spriteRenderer.flipY;
+            yield return new WaitForSeconds(flipDuration);
+        }
 
-    //    if (detection.EnemyTarget == null) // If no enemies, face in player input
-    //    {
-    //        anim.SetFloat("X", input.x);
-    //        anim.SetFloat("Y", input.y);
-    //    }
-    //    else
-    //    {
-    //        FaceEnemy();
-    //    }
-    //}
+    }
 }

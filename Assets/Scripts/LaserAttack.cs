@@ -4,37 +4,28 @@ using System.Collections;
 public class LaserAttack : MonoBehaviour
 {
     [Header("Laser Config")]
-    [SerializeField] private LineRenderer laserLine;
-    [SerializeField] private float laserWidth = 0.1f;
-    [SerializeField] private float maxLaserLength = 100f; // Distance where laser becomes invisible
-    [SerializeField] private LayerMask collisionLayers;
-
-    [Header("Reference")]
-    [SerializeField] private GameObject player;
-
-    private PlayerController playerController;
-
-    private void Start()
-    {
-        playerController = player.GetComponent<PlayerController>();
-        laserLine.startWidth = laserWidth;
-        laserLine.endWidth = laserWidth;
-    }
+    [SerializeField] private float speed; // Distance where laser becomes invisible
+    public Vector2 Direction { get; set; }
+    public int Damage { get; set; }
 
     private void Update()
     {
-        Vector2 facingDirection = playerController.GetInput();
-        DrawLaser(facingDirection);
+        transform.Translate(Direction * (speed * Time.deltaTime));
+        StartCoroutine(SelfDestroy());
     }
 
-    private void DrawLaser(Vector2 direction)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxLaserLength, collisionLayers);
-        float laserLength = hit.collider != null ? hit.distance : maxLaserLength;
-
-        laserLine.SetPosition(0, transform.position);
-        laserLine.SetPosition(1, (Vector2)transform.position + direction * laserLength);
-
-
+        if (other.CompareTag("Enemy"))
+        {
+            EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+            enemy.TakeDamage(Damage);
+        }
+        
+    }
+    private IEnumerator SelfDestroy()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

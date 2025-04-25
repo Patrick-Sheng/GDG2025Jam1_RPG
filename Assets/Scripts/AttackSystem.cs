@@ -16,8 +16,9 @@ public class PlayerAttack : MonoBehaviour
     private float lastMeleeTime;
 
     [Header("Laser Attack")]
-    [SerializeField] private GameObject laser;
+    [SerializeField] private LaserAttack laser;
     [SerializeField] private float laserCooldown = 0.01f;
+    [SerializeField] private int laserDamage;
     private float lastLaserTime;
 
     private PlayerInput playerInput;
@@ -60,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
         {
             //StartCoroutine(LaserAttack());
             lastLaserTime = Time.time;
-            DrawLaser(playerController.GetInput());
+            DrawLaser();
         }
     }
 
@@ -86,38 +87,27 @@ public class PlayerAttack : MonoBehaviour
         Destroy(meleeObject);
         
     }
-    
-
-    //private IEnumerator LaserAttack()
-    //{
-    //    lastMeleeTime = Time.time;
-    //    meleeObject = Instantiate(melee, attackPoint.position, Quaternion.identity, attackPoint);
-    //    if (detection.EnemyTarget != null)
-    //    {
-    //        Vector3 dirToEnemy = detection.EnemyTarget.transform.position - attackPoint.position;
-    //        float angle = Mathf.Atan2(-dirToEnemy.y, -dirToEnemy.x) * Mathf.Rad2Deg;
-    //        meleeObject.transform.rotation = Quaternion.Euler(0, 0, angle);
-    //    }
-    //    else // Default to player's facing direction
-    //    {
-    //        Vector2 playerInput = playerController.GetInput();
-    //        float angle = Mathf.Atan2(-playerInput.y, -playerInput.x) * Mathf.Rad2Deg;
-    //        meleeObject.transform.rotation = Quaternion.Euler(0, 0, angle);
-    //    }
-    //    yield return new WaitForSeconds(0.5f);
-    //    Destroy(meleeObject);
-    //}
-
-
-    private void DrawLaser(Vector2 direction)
+    private void LaserAttack(Vector2 direction)
     {
-        direction = direction.normalized; // Ensure unit vector
+        lastMeleeTime = Time.time;
+        LaserAttack laserObject = Instantiate(laser);
+        laserObject.transform.position = attackPoint.position;
+        laserObject.Direction = direction;
+        laserObject.Damage = laserDamage;
+        
+    }
+
+
+    private void DrawLaser()
+    {   
+
+        Vector2 direction = playerController.GetInput().normalized; // Ensure unit vector
         if (detection.EnemyTarget != null)
         {
             direction = detection.EnemyTarget.transform.position - attackPoint.position;
 
         }
-
+        LaserAttack(direction);
         RaycastHit2D hit = Physics2D.Raycast(
             attackPoint.position,
             direction,
@@ -127,12 +117,13 @@ public class PlayerAttack : MonoBehaviour
 
         float laserLength = hit.collider ? hit.distance : maxLaserLength;
 
-        
+
         laserLine.SetPosition(0, attackPoint.position);
         laserLine.SetPosition(1, (Vector2)attackPoint.position + direction * laserLength);
         laserLine.enabled = true;
 
         StartCoroutine(HideLaserAfterDelay(0.5f));
+        
     }
 
     private IEnumerator HideLaserAfterDelay(float delay)

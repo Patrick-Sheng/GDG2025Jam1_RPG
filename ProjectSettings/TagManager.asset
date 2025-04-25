@@ -6,6 +6,8 @@ TagManager:
   tags:
   - test
   - Fade
+  - Gate
+  - OldMan
   layers:
   - Default
   - TransparentFX

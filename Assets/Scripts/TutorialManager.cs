@@ -28,6 +28,12 @@ public class TutorialManager : MonoBehaviour
             updateInstruction();
           }
           break;
+        case 3:
+          if(StaticManager.talkedToOldMan) {
+            print(StaticManager.talkedToOldMan);
+            updateInstruction();
+          }
+          break;
         default:
           break;
       } 
@@ -43,8 +49,11 @@ public class TutorialManager : MonoBehaviour
         case 2:
           instructionText.text = "Press c to interact";
           break;
+        case 3:
+          instructionText.text = "Talk to the old man";
+          break;
         default:
-          instructionText.text = "Hello!";
+          instructionText.text = "Walk across the road";
           break;
       }
 

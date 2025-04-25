@@ -8,8 +8,17 @@ public class TutorialManager : MonoBehaviour
     public TextMeshProUGUI instructionText;
     private int progressIndex;
 
+    private GameObject Key;
+
+    private GameObject Gate;
+
     void Start()
     {
+      Key = GameObject.FindGameObjectWithTag("Key");
+      Gate = GameObject.FindGameObjectWithTag("Gate");
+
+      Key.SetActive(false);
+
       progressIndex = 0;
       updateInstruction();
     }
@@ -30,12 +39,27 @@ public class TutorialManager : MonoBehaviour
           break;
         case 3:
           if(StaticManager.talkedToOldMan) {
-            print(StaticManager.talkedToOldMan);
+            updateInstruction();
+          }
+          break;
+        case 4:
+          if(StaticManager.canOpenGate) {
             updateInstruction();
           }
           break;
         default:
           break;
+      }
+      
+      if(StaticManager.talkedToOldMan) {
+        Key.SetActive(true);
+        StaticManager.talkedToOldMan = false;
+      }
+      if(StaticManager.canOpenGate) {
+        Key.SetActive(false);
+        Gate.SetActive(false);
+
+        StaticManager.canOpenGate = false;
       } 
     }
 
@@ -51,6 +75,9 @@ public class TutorialManager : MonoBehaviour
           break;
         case 3:
           instructionText.text = "Talk to the old man";
+          break;
+        case 4:
+          instructionText.text = "Walk around the park to find the key";
           break;
         default:
           instructionText.text = "Walk across the road";

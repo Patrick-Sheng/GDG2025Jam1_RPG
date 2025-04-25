@@ -1,5 +1,6 @@
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class StaticManager : MonoBehaviour
 {
@@ -17,14 +18,20 @@ public class StaticManager : MonoBehaviour
     public static string nextScene;
 
     public static void UpdateVariable(string varName, string value) {
-        switch(varName)
-        {
-            case "talkedToOldMan":
-                if(bool.TryParse(value, out bool result))
-                    talkedToOldMan = result;
-                break;
-        }
-        
-        print($"Updated {varName} to {value}");
+      bool result;
+
+      switch(varName)
+      {
+        case "talkedToOldMan":
+          if(bool.TryParse(value, out result))
+            talkedToOldMan = result;
+          break;
+        case "canOpenGate":
+          if(bool.TryParse(value, out result))
+            canOpenGate = result;
+          break;
+      }
+      
+      print($"Updated {varName} to {value}");
     }
 }

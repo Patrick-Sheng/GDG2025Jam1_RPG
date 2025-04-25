@@ -348,7 +348,6 @@ public class DialogueManager : MonoBehaviour
         {
             if(tag.StartsWith("UPDATE_VAR:"))
             {
-                print("Found it!");
                 ProcessVariableUpdate(tag);
             }
         }

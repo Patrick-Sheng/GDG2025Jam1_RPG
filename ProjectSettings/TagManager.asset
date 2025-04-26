@@ -19,7 +19,7 @@ TagManager:
   - Room
   - Enemy
   - Player
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Backround
     uniqueID: 1610596905
+    locked: 0
+  - name: Wall
+    uniqueID: 4190034115
     locked: 0
   - name: Forground
     uniqueID: 1264486351

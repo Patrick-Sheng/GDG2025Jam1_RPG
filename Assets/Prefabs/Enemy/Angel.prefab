@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3136975053758268255}
   - component: {fileID: 4346045652920503391}
   - component: {fileID: 2409957423207628845}
+  - component: {fileID: 2389006784580821790}
+  - component: {fileID: 578446998759155323}
   m_Layer: 7
   m_Name: Angel
   m_TagString: Enemy
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 724138601
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 794005853264362711, guid: a85528353aff2764eb9f81143d09d9cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,3 +168,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 51
+--- !u!114 &2389006784580821790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028690719972247161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2226b40ab029c4ab8557c5d1ff5c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialStateID: Wander
+  states:
+  - StateID: Wander
+    Actions:
+    - {fileID: 578446998759155323}
+    Transitions: []
+--- !u!114 &578446998759155323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028690719972247161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431ef92b5caebd64b8608c0c6ea6d257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDebug: 1
+  useRandomMovement: 1
+  wanderSpeed: 1.5
+  moveRange: {x: 2, y: 2}
+  minDistanceCheck: 0.5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionRange: 0.6

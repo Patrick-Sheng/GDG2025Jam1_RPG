@@ -100,6 +100,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator FadeLaser()
     {
+        
         float elapsed = 0f;
         Color startColor = laserMaterial.GetColor("_Color");
 
@@ -107,7 +108,7 @@ public class PlayerAttack : MonoBehaviour
         {
             float t = elapsed / fadeDuration;
             laserMaterial.SetColor("_Color", laserColorGradient.Evaluate(t));
-            laserLine.widthMultiplier = Mathf.Lerp(1f, 0f, t);
+            laserLine.widthMultiplier = Mathf.Lerp(2f, 0f, t);
             elapsed += Time.deltaTime;
             yield return null;
         }
@@ -160,9 +161,10 @@ public class PlayerAttack : MonoBehaviour
         laserLine.SetPosition(1, (Vector2)attackPoint.position + direction * laserLength);
         StopCoroutine("FadeLaser"); // Stop previous fade
         laserMaterial.SetColor("_Color", laserColorGradient.Evaluate(0));
-        StartCoroutine(FadeLaser());
+        
         laserLine.enabled = true;
 
+        StartCoroutine(FadeLaser());
         StartCoroutine(HideLaserAfterDelay(0.5f));
         
     }

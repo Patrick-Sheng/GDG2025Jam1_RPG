@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7498749888818263919}
   - component: {fileID: 5294187389530793252}
   - component: {fileID: 7557073384622220296}
+  - component: {fileID: 3501662270671495521}
+  - component: {fileID: 3573559443574643961}
   m_Layer: 7
   m_Name: Soul
   m_TagString: Enemy
@@ -166,3 +168,42 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3125
+--- !u!114 &3501662270671495521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3462267786297087903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2226b40ab029c4ab8557c5d1ff5c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialStateID: Wander
+  states:
+  - StateID: Wander
+    Actions:
+    - {fileID: 0}
+    Transitions: []
+--- !u!114 &3573559443574643961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3462267786297087903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431ef92b5caebd64b8608c0c6ea6d257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDebug: 1
+  useRandomMovement: 1
+  wanderSpeed: 1.5
+  moveRange: {x: 2, y: 2}
+  minDistanceCheck: 0.5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  detectionRange: 0.6

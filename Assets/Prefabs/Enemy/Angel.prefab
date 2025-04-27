@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 2409957423207628845}
   - component: {fileID: 2389006784580821790}
   - component: {fileID: 578446998759155323}
+  - component: {fileID: 2837354795331660132}
+  - component: {fileID: 702589956385125041}
+  - component: {fileID: 6929848245035099307}
   m_Layer: 7
   m_Name: Angel
   m_TagString: Enemy
@@ -185,7 +188,19 @@ MonoBehaviour:
   - StateID: Wander
     Actions:
     - {fileID: 578446998759155323}
-    Transitions: []
+    - {fileID: 2837354795331660132}
+    Transitions:
+    - Decision: {fileID: 6929848245035099307}
+      TrueState: Attack
+      FalseState: 
+  - StateID: Attack
+    Actions:
+    - {fileID: 2837354795331660132}
+    - {fileID: 702589956385125041}
+    Transitions:
+    - Decision: {fileID: 6929848245035099307}
+      TrueState: 
+      FalseState: Wander
 --- !u!114 &578446998759155323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,5 +220,48 @@ MonoBehaviour:
   minDistanceCheck: 0.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   detectionRange: 0.6
+--- !u!114 &2837354795331660132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028690719972247161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9e81bf1820658468634a011b5630dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeDetection: 4
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &702589956385125041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028690719972247161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577e88de11c7b03408ef2dedbc179798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6929848245035099307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028690719972247161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f552ca2d18d5f489d5725c45c33d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 512

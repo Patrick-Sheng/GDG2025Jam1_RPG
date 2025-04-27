@@ -15,7 +15,7 @@ public class DecisionState
 
     private void ExecuteActions()
     {
-        if(Actions.Length <= 0) return;
+        if (Actions.Length <= 0) return;
         for (int i = 0; i < Actions.Length; i++)
         {
             Actions[i].Act();
@@ -34,15 +34,14 @@ public class DecisionState
                 {
                     enemy.ChangeState(Transitions[i].TrueState);
                 }
-                else
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(Transitions[i].FalseState) == false)
                 {
-                    if (string.IsNullOrEmpty(Transitions[i].FalseState) == false)
-                    {
-                        enemy.ChangeState(Transitions[i].FalseState);
-                    }
+                    enemy.ChangeState(Transitions[i].FalseState);
                 }
             }
         }
-
     }
 }

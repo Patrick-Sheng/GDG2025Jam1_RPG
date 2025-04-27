@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
 
     public DecisionState CurrentState { get; set; }
 
+    public Transform Player {  get; set; }
+
     private void Start()
     {
         ChangeState(initialStateID);

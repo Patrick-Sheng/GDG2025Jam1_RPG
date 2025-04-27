@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4800638339684576076}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 250, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8280051380672458848}
     m_Position: {x: 235, y: 65, z: 0}
@@ -31,7 +31,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Square
+  m_Name: buttonController
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:

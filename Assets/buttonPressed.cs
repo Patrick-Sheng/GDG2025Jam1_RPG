@@ -27,6 +27,8 @@ public class buttonPressed : MonoBehaviour
           print("You failed");
           print(StaticManager.numberOfCorrect);
         }
+        ResetAllButtons();
+
         StaticManager.numberOfCorrect = 0;
       } else {
         StaticManager.numberOfCorrect = 999;
@@ -34,10 +36,22 @@ public class buttonPressed : MonoBehaviour
     }
   }
 
-  void OnTriggerExit2D(Collider2D collision)
-  {
-    if (collision.gameObject.tag == "Player") {
-      anim.Play("brownReleased");
+  // void OnTriggerExit2D(Collider2D collision)
+  // {
+  //   if (collision.gameObject.tag == "Player") {
+  //     anim.Play("brownReleased");
+  //   }
+  // }
+
+  private void ResetAllButtons()
+    {
+      // Find all buttonPressed components in the scene
+      buttonPressed[] allButtons = FindObjectsOfType<buttonPressed>();
+      
+      foreach (buttonPressed button in allButtons)
+      { 
+        button.anim.Play("brownReleased");
+        button.alreadyStepped = false;
+      }
     }
-  }
 }

@@ -33,10 +33,10 @@ public class DecisionPlayerInSight : AbstractEnemyDecision
         return true;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (enemy.Player == null) return;
-        Gizmos.color = DetectPlayerInSight() ? Color.green : Color.red;
-        Gizmos.DrawLine(transform.position, enemy.Player.position);
-    }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (enemy.Player == null) return;
+    //    Gizmos.color = DetectPlayerInSight() ? Color.green : Color.red;
+    //    Gizmos.DrawLine(transform.position, enemy.Player.position);
+    //}
 }

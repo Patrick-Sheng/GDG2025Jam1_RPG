@@ -2381,6 +2381,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69df48a949e4d242a6c1ff76036c98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1172510995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3745418767110241919, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
+  m_PrefabInstance: {fileID: 1358318854280882815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1172511001
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172510995}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.4706863}
+  m_Size: {x: 0.5, y: 0.90939397}
+  m_Direction: 0
 --- !u!1001 &1355515062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3648,15 +3690,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 322581090222672520, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.76
+      value: 6.63
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.57
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3696,7 +3738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2073385395421749023, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2481666638874724232, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: heartDisplay
@@ -3910,10 +3952,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.4918071
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8914609464512599243, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3745418767110241919, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1172511001}
   m_SourcePrefab: {fileID: 100100000, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

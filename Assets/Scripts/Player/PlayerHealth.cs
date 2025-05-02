@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
     if (playerConfig.CurrentHealth > 0f)
     {
         playerConfig.CurrentHealth = Mathf.Max(0, playerConfig.CurrentHealth - amount);
-        heartDisplay.UpdateHearts(); // <--- added
+        heartDisplay.UpdateHearts(); 
         //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
     }
 }
@@ -44,7 +44,7 @@ public void Heal(int amount)
     if (playerConfig.CurrentHealth < playerConfig.MaxHealth)
     {
         playerConfig.CurrentHealth = Mathf.Min(playerConfig.CurrentHealth + amount, playerConfig.MaxHealth);
-        heartDisplay.UpdateHearts(); // <--- added
+        heartDisplay.UpdateHearts(); 
         //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
     }
 }

@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9e81bf1820658468634a011b5630dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeDetection: 4
+  rangeDetection: 3
   playerMask:
     serializedVersion: 2
     m_Bits: 256

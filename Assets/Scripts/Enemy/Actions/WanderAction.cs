@@ -32,6 +32,7 @@ public class WanderAction : AbstractEnemyAction
         {
             GetNewMoveDirection();
         }
+        Debug.Log("wander");
     }
 
     private void GetNewMoveDirection()

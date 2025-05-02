@@ -3,20 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DecisionPlayerInSight :AbstractEnemyDecision
+public class DecisionPlayerInSight : AbstractEnemyDecision
 {
     [SerializeField] private LayerMask obstacleMask;
 
     private EnemyController enemy;
 
-    private void Awake()
+    private void Start()
     {
         enemy = GetComponent<EnemyController>();
     }
 
     public override bool Decide()
     {
-        return DetectPlayerInSight();
+        return DetectPlayerInSight(); ;
     }
 
     private bool DetectPlayerInSight()

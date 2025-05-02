@@ -4,7 +4,7 @@ using System.Collections;
 public class LaserAttack : MonoBehaviour
 {
     [Header("Laser Config")]
-    [SerializeField] private float speed; // Distance where laser becomes invisible
+    [SerializeField] private float speed;
     public Vector2 Direction { get; set; }
     public int Damage { get; set; }
 

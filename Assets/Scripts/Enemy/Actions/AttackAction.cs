@@ -30,6 +30,6 @@ public class AttackAction : AbstractEnemyAction
         //    enemyWeapon.UseWeapon();
         //    attackTimer = timeBtwAttacks;
         //}
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
     }
 }

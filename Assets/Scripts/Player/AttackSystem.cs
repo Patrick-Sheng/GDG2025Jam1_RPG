@@ -130,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
     private void DrawLaser()
     {   
 
-        Vector2 direction = playerController.GetInput().normalized; // Ensure unit vector
+        Vector2 direction = playerController.GetInput().normalized; 
         if (detection.EnemyTarget != null)
         {
             direction = detection.EnemyTarget.transform.position - attackPoint.position;
@@ -159,7 +159,7 @@ public class PlayerAttack : MonoBehaviour
         };
         laserLine.SetPosition(0, attackPoint.position);
         laserLine.SetPosition(1, (Vector2)attackPoint.position + direction * laserLength);
-        StopCoroutine("FadeLaser"); // Stop previous fade
+        //StopCoroutine("FadeLaser"); 
         laserMaterial.SetColor("_Color", laserColorGradient.Evaluate(0));
         
         laserLine.enabled = true;

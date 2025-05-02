@@ -18,18 +18,26 @@ public class WanderAction : AbstractEnemyAction
 
     private Vector3 movePosition;
     private Vector3 moveDirection;
+    private float lastMoveTime;
+    private float moveCooldown = 1;
 
     private void Start()
     {
         GetNewMoveDirection();
+        lastMoveTime = Time.time;
     }
 
     public override void Act()
-    {
+    {   
+        if(Time.time > lastMoveTime + moveCooldown) 
+        { 
         moveDirection = (movePosition - transform.position).normalized;
         transform.Translate(moveDirection*(wanderSpeed*Time.deltaTime));
-        if(CanGetNewPosition())
+        
+        }
+        if (CanGetNewPosition())
         {
+            lastMoveTime = Time.time;
             GetNewMoveDirection();
         }
     }

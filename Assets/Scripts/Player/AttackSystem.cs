@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private float laserWidth = 1f;
     [SerializeField] private float maxLaserLength = 100f; // Distance where laser becomes invisible
-    [SerializeField] private LayerMask collisionLayers;
+    [SerializeField] private LayerMask ObstacleLayer;
 
     private void Awake()
     {
@@ -117,6 +117,7 @@ public class PlayerAttack : MonoBehaviour
         laserObject.transform.position = attackPoint.position;
         laserObject.Direction = direction;
         laserObject.Damage = laserDamage;
+        laserObject.ObstacleLayer = ObstacleLayer;
         
     }
 
@@ -135,7 +136,7 @@ public class PlayerAttack : MonoBehaviour
             attackPoint.position,
             direction,
             maxLaserLength,
-            collisionLayers
+            ObstacleLayer
         );
 
         float laserLength = hit.collider ? hit.distance : maxLaserLength;

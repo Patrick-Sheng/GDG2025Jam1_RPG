@@ -310,8 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22356e1b1cf2bf84f80d1ccec307e062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 3169977681039230708, guid: aee617c2ae9d6d240a0df910c7caacf9, type: 3}
+  Projectile: {fileID: 6761173187845367194, guid: d63009b0a7975094fb9210225a1f8f91, type: 3}
   Cooldown: 1
   Damage: 2
   attackPoint: {fileID: 2478552861225232655}
   Speed: 2
+  ObsticleLayer:
+    serializedVersion: 2
+    m_Bits: 512

@@ -8,10 +8,17 @@ public class LaserAttack : MonoBehaviour
     public Vector2 Direction { get; set; }
     public int Damage { get; set; }
 
+    public LayerMask ObstacleLayer { get; set; }
+
     private void Update()
     {
         transform.Translate(Direction * (speed * Time.deltaTime));
-        StartCoroutine(SelfDestroy());
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.1f, ObstacleLayer);
+        if (hit != null)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,10 +29,5 @@ public class LaserAttack : MonoBehaviour
             enemy.TakeDamage(Damage);
         }
         
-    }
-    private IEnumerator SelfDestroy()
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
     }
 }

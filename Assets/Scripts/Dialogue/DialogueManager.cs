@@ -182,6 +182,7 @@ public class DialogueManager : MonoBehaviour
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
             HandleTags(currentStory.currentTags);
+            CheckForVariableUpdate();
 
 
             //dialogueText.text = nextLine;
@@ -340,7 +341,32 @@ public class DialogueManager : MonoBehaviour
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
         }
+    }
 
+    private void CheckForVariableUpdate() {
+      foreach(string tag in currentStory.currentTags)
+        {
+            if(tag.StartsWith("UPDATE_VAR:"))
+            {
+                ProcessVariableUpdate(tag);
+            }
+        }
+    }
+
+    private void ProcessVariableUpdate(string tag) {
+        // Remove the "UPDATE_VAR:" prefix
+        string content = tag.Substring(11);
+        
+        // Split into variable name and value
+        string[] parts = content.Split(',');
+        if(parts.Length == 2)
+        {
+            string varName = parts[0];
+            string varValue = parts[1];
+            
+            // Update the static manager
+            StaticManager.UpdateVariable(varName, varValue);
+        }
     }
 
 }

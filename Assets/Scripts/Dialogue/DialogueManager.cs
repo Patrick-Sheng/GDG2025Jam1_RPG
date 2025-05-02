@@ -143,13 +143,13 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIsPlaying = true;
 
-        // ——— UI boilerplate you had in EnterDialogueMode ———
+        // ï¿½ï¿½ï¿½ UI boilerplate you had in EnterDialogueMode ï¿½ï¿½ï¿½
         displayNameText.text = "???";
         portraitAnimator.Play("default");
         layoutAnimator.Play("default");
         dialoguePanel.SetActive(true);
         Canvas.ForceUpdateCanvases();
-        // ————————————————————————————————————————————————
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         ContinueStory();
     }
@@ -236,13 +236,10 @@ public class DialogueManager : MonoBehaviour
 
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
-<<<<<<< HEAD
             HandleTags(currentStory.currentTags);
             CheckForVariableUpdate();
-=======
             //chat gpt told me to move this somewhere else 
             //HandleTags(currentStory.currentTags);
->>>>>>> origin/main
 
 
             //dialogueText.text = nextLine;

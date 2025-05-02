@@ -1,26 +1,19 @@
-<<<<<<< HEAD
-using UnityEditor.Build;
-=======
 using Unity.VisualScripting;
 using UnityEditor;
->>>>>>> origin/main
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class StaticManager : MonoBehaviour
 {
-<<<<<<< HEAD
     public static bool PlayerDead;
     public static bool carHit;
 
-<<<<<<< HEAD
     public static int numberOfCorrect;
-=======
     // public static bool indio;
     public static bool carmove; 
 
     public static bool canOpenGate;
-=======
+
     public static bool noguard;
 
     public static bool DisableGuardOnRoomEntry;
@@ -45,15 +38,11 @@ public class StaticManager : MonoBehaviour
 
     public static bool YouWinArcade;
     public static bool YouLoseArcade;
->>>>>>> origin/main
 
     public static bool talkedToOldMan;
-
->>>>>>> 1eb4687061b60c07074a15637837d6fb1ebf44ae
     public static bool resettrigger;
     public static string nextScene;
 
-<<<<<<< HEAD
     public static void UpdateVariable(string varName, string value) {
       bool result;
 
@@ -70,7 +59,7 @@ public class StaticManager : MonoBehaviour
       }
       
       print($"Updated {varName} to {value}");
-=======
+    }
     public static int licked;
     public static bool CanLick;
     public static bool licked6times;
@@ -133,6 +122,5 @@ public class StaticManager : MonoBehaviour
 
 
 
->>>>>>> origin/main
     }
 }

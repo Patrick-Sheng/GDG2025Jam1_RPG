@@ -6,17 +6,14 @@ TagManager:
   tags:
   - test
   - Fade
-<<<<<<< HEAD
   - CorrectButton
   - ConfirmButton
   - Gate
   - OldMan
   - Key
-=======
   - moneyholder
   - pancakeholder
   - gotohevenmain
->>>>>>> origin/main
   layers:
   - Default
   - TransparentFX

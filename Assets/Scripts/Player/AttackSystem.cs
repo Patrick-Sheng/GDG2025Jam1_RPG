@@ -59,9 +59,8 @@ public class PlayerAttack : MonoBehaviour
 
         if (laserAction.triggered && Time.time >= lastLaserTime + laserCooldown)
         {
-            //StartCoroutine(LaserAttack());
             lastLaserTime = Time.time;
-            DrawLaser();
+            LaserAttack();
         }
     }
 
@@ -93,11 +92,6 @@ public class PlayerAttack : MonoBehaviour
     private Material laserMaterial;
 
 
-        // Create material instance to avoid editing original
-    
-    
-
-
     private IEnumerator FadeLaser()
     {
         
@@ -116,7 +110,7 @@ public class PlayerAttack : MonoBehaviour
         laserLine.enabled = false;
         laserMaterial.SetColor("_Color", startColor); // Reset color
     }
-    private void LaserAttack(Vector2 direction)
+    private void ShootLaserHitbox(Vector2 direction)
     {
         lastMeleeTime = Time.time;
         LaserAttack laserObject = Instantiate(laser);
@@ -136,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
             direction = detection.EnemyTarget.transform.position - attackPoint.position;
 
         }
-        LaserAttack(direction);
+        ShootLaserHitbox(direction);
         RaycastHit2D hit = Physics2D.Raycast(
             attackPoint.position,
             direction,
@@ -159,7 +153,7 @@ public class PlayerAttack : MonoBehaviour
         };
         laserLine.SetPosition(0, attackPoint.position);
         laserLine.SetPosition(1, (Vector2)attackPoint.position + direction * laserLength);
-        //StopCoroutine("FadeLaser"); 
+
         laserMaterial.SetColor("_Color", laserColorGradient.Evaluate(0));
         
         laserLine.enabled = true;
@@ -167,6 +161,10 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(FadeLaser());
         StartCoroutine(HideLaserAfterDelay(0.5f));
         
+    }
+    private void LaserAttack()
+    {
+        DrawLaser();
     }
 
     private IEnumerator HideLaserAfterDelay(float delay)

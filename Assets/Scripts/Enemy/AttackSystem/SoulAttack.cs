@@ -17,7 +17,6 @@ public class SoulAttack : MonoBehaviour
         lastAttackTime = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
     }

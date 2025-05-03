@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      monarisa_0: 7151187340649540378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

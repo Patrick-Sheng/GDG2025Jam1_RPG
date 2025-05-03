@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cobblestone paths_0: 1418252494838048088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

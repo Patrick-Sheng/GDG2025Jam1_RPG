@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDebug: 1
   useRandomMovement: 1
-  wanderSpeed: 1.5
+  wanderSpeed: 1
   moveRange: {x: 2, y: 2}
   minDistanceCheck: 0.5
   obstacleLayer:
@@ -315,6 +315,6 @@ MonoBehaviour:
   Damage: 2
   attackPoint: {fileID: 2478552861225232655}
   Speed: 2
-  ObsticleLayer:
+  ObstacleLayer:
     serializedVersion: 2
     m_Bits: 512

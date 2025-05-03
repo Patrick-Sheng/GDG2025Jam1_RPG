@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1383345359254052711}
   - component: {fileID: 4900430584682090839}
   - component: {fileID: 3365919272304467625}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -249,7 +249,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4007311310878570539}
-  m_Layer: 0
+  - component: {fileID: 2130191060538788499}
+  m_Layer: 2
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +272,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411684935709781159}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2130191060538788499
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073385395421749023}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.048618793, y: 0.000000029802322}
+  m_Size: {x: 0.5, y: 0.91896874}
+  m_Direction: 0
 --- !u!1 &3745418767110241919
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,13 +321,13 @@ GameObject:
   - component: {fileID: 6336268425584816651}
   - component: {fileID: 5602699953933726119}
   - component: {fileID: 6452477975462096472}
-  - component: {fileID: 8914609464512599243}
+  - component: {fileID: 5882302271216627173}
   - component: {fileID: 928784679078419092}
   - component: {fileID: 7372145991021470262}
   - component: {fileID: 2481666638874724232}
   - component: {fileID: 4880971043881389342}
   - component: {fileID: 7666876851680285091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -414,8 +452,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8914609464512599243
-BoxCollider2D:
+--- !u!70 &5882302271216627173
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -444,22 +482,13 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0018823147, y: 0.4918071}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.5, y: 1}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.49934053, y: 0.9487312}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.0101287365, y: 0.4706863}
+  m_Size: {x: 0.5040517, y: 0.90939397}
+  m_Direction: 0
 --- !u!95 &928784679078419092
 Animator:
   serializedVersion: 7
@@ -635,9 +664,9 @@ MonoBehaviour:
   laserLine: {fileID: 7666876851680285091}
   laserWidth: 0.5
   maxLaserLength: 100
-  collisionLayers:
+  ObstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   fadeDuration: 0.3
   laserColorGradient:
     serializedVersion: 2
@@ -737,17 +766,17 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8941177, g: 0.9058824, b: 0.10588236, a: 1}
-      key1: {r: 0.8941177, g: 0.9058824, b: 0.10588236, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
+      key1: {r: 0.38823533, g: 0.38823533, b: 0.38823533, a: 1}
+      key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 0
+      ctime1: 7710
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -761,14 +790,14 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 2
       m_ColorSpace: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 1

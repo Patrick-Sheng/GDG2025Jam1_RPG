@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class StaticManager : MonoBehaviour
 {
+
+
+    public static bool enterWordle;
     public static bool PlayerDead;
     public static bool carHit;
 

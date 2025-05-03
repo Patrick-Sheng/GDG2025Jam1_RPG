@@ -388,7 +388,12 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
-
+            if (tag.Trim() == "PlayWordle")
+            {
+                StaticManager.enterWordle = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
 
             
 

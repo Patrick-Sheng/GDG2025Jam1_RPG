@@ -6,30 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/heavenMain.unity
+    path: Assets/Tiles/Scenes/heavenMain.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/2.unity
+    path: Assets/Tiles/Scenes/2.unity
     guid: bf804ef7306bd5743ad624198cd5f7d5
   - enabled: 1
-    path: Assets/Scenes/MoleRoom/MoleRoom2.unity
+    path: Assets/Tiles/Scenes/MoleRoom/MoleRoom2.unity
     guid: 29bd8baaa15c9fa4787b5b2c6440ac98
   - enabled: 1
-    path: Assets/Scenes/MoleRoom/MoleRoom1.unity
+    path: Assets/Tiles/Scenes/MoleRoom/MoleRoom1.unity
     guid: 9819262a6dd50c64ba65b48908309548
   - enabled: 1
-    path: Assets/Scenes/MoleRoom/MoleRoom3.unity
+    path: Assets/Tiles/Scenes/MoleRoom/MoleRoom3.unity
     guid: 40c06a1ba128bf940896630b9f4d5fa4
   - enabled: 1
-    path: Assets/Scenes/MoleRoom/MoleRoom4.unity
+    path: Assets/Tiles/Scenes/MoleRoom/MoleRoom4.unity
     guid: 73da4b34aaf39d249be8226a5cb4b01d
-    path: Assets/Scenes/ParkRoom.unity
-    guid: b0bf6019f0b53454d9b25c1332776b32
-    path: Assets/Scenes/HeavenGate.unity
-    guid: b112f762f71fcaa4b94e71d5749e0ea8
   - enabled: 1
-    path: Assets/Scenes/TestArcade.unity
+    path: Assets/Tiles/Scenes/TestArcade.unity
     guid: 8250fe430b1d3ee4d8e65a6c74d7998a
+  - enabled: 1
+    path: Assets/Tiles/Scenes/test.unity
+    guid: 9badf2a01e023d444bfa9e288d27dd7e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

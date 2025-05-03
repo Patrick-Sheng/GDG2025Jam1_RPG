@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mud wall tileset_0: -7439213322418420400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

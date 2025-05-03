@@ -43,6 +43,8 @@ public class StaticManager : MonoBehaviour
     public static bool resettrigger;
     public static string nextScene;
 
+    public static int couchPosition;
+
     public static void UpdateVariable(string varName, string value) {
       bool result;
 

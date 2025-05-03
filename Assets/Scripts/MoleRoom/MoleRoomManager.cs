@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MoleRoomManager : MonoBehaviour
 {
-  
+    [Header("Items")]
     public GameObject DogBone;
     public GameObject Truffle;
     public GameObject Ruby;
@@ -18,13 +18,36 @@ public class MoleRoomManager : MonoBehaviour
     public GameObject[] slots;        // Should contain slot1, slot2, slot3
     public GameObject[] imageSlots;   // Should contain imageSlot1, imageSlot2, imageSlot3
 
-    private List<Item> inventory = new List<Item>();
+    [Header("StoneWalls")]
+    public GameObject Room2StoneWall;
+
+    private List<Item> inventory = StaticManager.inventory;
 
     void Start()
-    {
-        // Ensure all slots are disabled at start
-        foreach (var slot in slots)
-            slot.SetActive(false);
+    {   
+        // First time entering the room
+        if (!StaticManager.moleRoom1Visited) {
+          StaticManager.moleRoom1Visited = true;
+          StaticManager.inventory.Clear();
+        } else {
+          if (StaticManager.firstTime_pickedUpBone && DogBone != null) {
+            DogBone.SetActive(false);
+          }
+          if (StaticManager.firstTime_pickedUpTruffle && Truffle != null) {
+            Truffle.SetActive(false);
+          }
+          if (StaticManager.firstTime_pickedUpRuby && Ruby != null) {
+            Ruby.SetActive(false);
+          }
+        }
+        // Initialize the inventory UI
+        UpdateUI();
+
+        // Initialize the items in the scene
+        
+        if (Room2StoneWall != null) {
+          Room2StoneWall.SetActive(true);
+        }
     }
 
     void Update()
@@ -34,18 +57,32 @@ public class MoleRoomManager : MonoBehaviour
       }
       if (StaticManager.pickedUpBone) {
         StaticManager.pickedUpBone = false;
-        DogBone.SetActive(false);
+        StaticManager.firstTime_pickedUpBone = true;
+        if (DogBone != null) {
+          DogBone.SetActive(false);
+        }
         ToggleItem(Item.DOG_BONE);
       }
       if (StaticManager.pickedUpTruffle) {
         StaticManager.pickedUpTruffle = false;
-        Truffle.SetActive(false);
+        StaticManager.firstTime_pickedUpTruffle = true;
+        if (Truffle != null) {
+          Truffle.SetActive(false);
+        }
         ToggleItem(Item.TRUFFLE);
       }
       if (StaticManager.pickedUpRuby) {
         StaticManager.pickedUpRuby = false;
-        Ruby.SetActive(false);
+        StaticManager.firstTime_pickedUpRuby = true;
+        if (Ruby != null) {
+          Ruby.SetActive(false);
+        }
         ToggleItem(Item.RUBY);
+      }
+      if (StaticManager.completedPressurePlatePuzzle) {
+        if (Room2StoneWall != null) {
+          Room2StoneWall.SetActive(false);
+        }
       }
     }
 

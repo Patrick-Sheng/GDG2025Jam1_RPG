@@ -1680,6 +1680,7 @@ MonoBehaviour:
   - {fileID: 1741117313}
   - {fileID: 1861542823}
   - {fileID: 1756675498}
+  Room2StoneWall: {fileID: 0}
 --- !u!1001 &310311897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1813,7 +1814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &340948175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2851,7 +2852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &683853741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10670,7 +10671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1886914326
 RectTransform:
   m_ObjectHideFlags: 0

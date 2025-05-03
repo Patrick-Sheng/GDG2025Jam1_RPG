@@ -20,12 +20,11 @@ public class buttonPressed : MonoBehaviour
         }
 
       } else if (gameObject.tag == "ConfirmButton") {
-        if (StaticManager.numberOfCorrect == 3) {
+        if (StaticManager.numberOfCorrect == 10) {
           print("You passed!");
-          print(StaticManager.numberOfCorrect);
+          StaticManager.completedPressurePlatePuzzle = true;
         } else {
           print("You failed");
-          print(StaticManager.numberOfCorrect);
         }
         ResetAllButtons();
 

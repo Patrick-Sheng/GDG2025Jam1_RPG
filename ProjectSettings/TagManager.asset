@@ -14,6 +14,7 @@ TagManager:
   - moneyholder
   - pancakeholder
   - gotohevenmain
+  - LockedDoor
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class StaticManager : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class StaticManager : MonoBehaviour
     public static bool pickedUpBone;
     public static bool pickedUpTruffle;
     public static bool pickedUpRuby;
+
+    public static bool firstTime_pickedUpBone;
+    public static bool firstTime_pickedUpTruffle;
+    public static bool firstTime_pickedUpRuby;
+
+    public static bool moleRoom1Visited;
+
+    public static bool completedPressurePlatePuzzle;
     public static int numberOfCorrect;
     // public static bool indio;
     public static bool carmove; 
@@ -50,6 +59,8 @@ public class StaticManager : MonoBehaviour
     public static string nextScene;
 
     public static int couchPosition;
+
+    public static List<Item> inventory = new List<Item>();
 
     public static void UpdateVariable(string varName, string value) {
       bool result;

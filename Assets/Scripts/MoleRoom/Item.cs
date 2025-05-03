@@ -1,4 +1,4 @@
-enum Item
+public enum Item
 {
   DOG_BONE,
   TRUFFLE,

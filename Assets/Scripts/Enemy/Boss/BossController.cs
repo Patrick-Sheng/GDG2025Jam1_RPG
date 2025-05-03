@@ -21,11 +21,14 @@ public class BossController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) // Replace with your actual trigger condition
         {
             bossLaser.FireLasers();
-            Debug.Log("W pressed");
         }
         if (Input.GetKeyDown(KeyCode.A)) // Replace with your actual trigger condition
         {
             bossProjectile.ChargeAndFire();
+        }
+        if (Input.GetKeyDown(KeyCode.S)) // Replace with your actual trigger condition
+        {
+            bossSpecial.ActivateFloorIsLava();
         }
     }
 }

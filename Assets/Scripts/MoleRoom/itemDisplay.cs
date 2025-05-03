@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
 
-public class itemDisplay : MonoBehaviour
+public class ItemDisplay : MonoBehaviour
 {
     [Header("Sprites")]
     public Sprite dogBoneSprite;
@@ -27,12 +27,16 @@ public class itemDisplay : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            ToggleItem(Item.DOG_BONE);
-        else if (Input.GetKeyDown(KeyCode.W))
-            ToggleItem(Item.TRUFFLE);
-        else if (Input.GetKeyDown(KeyCode.E))
-            ToggleItem(Item.RUBY);
+        if (StaticManager.pickedUpBone) {
+          StaticManager.pickedUpBone = false;
+          ToggleItem(Item.DOG_BONE);
+        } else if (StaticManager.pickedUpTruffle) {
+          StaticManager.pickedUpTruffle = false;
+          ToggleItem(Item.TRUFFLE);
+        } else if (StaticManager.pickedUpRuby) {
+          StaticManager.pickedUpRuby = false;
+          ToggleItem(Item.RUBY);
+        }
     }
 
     private void ToggleItem(Item item)

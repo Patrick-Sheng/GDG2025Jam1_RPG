@@ -72,6 +72,21 @@ public class StaticManager : MonoBehaviour
             pushTimes += intResult;
             print($"Updated {varName} to {pushTimes}");
           break;
+        case "pickedUpBone":
+          if(bool.TryParse(value, out result))
+            pickedUpBone = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "pickedUpTruffle":
+          if(bool.TryParse(value, out result))
+            pickedUpTruffle = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "pickedUpRuby":
+          if(bool.TryParse(value, out result))
+            pickedUpRuby = result;
+            print($"Updated {varName} to {value}");
+          break;
       }
       
       

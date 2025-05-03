@@ -4,4 +4,9 @@
 
 That seems familiar...
 
--> END
++ [Pick up]
+    You picked up the bone.
+    #UPDATE_VAR:pickedUpBone,TRUE
+    -> END
++ [Leave]
+    -> END

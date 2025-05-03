@@ -15,9 +15,10 @@ Seems like something is behind it. #layout:default
 === repush ===
 
 { wallCracked():
-    Something winks in the dim light! It's a pebble! #layout:default
-    ++ [Pick it up]
-        You picked up the pebble.
+    Something winks in the dim light! It's a ruby! #layout:default
+    ++ [Pick up]
+        You picked up the ruby.
+        #UPDATE_VAR:pickedUpRuby,TRUE
         -> END
     -> DONE
 - else:

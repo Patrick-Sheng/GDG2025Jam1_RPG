@@ -144,7 +144,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -271,7 +271,7 @@ public class DialogueManager : MonoBehaviour
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
-                Debug.LogError("Tag Could Not Be parsed: " + tag);
+                continue;
             }
 
             string tagKey = splitTag[0].Trim();
@@ -342,5 +342,6 @@ public class DialogueManager : MonoBehaviour
         }
 
     }
+
 
 }

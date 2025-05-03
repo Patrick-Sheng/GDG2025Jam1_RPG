@@ -1,6 +1,7 @@
-﻿-->main
- 
- ===main===
- 
- You found me... bring some water by clicking 'E' button. Don't forget to bring it to that fish.#layout:default
- -> END
+-> main
+
+=== main ===
+#layout:left #portrait:dr_green_neutral
+
+You found something wet... It's yours now. Go back to the fish and click 'E' button. #give_water  
+-> END

@@ -1,2 +1,2 @@
-WOWIE I can't believe I made it to heaven!!! 
-today sure is a good day
+You know, theres not that much to do here so I like to keep myself busy by seeing how long I can stand completely still for 
+Im even doing it right now!

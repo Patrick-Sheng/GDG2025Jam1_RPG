@@ -386,6 +386,12 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "GodDiolgueEnd")
+            {
+                StaticManager.godDiologueEnd = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
 
 
             

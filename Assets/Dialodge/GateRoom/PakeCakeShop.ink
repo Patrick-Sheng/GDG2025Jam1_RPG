@@ -4,7 +4,7 @@ EXTERNAL boughtpancake()
 -->main
 
 ===main===
-
+#speaker:Dr. Green #portrait:dr_green_neutral #layout:left
 { boughtpancake():
 
     Sorry Dear, we only sell 1 pancake per customer #layout:default

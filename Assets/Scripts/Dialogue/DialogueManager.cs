@@ -137,6 +137,8 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+
 
 
         currentStory.ChoosePathString(knotName);
@@ -166,8 +168,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
-
-
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
 
         dialogueIsPlaying = true;
 

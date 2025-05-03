@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class StaticManager : MonoBehaviour
 {
+
+    public static bool wallCracked;
+    public static int pushTimes;
     public static bool PlayerDead;
     public static bool carHit;
 
@@ -47,20 +50,28 @@ public class StaticManager : MonoBehaviour
 
     public static void UpdateVariable(string varName, string value) {
       bool result;
+      int intResult;
 
       switch(varName)
       {
         case "talkedToOldMan":
           if(bool.TryParse(value, out result))
             talkedToOldMan = result;
+            print($"Updated {varName} to {value}");
           break;
         case "canOpenGate":
           if(bool.TryParse(value, out result))
             canOpenGate = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "pushTimes":
+          if(int.TryParse(value, out intResult))
+            pushTimes += intResult;
+            print($"Updated {varName} to {pushTimes}");
           break;
       }
       
-      print($"Updated {varName} to {value}");
+      
     }
     public static int licked;
     public static bool CanLick;

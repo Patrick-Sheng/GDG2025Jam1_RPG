@@ -1,18 +1,30 @@
--->main
+EXTERNAL wallCracked()
 
-===main===
+-> main
+
+=== main ===
+
 
 This brick wobbles when touched. #layout:default
 Seems like something is behind it. #layout:default
++ [Push the wall]
+    -> repush
++ [Leave]
+    -> END 
 
-+ [Pushes the brick]
+=== repush ===
+
+{ wallCracked():
     Something winks in the dim light! It's a pebble! #layout:default
     ++ [Pick it up]
         You picked up the pebble.
-            -> END
-    
+        -> END
     -> DONE
-
-+ [Leave]
-
--> END
+- else:
+    #UPDATE_VAR:pushTimes,1
+    You push the brick. It shifts slightly...
+    + [Push the wall]
+        -> repush
+    + [Leave]
+        -> END
+}

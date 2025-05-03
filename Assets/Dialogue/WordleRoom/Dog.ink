@@ -3,7 +3,7 @@
 ===main===
 
 Woof woof! 
-(You got any snacks?) #layout:default
+(Ya got any snacks?) #layout:default
 
 + [Yup, take this!]
     Woof!!

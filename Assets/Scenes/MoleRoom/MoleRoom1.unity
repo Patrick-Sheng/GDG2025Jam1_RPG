@@ -931,6 +931,7 @@ Transform:
   m_Children:
   - {fileID: 930369120}
   - {fileID: 1116322132}
+  - {fileID: 918892666}
   m_Father: {fileID: 2016506804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160000759
@@ -1451,7 +1452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356728155119643137, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1665,6 +1666,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6d429e487057d458a8a69082905e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DogBone: {fileID: 930369119}
+  Truffle: {fileID: 1116322131}
+  Ruby: {fileID: 918892665}
+  dogBoneSprite: {fileID: 7227859545808861618, guid: 91911acb18b9bf049bfad27f4d635a55, type: 3}
+  truffleSprite: {fileID: -1813171805, guid: 91911acb18b9bf049bfad27f4d635a55, type: 3}
+  rubySprite: {fileID: 3685852808054119220, guid: 91911acb18b9bf049bfad27f4d635a55, type: 3}
+  slots:
+  - {fileID: 340948174}
+  - {fileID: 1886914325}
+  - {fileID: 683853740}
+  imageSlots:
+  - {fileID: 1741117313}
+  - {fileID: 1861542823}
+  - {fileID: 1756675498}
 --- !u!1001 &310311897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1675,7 +1690,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356728155119643137, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4037,7 +4052,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356728155119643137, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4298,14 +4313,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918892665}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.26, y: 3.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1657593436}
   - {fileID: 202516254}
-  m_Father: {fileID: 1166751029}
+  m_Father: {fileID: 156641381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930369119
 GameObject:
@@ -6838,7 +6853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356728155119643137, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7012,7 +7027,6 @@ Transform:
   - {fileID: 1699277820}
   - {fileID: 246760447}
   - {fileID: 282479323}
-  - {fileID: 918892666}
   - {fileID: 1425126487}
   m_Father: {fileID: 2016506804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8737,7 +8751,6 @@ GameObject:
   - component: {fileID: 1556193674}
   - component: {fileID: 1556193673}
   - component: {fileID: 1556193672}
-  - component: {fileID: 1556193676}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -8830,29 +8843,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1556193676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556193671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa62c92ad52b28498ecdf92567be64b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dogBoneSprite: {fileID: 7227859545808861618, guid: 91911acb18b9bf049bfad27f4d635a55, type: 3}
-  truffleSprite: {fileID: -1813171805, guid: 91911acb18b9bf049bfad27f4d635a55, type: 3}
-  rubySprite: {fileID: 3685852808054119220, guid: 91911acb18b9bf049bfad27f4d635a55, type: 3}
-  slots:
-  - {fileID: 340948174}
-  - {fileID: 1886914325}
-  - {fileID: 683853740}
-  imageSlots:
-  - {fileID: 1741117313}
-  - {fileID: 1861542823}
-  - {fileID: 1756675498}
 --- !u!1 &1573972740
 GameObject:
   m_ObjectHideFlags: 0
@@ -10561,7 +10551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356728155119643137, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 34ae3f7e970109f4ebc595c9338d05cc, type: 3}
       propertyPath: m_LocalPosition.x

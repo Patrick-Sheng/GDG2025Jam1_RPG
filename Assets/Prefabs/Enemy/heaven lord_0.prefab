@@ -165,7 +165,7 @@ SpriteRenderer:
   m_SortingLayerID: 724138601
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3185526159441200938, guid: 931418e9e610b8a42a090d34f824f80d, type: 3}
+  m_Sprite: {fileID: -3538683167495299791, guid: fd8ba693044b64349bcbf6bf6a7855ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -321,7 +321,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.96875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.24, y: 0.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -367,20 +367,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588fdbdf0401b8e4f8f194df04b286b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserWidth: 0.5
-  laserRange: 10
-  damage: 10
   chargeTime: 2
-  activeTime: 1
-  cooldown: 5
-  damageLayers:
+  laserDuration: 3
+  laserDamage: 1
+  angle: 25
+  laserAmount: 5
+  obstacleLayer:
     serializedVersion: 2
-    m_Bits: 256
-  chargeMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  activeMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  middleLaser: {fileID: 4187874630608122241}
-  leftLaser: {fileID: 8144180266404342654}
-  rightLaser: {fileID: 8082655892386093683}
+    m_Bits: 0
+  laserWarningPrefab: {fileID: 0}
+  laserEffectPrefab: {fileID: 0}
 --- !u!114 &3360537649281653310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8560dad5b369fec439b08becac5c9008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chargeTime: 2
+  projectileSpeed: 1
+  damage: 1
+  maxRadius: 3
+  energyOrbPrefab: {fileID: 0}
+  chargingEffectPrefab: {fileID: 0}
 --- !u!114 &7611986261317506676
 MonoBehaviour:
   m_ObjectHideFlags: 0

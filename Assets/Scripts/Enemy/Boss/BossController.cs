@@ -23,5 +23,9 @@ public class BossController : MonoBehaviour
             bossLaser.FireLasers();
             Debug.Log("W pressed");
         }
+        if (Input.GetKeyDown(KeyCode.A)) // Replace with your actual trigger condition
+        {
+            bossProjectile.ChargeAndFire();
+        }
     }
 }

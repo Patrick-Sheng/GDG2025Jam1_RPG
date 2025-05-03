@@ -5,22 +5,28 @@ public class BossLaser : MonoBehaviour
     [Header("Laser Settings")]
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private float laserDuration = 3f;
-    [SerializeField] private int laserDamage = 10;
+    [SerializeField] private int laserDamage = 1;
+    [SerializeField] private float angle = 25;
+    [SerializeField] private int laserAmount = 5;
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private LineRenderer laserWarningPrefab;
     [SerializeField] private LineRenderer laserEffectPrefab;
-
+    
     private Transform player;
     private bool isCharging;
     private bool isFiring;
-    private Vector2[] lockedDirections = new Vector2[3];
-    private LineRenderer[] warningLasers = new LineRenderer[3];
-    private LineRenderer[] activeLasers = new LineRenderer[3];
+    private Vector2[] lockedDirections;
+    private LineRenderer[] warningLasers;
+    private LineRenderer[] activeLasers;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+        if (laserAmount%2 == 0){laserAmount -= 1;}
+        player = GameObject.FindGameObjectWithTag("PlayerAttackPoint").transform;
+        lockedDirections = new Vector2[laserAmount];
+        warningLasers = new LineRenderer[laserAmount];
+        activeLasers = new LineRenderer[laserAmount];
+}
 
     public void FireLasers()
     {
@@ -35,13 +41,17 @@ public class BossLaser : MonoBehaviour
         // Phase 1: Charging and showing warning
         isCharging = true;
 
-        // Lock directions at start (won't track player after this)
         lockedDirections[0] = (player.position - transform.position).normalized;
-        lockedDirections[1] = Quaternion.Euler(0, 0, 30) * lockedDirections[0];
-        lockedDirections[2] = Quaternion.Euler(0, 0, -30) * lockedDirections[0];
-
+        int count = 0;
+        for (int i = 1;i < laserAmount-1; i+=2) 
+        {   
+            count++;
+            lockedDirections[i] = Quaternion.Euler(0, 0, angle*count) * lockedDirections[0];
+            lockedDirections[i+1] = Quaternion.Euler(0, 0, -angle*count) * lockedDirections[0];
+        }
+        
         // Create warning lasers
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < laserAmount; i++)
         {
             warningLasers[i] = Instantiate(laserWarningPrefab, transform.position, Quaternion.identity);
             UpdateLaserVisual(warningLasers[i], lockedDirections[i], Color.red);
@@ -77,7 +87,7 @@ public class BossLaser : MonoBehaviour
         }
 
         // Create actual lasers
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < laserAmount; i++)
         {
             activeLasers[i] = Instantiate(laserEffectPrefab, transform.position, Quaternion.identity);
             UpdateLaserVisual(activeLasers[i], lockedDirections[i], Color.yellow);
@@ -108,6 +118,8 @@ public class BossLaser : MonoBehaviour
         laser.positionCount = 2;
         laser.startColor = color;
         laser.endColor = color;
+        laser.startWidth = 0.5f;
+        laser.endWidth = 0.5f;
 
         // Cast ray to find obstacle
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 100f, obstacleLayer);

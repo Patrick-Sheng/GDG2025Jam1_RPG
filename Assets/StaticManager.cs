@@ -11,6 +11,9 @@ public class StaticManager : MonoBehaviour
     public static bool PlayerDead;
     public static bool carHit;
 
+    public static bool pickedUpBone;
+    public static bool pickedUpTruffle;
+    public static bool pickedUpRuby;
     public static int numberOfCorrect;
     // public static bool indio;
     public static bool carmove; 

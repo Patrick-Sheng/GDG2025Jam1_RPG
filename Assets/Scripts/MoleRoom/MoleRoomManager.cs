@@ -21,6 +21,8 @@ public class MoleRoomManager : MonoBehaviour
     [Header("StoneWalls")]
     public GameObject Room2StoneWall;
 
+    public GameObject Room3StoneWall;
+
     private List<Item> inventory = StaticManager.inventory;
 
     void Start()

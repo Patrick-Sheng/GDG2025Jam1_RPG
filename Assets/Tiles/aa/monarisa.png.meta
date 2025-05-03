@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 05852c462b118924386fedb45888b4f4
+guid: 8aebd30755dce86418fe10a2689c6132
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1480917699468073914
-    second: dog_0
-  - first:
-      213: 9118213209582376027
-    second: dog_1
+      213: 7151187340649540378
+    second: monarisa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dog_0
+      name: monarisa_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 22
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abb126a2dc64d8410800000000000000
-      internalID: 1480917699468073914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog_1
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 0
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b549e6f8a966a8e70800000000000000
-      internalID: 9118213209582376027
+      spriteID: a1bafa96ffe1e3360800000000000000
+      internalID: 7151187340649540378
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dog_0: 1480917699468073914
-      dog_1: 9118213209582376027
+      monarisa_0: 7151187340649540378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -360,13 +360,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lavaDuration: 7
-  damageCooldown: 0.5
+  damageCooldown: 1
   lavaDamage: 1
-  lavaSpreadSpeed: 5
-  maxLavaRadius: 20
+  lavaSpreadSpeed: 30
+  lavaSpreadRate: 1.01
+  maxLavaRadius: 3000
   lavaMaterial: {fileID: 2100000, guid: 4890786e7b65a8b4c893c0a30b0fd358, type: 2}
   safeAreaPrefab: {fileID: 4446763627354278765, guid: 580e45e6d398e56459e9949b3a2facfe, type: 3}
-  safeAreaRadius: 2
+  sortingLayerName: Foreground
+  safeAreaRadius: 1
   minDistanceFromPlayer: 5
 --- !u!70 &3595210198109669000
 CapsuleCollider2D:

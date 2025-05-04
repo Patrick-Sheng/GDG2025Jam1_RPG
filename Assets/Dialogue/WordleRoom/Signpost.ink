@@ -2,5 +2,5 @@
 
 ===main===
 
-WARNING: Tiny dog inside. Please be very gentle! #layout:default
+CAUTION: Tiny dog inside. Please be very gentle! #layout:default
 -> END

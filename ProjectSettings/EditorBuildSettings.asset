@@ -38,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tiles/Scenes/Anns Room/WordleRoom.unity
     guid: 82abd95797197e84584616963afa54a1
+  - enabled: 1
+    path: Assets/Tiles/Scenes/Anns Room/TunnelRoom.unity
+    guid: b6e94bce0dbe7854a95a187224ea8ab0
+  - enabled: 1
+    path: Assets/Tiles/Scenes/Anns Room/DogRoomTunnel.unity
+    guid: 318db62250ae05c4296c7bd7db4c9b65
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

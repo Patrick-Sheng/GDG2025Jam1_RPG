@@ -2,18 +2,25 @@
 
 ===main===
 
-Woof woof! 
-(Ya got any snacks?) #layout:default
+Ruff ruff!
+Ya got any snacks? 
 
 + [Yup, take this!]
-    Woof!!
+    { hasBone():
+        Ooooh thanks so much!
+        *scoff scoff*
 
-    -> END
-    
-+ [No sorry]
-    :( 
+        #dogMovesToLeft
+        #goToDogWithTunnelScene
 
-    -> END
+    - else:
+        HEY! Where's my snack??
+         -> END
+    }
+
++[No sorry]
+    Oh, okay. 
+    *tail stops wagging and ears flop down*
 
 -> END
 

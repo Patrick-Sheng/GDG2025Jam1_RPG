@@ -10,8 +10,12 @@ public class EnergyOrb : MonoBehaviour
     private float currentLifetime;
     private bool isDamaged;
     public BossProjectile parent { private get; set; }
-    
 
+
+    private void Start()
+    {
+        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), boss.GetComponent<Collider2D>());
+    }
     public void Initialize(Vector2 dir, float spd, int dmg)
     {
         direction = dir;
@@ -46,7 +50,14 @@ public class EnergyOrb : MonoBehaviour
                 player.TakeDamage(damage);
                 isDamaged = true;          
             }
-        }else if (other.CompareTag("Enemy")|| other.CompareTag("PlayerAttackPoint"))
+        }else if (other.gameObject.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(
+            GetComponent<Collider2D>(),
+            other.gameObject.GetComponent<Collider2D>()
+            );
+        }
+        else if (other.CompareTag("PlayerAttackPoint"))
         {
             return;
         }

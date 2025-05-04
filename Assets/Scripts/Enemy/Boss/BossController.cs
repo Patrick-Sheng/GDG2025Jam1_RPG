@@ -22,34 +22,48 @@ public class BossController : MonoBehaviour
     private float lastMoveTime;
     private float moveCooldown = 5;
     private float lastAttackTime = 0;
+    private Rigidbody2D rb;
+    private bool banAttack;
 
     private BossAttackInterface[] attacks;
     private int id;
     private bool isAttackInProgress;
+    private bool isMoving;
+    private bool banMovement;
 
     void Start()
     {
-        // Initialize the attacks array
+        banAttack = false;
+        rb = GetComponent<Rigidbody2D>();
         attacks = new BossAttackInterface[3];
         attacks[0] = GetComponent<BossLaser>();
         attacks[1] = GetComponent<BossProjectile>();
         attacks[2] = GetComponent<BossSpecial>();
+        banMovement = false;
     }
 
     void Update()
     {
         attemptAttacking();
+        if (!banMovement)
+        {
+            attemptMoving();
+        }
+        if(isAttackInProgress == false) {banMovement = false;}
 
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    Debug.Log(attacks[1].isAttacking);
-        //    attacks[1].Attack();
-        //    Debug.Log(attacks[1].isAttacking);
-        //}
-        attemptMoving();
+            //if (Input.GetKeyDown(KeyCode.S))
+            //{
+            //    Debug.Log(attacks[1].isAttacking);
+            //    attacks[1].Attack();
+            //    Debug.Log(attacks[1].isAttacking);
+            //}
+
+        }
+    public bool IsMoving()
+    {
+        return rb.linearVelocity.magnitude > 0;
     }
-
-    private bool isAttacking()
+    public bool isAttacking()
     {
         foreach (var attack in attacks)
         {
@@ -64,12 +78,17 @@ public class BossController : MonoBehaviour
 
     private void attemptAttacking()
     {
-        if (!isAttacking()&&lastAttackTime+attackCooldown<Time.time)
+        if (!isAttacking()&&lastAttackTime+attackCooldown<Time.time&&!banAttack)
         {
             id = Random.Range(0, attacks.Length);
             if (attacks[id] != null)
             {
-                attacks[id].Attack();
+                isMoving = IsMoving();
+                if (id == 1 && !isMoving) { banMovement = true;  attacks[id].Attack(); }
+                else
+                {
+                    attacks[id].Attack();
+                }
                 //Debug.Log("Executing attack: " + attacks[id].GetType().Name);
             }
 
@@ -116,5 +135,12 @@ public class BossController : MonoBehaviour
         float randomX = Random.Range(-moveRange.x, moveRange.x);
         float randomY = Random.Range(-moveRange.y, moveRange.y);
         return new Vector3(randomX, randomY);
+    }
+    public void ResetAllStates()
+    {
+
+        // Cancel any delayed invokes
+        CancelInvoke();
+        banAttack = true;
     }
 }

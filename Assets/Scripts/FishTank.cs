@@ -12,6 +12,8 @@ public class FishTank : MonoBehaviour
 
     private bool playerInRange = false;
 
+    public GameObject waterObjectToTransform;
+
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
@@ -36,8 +38,10 @@ public class FishTank : MonoBehaviour
                 else if (waterLevel == maxWater && fullDialogueInkJSON != null)
                 {
                     Debug.Log("Fish Tank is now Full!");
-                    StartCoroutine(ShowAndCloseDialogue(fullDialogueInkJSON));
+                    StartCoroutine(ShowAndCloseDialogue(fullDialogueInkJSON, true));
                 }
+
+
             }
         }
     }
@@ -66,6 +70,22 @@ public class FishTank : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+        }
+    }
+
+
+    private IEnumerator ShowAndCloseDialogue(TextAsset dialogue, bool isFinal = false)
+    {
+        DialogueManager.GetInstance().EnterDialogueMode(dialogue);
+        yield return new WaitUntil(() => !DialogueManager.GetInstance().dialogueIsPlaying);
+
+        if (isFinal && waterObjectToTransform != null)
+        {
+            WaterToPassage converter = waterObjectToTransform.GetComponent<WaterToPassage>();
+            if (converter != null)
+            {
+                converter.PlayTransformation();
+            }
         }
     }
 }

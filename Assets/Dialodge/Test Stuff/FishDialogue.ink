@@ -1,13 +1,13 @@
 -> start
 
 === start ===
-#layout:left #portrait:dr_green_neutral
+#layout:default
 ...Hello. A new arrival. I could tell by the way you walk, unsure. Still searching.
 I’ve been in this tank for a long time. Longer than most can remember.
 My water… it’s disappearing. Bit by bit.
 They say it’s ‘natural,’ but you’re smarter than that, aren’t you?
 
-(Pisiel pauses, eyes glowing faintly)
+(Poseidon pauses, eyes glowing faintly)
 
 It’s punishment. I... said something I shouldn't have.
 About Him.
@@ -17,7 +17,7 @@ Still, you’re free to try. If you want to help me, I won’t stop you.
 
 ""
 
-+ Help Pisiel by filling the tank.
++ Help Poseidon by filling the tank.
     -> helped
 
 + Say nothing and walk away.

@@ -1333,6 +1333,26 @@ MonoBehaviour:
     m_Y: 0
     m_Width: 444
     m_Height: 511
+  - m_X: 0
+    m_Y: 476
+    m_Width: 511
+    m_Height: 35
+  - m_X: 78
+    m_Y: 158
+    m_Width: 433
+    m_Height: 161
+  - m_X: 119
+    m_Y: 158
+    m_Width: 392
+    m_Height: 353
+  - m_X: 74
+    m_Y: 239
+    m_Width: 437
+    m_Height: 80
+  - m_X: 69
+    m_Y: 368
+    m_Width: 442
+    m_Height: 143
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []
     m_LigatureSubstitutionRecords: []
@@ -11452,7 +11472,7 @@ MonoBehaviour:
         m_GlyphValueRecord:
           m_XPlacement: 0
           m_YPlacement: 0
-          m_XAdvance: -1.5537109
+          m_XAdvance: -4.703125
           m_YAdvance: 0
       m_SecondAdjustmentRecord:
         m_GlyphIndex: 3

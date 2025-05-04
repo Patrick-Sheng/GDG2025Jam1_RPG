@@ -206,7 +206,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);

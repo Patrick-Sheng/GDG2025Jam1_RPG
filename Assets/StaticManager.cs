@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class StaticManager : MonoBehaviour
 {
     public static bool fromdoghall;
-    public static bool fromdoghallfromdog;
+    public static bool fromgirlroom;
     public static bool enterWordle;
     public static bool PlayerDead;
     public static bool carHit;

@@ -143,13 +143,13 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIsPlaying = true;
 
-        // ——— UI boilerplate you had in EnterDialogueMode ———
+        // ï¿½ï¿½ï¿½ UI boilerplate you had in EnterDialogueMode ï¿½ï¿½ï¿½
         displayNameText.text = "???";
         portraitAnimator.Play("default");
         layoutAnimator.Play("default");
         dialoguePanel.SetActive(true);
         Canvas.ForceUpdateCanvases();
-        // ————————————————————————————————————————————————
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         ContinueStory();
     }
@@ -386,6 +386,21 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "StartFlowerGame")
+            {
+                StaticManager.flowerGameStart = true;
+                continue;
+            }
+            if (tag.Trim() == "StartBirdGame")
+            {
+                StaticManager.birdGameStart = true;
+                continue;
+            }
+            if (tag.Trim() == "deleteKey")
+            {
+                StaticManager.birdwon = false;
+                continue;
+            }
             if (tag.Trim() == "GodDiolgueEnd")
             {
                 StaticManager.godDiologueEnd = true;
@@ -394,7 +409,6 @@ public class DialogueManager : MonoBehaviour
             }
 
 
-            
 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)

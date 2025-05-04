@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    
+    public DialogueManager DialogueManager;
 
     public static bool dodio;
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private bool moving;
 
-
+    
      
     private void Start()
     {

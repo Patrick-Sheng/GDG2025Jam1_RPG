@@ -674,10 +674,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 24599460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
+  m_Script: {fileID: 11500000, guid: a8f2bdec65877be4ca7d623919cf1e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: 2
+  SceneName: 
 --- !u!61 &24599464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18681,7 +18681,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 385406225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641d7d07833f40d438b13dacde81647f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c891bc04f4193a419b157cc3cef042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &407907602
@@ -22462,7 +22462,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 972407951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5aa788e6d394748a39f65453ee105e, type: 3}
+  m_Script: {fileID: 11500000, guid: af05a25093fc4c04daa6cee3827f4418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1014442618
@@ -22620,7 +22620,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1033862036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee363bfffe24af24180b06e8de2a87f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6217b64ff5d1c7a468966d09d03153b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   typing: {fileID: 1951422404}
@@ -23074,7 +23074,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1205497674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
+  m_Script: {fileID: 11500000, guid: a8f2bdec65877be4ca7d623919cf1e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: HeavenGate
@@ -28475,7 +28475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518261045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962e2f731b243d64b863a78ab74a9b25, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e519d95d053df142b0d3a23a1249f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1518261047
@@ -28995,6 +28995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee3f8935180f9c4c9768c2fe7d621d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogueManager: {fileID: 1033862038}
   anim: {fileID: 1636211709}
   moveSpeed: 2
 --- !u!50 &1552627038

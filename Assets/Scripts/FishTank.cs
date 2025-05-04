@@ -38,9 +38,8 @@ public class FishTank : MonoBehaviour
                 else if (waterLevel == maxWater && fullDialogueInkJSON != null)
                 {
                     Debug.Log("Fish Tank is now Full!");
-                    StartCoroutine(ShowAndCloseDialogue(fullDialogueInkJSON, true));
+                    DialogueManager.GetInstance().EnterDialogueMode(fullDialogueInkJSON);
                 }
-
 
             }
         }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class laydownmanagerscript : MonoBehaviour
 {
+    public GameObject spawn;
 
     public GameObject cam;
     private Transform CamTransform;
@@ -19,7 +20,7 @@ public class laydownmanagerscript : MonoBehaviour
         {
             if (movedback == false)
             {
-                REALplayer.transform.position = new Vector2 (REALplayer.transform.position.x - 0.2f, REALplayer.transform.position.y);
+                REALplayer.transform.position = spawn.transform.position;
                 movedback = true;
 
             }

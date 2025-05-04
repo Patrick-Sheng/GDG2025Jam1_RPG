@@ -9,6 +9,7 @@ TagManager:
   - moneyholder
   - pancakeholder
   - gotohevenmain
+  - pancake
   layers:
   - Default
   - TransparentFX

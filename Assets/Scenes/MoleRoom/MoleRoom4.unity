@@ -4105,7 +4105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: MoleRoom1
+  SceneName: GardenRoom
 --- !u!212 &1413768668
 SpriteRenderer:
   m_ObjectHideFlags: 0

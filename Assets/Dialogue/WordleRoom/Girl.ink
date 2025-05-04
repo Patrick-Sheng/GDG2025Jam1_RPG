@@ -4,7 +4,7 @@
 -> main
 
 === main === 
-That weird pancake dude gave me this word game, and I've been stuck on it for ages! 
+God gave me this word game a few days ago, and I've been stuck on it ever since!
 Could you please help me?
 + [Sure]
     Great!

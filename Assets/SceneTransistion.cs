@@ -19,6 +19,12 @@ public class SceneTransistion : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+
+            if (gameObject.tag == "gotohevenmain")
+            {
+                StaticManager.gatetoheaven = true;
+            }
+
             StaticManager.nextScene = SceneName;
 
             GameObject FadeObj = GameObject.FindGameObjectWithTag("Fade");

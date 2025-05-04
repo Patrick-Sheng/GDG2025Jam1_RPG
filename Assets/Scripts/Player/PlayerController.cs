@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Vector2 latestInput;
     private bool moving;
+    private bool playerdeadonthefloor;
 
     public static bool dodio;
 
@@ -51,6 +52,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (StaticManager.PlayerDead == true && playerdeadonthefloor == false)
+        {
+            anim.Play("dead");
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x + 2f, gameObject.transform.position.y - 0.8f);
+            playerdeadonthefloor = true;
+        }
+
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
             Animate();
@@ -131,20 +139,24 @@ public class PlayerController : MonoBehaviour
     }
     private void Animate()
     {
-        if (anim == null) return;
+        if (StaticManager.PlayerDead == false) {
+            if (anim == null) return;
 
-        moving = input.magnitude > 0.1f;
-        anim.SetBool("Moving", moving);
+            moving = input.magnitude > 0.1f || input.magnitude < -0.1f;
+            anim.SetBool("Moving", moving);
 
-        if (moving&& detection.EnemyTarget == null) // If no enemies, face in player input
-        {
-            anim.SetFloat("X", input.x);
-            anim.SetFloat("Y", input.y);
+            if (moving && detection.EnemyTarget == null) // If no enemies, face in player input
+            {
+                anim.SetFloat("X", input.x);
+                anim.SetFloat("Y", input.y);
+            }
+            else
+            {
+                FaceEnemy();
+            }
+            anim.SetBool("Moving", moving);
         }
-        else
-        {
-            FaceEnemy();
-        }
+            
     }
     public Vector2 GetInput()
     {

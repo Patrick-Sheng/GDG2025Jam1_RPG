@@ -2268,6 +2268,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 578446998759155323, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353710889811320015, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353710889811320015, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2086827407
+      objectReference: {fileID: 0}
     - target: {fileID: 4502415887676860815, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.83
@@ -2308,6 +2320,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6807177512241628628, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+      propertyPath: ObstacleLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929848245035099307, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+      propertyPath: obstacleMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8028690719972247161, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
       propertyPath: m_Name
       value: Angel
@@ -2335,7 +2355,7 @@ GameObject:
   - component: {fileID: 1600646049}
   - component: {fileID: 1600646048}
   - component: {fileID: 1600646047}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3465,6 +3485,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3573559443574643961, guid: 7915166796cc76d418d1c769193849b5, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502154939786794752, guid: 7915166796cc76d418d1c769193849b5, type: 3}
+      propertyPath: obstacleMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8817697213309050424, guid: 7915166796cc76d418d1c769193849b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.74
@@ -3693,7 +3721,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5160096487186067939, guid: 37d804185248de4429b09a5507b4d217, type: 3}
       propertyPath: m_Name
-      value: heaven lord_0
+      value: God
       objectReference: {fileID: 0}
     - target: {fileID: 5947651729212661004, guid: 37d804185248de4429b09a5507b4d217, type: 3}
       propertyPath: m_LocalPosition.x

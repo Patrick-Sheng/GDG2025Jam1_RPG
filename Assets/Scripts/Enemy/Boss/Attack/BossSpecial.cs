@@ -73,7 +73,7 @@ public class BossSpecial : MonoBehaviour
             lavaSpreadSpeed *= lavaSpreadRate;
             currentLavaRadius = Mathf.Min(currentLavaRadius + lavaSpreadSpeed * Time.deltaTime, maxLavaRadius);
             lavaEffect.transform.localScale = Vector3.one * currentLavaRadius * 2;
-            Debug.Log((maxLavaRadius, currentLavaRadius));
+            //Debug.Log((maxLavaRadius, currentLavaRadius));
             yield return null;
         }
         lavaSpreadSpeed = temp;

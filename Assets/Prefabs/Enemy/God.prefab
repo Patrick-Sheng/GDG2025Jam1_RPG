@@ -42,13 +42,13 @@ GameObject:
   - component: {fileID: 5947651729212661004}
   - component: {fileID: 8254817192363790171}
   - component: {fileID: 8361587796997043873}
+  - component: {fileID: 3595210198109669000}
   - component: {fileID: 2613989796605224295}
   - component: {fileID: 7020644921359547962}
   - component: {fileID: 7606022586726176821}
   - component: {fileID: 8037848321191924487}
   - component: {fileID: 3360537649281653310}
   - component: {fileID: 7611986261317506676}
-  - component: {fileID: 3595210198109669000}
   m_Layer: 7
   m_Name: God
   m_TagString: Enemy
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 724138601
+  m_SortingLayerID: 2086827407
   m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -3538683167495299791, guid: fd8ba693044b64349bcbf6bf6a7855ef, type: 3}
@@ -171,7 +171,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 724138601
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -235,6 +235,43 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!70 &3595210198109669000
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160096487186067939}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!61 &2613989796605224295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -326,7 +363,7 @@ MonoBehaviour:
   laserAmount: 5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
   laserWarningPrefab: {fileID: 8361587796997043873}
   laserEffectPrefab: {fileID: 4187874630608122241}
 --- !u!114 &3360537649281653310
@@ -370,43 +407,6 @@ MonoBehaviour:
   sortingLayerName: Foreground
   safeAreaRadius: 1
   minDistanceFromPlayer: 5
---- !u!70 &3595210198109669000
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5160096487186067939}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
 --- !u!1 &8131760905265597360
 GameObject:
   m_ObjectHideFlags: 0

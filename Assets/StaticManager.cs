@@ -20,6 +20,10 @@ public class StaticManager : MonoBehaviour
     public static bool firstTime_pickedUpTruffle;
     public static bool firstTime_pickedUpRuby;
 
+    public static bool placedDogBone = false;
+    public static bool placedTruffle = false;
+    public static bool placedRuby = false;
+
     public static bool moleRoom1Visited;
 
     public static bool completedPressurePlatePuzzle;
@@ -98,6 +102,21 @@ public class StaticManager : MonoBehaviour
             pickedUpRuby = result;
             print($"Updated {varName} to {value}");
           break;
+        case "placedDogBone":
+          if(bool.TryParse(value, out result))
+            placedDogBone = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "placedTruffle":
+          if(bool.TryParse(value, out result))
+            placedTruffle = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "placedRuby":
+          if(bool.TryParse(value, out result))
+            placedRuby = result;
+            print($"Updated {varName} to {value}");
+          break;
       }
       
       
@@ -110,11 +129,6 @@ public class StaticManager : MonoBehaviour
 
     private void Update()
     {
-
-
-
-
-
         if (NumDollars > 0)
         {
             hasmoney = true;

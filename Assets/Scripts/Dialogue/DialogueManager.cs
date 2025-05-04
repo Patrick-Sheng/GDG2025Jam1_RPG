@@ -138,6 +138,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
+        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
+        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
 
 
 
@@ -169,6 +172,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
+        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
+        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
 
         dialogueIsPlaying = true;
 

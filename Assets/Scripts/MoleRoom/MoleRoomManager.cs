@@ -23,11 +23,18 @@ public class MoleRoomManager : MonoBehaviour
 
     public GameObject Room3StoneWall;
 
+    [Header("Objects to place items on")]
+
+    public GameObject itemPlaceableSlot1;
+    public GameObject itemPlaceableSlot2;
+    public GameObject itemPlaceableSlot3;
+
+
     private List<Item> inventory = StaticManager.inventory;
 
     void Start()
     {   
-        // First time entering the room
+        // First time entering the room1
         if (!StaticManager.moleRoom1Visited) {
           StaticManager.moleRoom1Visited = true;
           StaticManager.inventory.Clear();
@@ -50,10 +57,33 @@ public class MoleRoomManager : MonoBehaviour
         if (Room2StoneWall != null) {
           Room2StoneWall.SetActive(true);
         }
+
+        if (Room3StoneWall != null) {
+          Room3StoneWall.SetActive(true);
+        }
+
+        itemPlaceableSlot1.SetActive(false);
+        itemPlaceableSlot2.SetActive(false);
+        itemPlaceableSlot3.SetActive(false);
     }
 
     void Update()
     {
+      if (Input.GetKeyDown(KeyCode.Q)) {
+        ToggleItem(Item.DOG_BONE);
+      }
+      if (Input.GetKeyDown(KeyCode.W)) {
+        ToggleItem(Item.TRUFFLE);
+      }
+      if (Input.GetKeyDown(KeyCode.E)) {
+        ToggleItem(Item.RUBY);
+      }
+      if (Input.GetKeyDown(KeyCode.R)) {
+        AddItem(Item.DOG_BONE);
+        AddItem(Item.TRUFFLE);
+        AddItem(Item.RUBY);
+      }
+
       if (StaticManager.pushTimes >= 3) {
         StaticManager.wallCracked = true;
       }
@@ -85,6 +115,24 @@ public class MoleRoomManager : MonoBehaviour
         if (Room2StoneWall != null) {
           Room2StoneWall.SetActive(false);
         }
+      }
+
+      if (StaticManager.placedDogBone)
+      {
+        StaticManager.placedDogBone = false;
+        StartCoroutine(PlaceItemNextFrame(Item.DOG_BONE));
+      }
+
+      if (StaticManager.placedTruffle)
+      {
+        StaticManager.placedTruffle = false;
+        StartCoroutine(PlaceItemNextFrame(Item.TRUFFLE));
+      }
+
+      if (StaticManager.placedRuby)
+      {
+        StaticManager.placedRuby = false;
+        StartCoroutine(PlaceItemNextFrame(Item.RUBY));
       }
     }
 
@@ -118,6 +166,28 @@ public class MoleRoomManager : MonoBehaviour
 
         inventory.Remove(item);
         UpdateUI();
+
+        switch (item)
+        {
+          case Item.DOG_BONE:
+            itemPlaceableSlot1.SetActive(true);
+            itemPlaceableSlot1.GetComponent<SpriteRenderer>().sprite = dogBoneSprite;
+            break;
+          case Item.TRUFFLE:
+            itemPlaceableSlot2.SetActive(true);
+            itemPlaceableSlot2.GetComponent<SpriteRenderer>().sprite = truffleSprite;
+            break;
+          case Item.RUBY:
+            itemPlaceableSlot3.SetActive(true);
+            itemPlaceableSlot3.GetComponent<SpriteRenderer>().sprite = rubySprite;
+            break;
+        }
+    }
+
+    private System.Collections.IEnumerator PlaceItemNextFrame(Item item)
+    {
+        yield return null; // Wait for one frame
+        RemoveItem(item);  // Now the inventory and UI are ready
     }
 
     private void UpdateUI()

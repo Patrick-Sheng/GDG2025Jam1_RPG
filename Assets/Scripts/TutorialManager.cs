@@ -6,10 +6,15 @@ public class TutorialManager : MonoBehaviour
 {
     
     public TextMeshProUGUI instructionText;
+
+    [Header("Door Sprites")]
+    public Sprite doorLocked;
+    public Sprite doorUnlocked;
+
+    public GameObject door;
     private int progressIndex;
 
     private GameObject Key;
-
     private GameObject Gate;
 
     void Start()
@@ -18,6 +23,8 @@ public class TutorialManager : MonoBehaviour
       Gate = GameObject.FindGameObjectWithTag("Gate");
 
       Key.SetActive(false);
+
+      door.GetComponent<SpriteRenderer>().sprite = doorLocked;
 
       progressIndex = 0;
       updateInstruction();
@@ -44,6 +51,7 @@ public class TutorialManager : MonoBehaviour
           break;
         case 4:
           if(StaticManager.canOpenGate) {
+            door.GetComponent<SpriteRenderer>().sprite = doorUnlocked;
             updateInstruction();
           }
           break;

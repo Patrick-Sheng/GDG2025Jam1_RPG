@@ -58,7 +58,10 @@ TagManager:
   - name: Backround
     uniqueID: 1610596905
     locked: 0
-  - name: Forground
+  - name: Wall
+    uniqueID: 4190034115
+    locked: 0
+  - name: Foreground
     uniqueID: 1264486351
     locked: 0
   - name: Buttons

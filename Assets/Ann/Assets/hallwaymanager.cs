@@ -8,6 +8,7 @@ public class hallwaymanager : MonoBehaviour
     public GameObject fromdogpos;
 
     public GameObject fromgirlpos;
+    public GameObject fromYellow;
     void Start()
     {
 
@@ -24,6 +25,11 @@ public class hallwaymanager : MonoBehaviour
             //cam.transform.position = new Vector3(34.249f, 3.42f, -10f);
             Player.transform.position = fromgirlpos.transform.position;
             StaticManager.fromgirlroom = false;
+        }
+        if (StaticManager.YellowToHall == true)
+        {
+            StaticManager.YellowToHall = false;
+            Player.transform.position = fromYellow.transform.position;
         }
     }
 

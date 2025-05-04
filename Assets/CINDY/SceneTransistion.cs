@@ -19,6 +19,10 @@ public class SceneTransistion : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            if (gameObject.name == "yellowToHallway")
+            {
+                StaticManager.YellowToHall = true;
+            }
             if (gameObject.name == "doghall")
             {
                 StaticManager.fromgirlroom = true;

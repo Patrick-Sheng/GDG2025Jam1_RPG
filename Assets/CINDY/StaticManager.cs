@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
+    public static bool YellowToHall;
+
     public static bool fromdoghall;
     public static bool fromgirlroom;
     public static bool enterWordle;

@@ -1,0 +1,5 @@
+cloud
+magic
+water
+ocean
+sunny

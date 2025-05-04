@@ -4,12 +4,13 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     [Header("Config")]
-    [SerializeField] private int Health = 50;
+    [SerializeField] private int Health;
 
     private SpriteRenderer sprite;
     private int currentHealth;
     private Color initialColour;
     private Coroutine colorCoroutine;
+    private BossController boss;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
     {
         currentHealth = Health;
         initialColour = sprite.color;
+        boss = GetComponent<BossController>();
     }
 
     public void TakeDamage(int damage)
@@ -28,7 +30,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         ShowDamageColor();
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -50,8 +52,18 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         sprite.color = initialColour;
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
+        while (boss != null && boss.isAttacking()) 
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+
         Destroy(gameObject);
+    }
+
+    public void Reset()
+    {
+        currentHealth = Health;
     }
 }

@@ -3730,6 +3730,10 @@ PrefabInstance:
       propertyPath: attackFixedPoint
       value: 
       objectReference: {fileID: 345125912}
+    - target: {fileID: 7666876851680285091, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3749,11 +3753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947651729212661004, guid: 37d804185248de4429b09a5507b4d217, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.73
+      value: 14.7
       objectReference: {fileID: 0}
     - target: {fileID: 5947651729212661004, guid: 37d804185248de4429b09a5507b4d217, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.34
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 5947651729212661004, guid: 37d804185248de4429b09a5507b4d217, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3791,6 +3795,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1172510995}
+    - target: {fileID: 7611986261317506676, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: sortingLayerName
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361587796997043873, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361587796997043873, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2086827407
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

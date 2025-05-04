@@ -21,9 +21,9 @@ public class AngelAttackProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
+        {   
             PlayerHealth player = other.GetComponent<PlayerHealth>();
-            player.TakeDamage(Damage);
+            if (player != null) { player.TakeDamage(Damage); }
             Destroy(gameObject);
         }
       

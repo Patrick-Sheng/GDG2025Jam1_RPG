@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Splines.ExtrusionShapes;
 
-public class BossSpecial : MonoBehaviour
+public class BossSpecial : MonoBehaviour, BossAttackInterface
 {
     [Header("Lava Settings")]
     [SerializeField] private float lavaDuration = 7f;
@@ -24,16 +24,16 @@ public class BossSpecial : MonoBehaviour
     private GameObject safeArea;
     private float currentLavaRadius;
     private float damageTimer;
-    private bool isLavaActive;
+    public bool isAttacking {  get; set; }
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void ActivateFloorIsLava()
+    public void Attack()
     {
-        if (!isLavaActive)
+        if (!isAttacking)
         {
             StartCoroutine(FloorIsLavaRoutine());
         }
@@ -43,7 +43,7 @@ public class BossSpecial : MonoBehaviour
     {
 
         // Initialize lava effect
-        isLavaActive = true;
+        isAttacking = true;
         currentLavaRadius = 10f;
         damageTimer = 0f;
 
@@ -97,7 +97,7 @@ public class BossSpecial : MonoBehaviour
         // Clean up
         Destroy(lavaEffect);
         Destroy(safeArea);
-        isLavaActive = false;
+        isAttacking = false;
     }
 
     private void SpawnSafeArea()

@@ -8,7 +8,14 @@ public class EnergyOrb : MonoBehaviour
     private int damage;
     private float lifetime = 20f;
     private float currentLifetime;
+    private bool isDamaged;
+    public BossProjectile parent { private get; set; }
 
+
+    private void Start()
+    {
+        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), boss.GetComponent<Collider2D>());
+    }
     public void Initialize(Vector2 dir, float spd, int dmg)
     {
         direction = dir;
@@ -29,6 +36,7 @@ public class EnergyOrb : MonoBehaviour
         if (currentLifetime <= 0)
         {
             Destroy(gameObject);
+            parent.isAttacking = false;
         }
     }
 
@@ -37,16 +45,26 @@ public class EnergyOrb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerHealth player = other.GetComponent<PlayerHealth>();
-            if (player != null)
+            if (player != null&&!isDamaged)
             {
                 player.TakeDamage(damage);
-                //DestroyProjectile();
+                isDamaged = true;          
             }
+        }else if (other.gameObject.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(
+            GetComponent<Collider2D>(),
+            other.gameObject.GetComponent<Collider2D>()
+            );
         }
-        //else if (!other.isTrigger) // Hit solid objects
-        //{
-        //    DestroyProjectile();
-        //}
+        else if (other.CompareTag("PlayerAttackPoint"))
+        {
+            return;
+        }
+        else if (!other.isTrigger) // Hit solid objects
+        {
+            DestroyProjectile();
+        }
     }
 
     private void DestroyProjectile()
@@ -58,5 +76,6 @@ public class EnergyOrb : MonoBehaviour
         //    Destroy(effect.gameObject, effect.main.duration);
         //}
         Destroy(gameObject);
+        parent.isAttacking = false;
     }
 }

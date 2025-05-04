@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
+
+    public static bool LayingDownRightnow;
     public static bool godDiologueEnd;
     public static bool talkedtogood = false;
     public static bool noguard;

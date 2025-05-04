@@ -1,4 +1,4 @@
-Hello There! #speaker:Dr. Green #portrait:dr_green_neutral #layout:left
+Hello There! 
 -> main
 
 === main === 

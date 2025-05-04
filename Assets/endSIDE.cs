@@ -1,20 +1,17 @@
 using UnityEngine;
 
-public class heavenCameraChange : MonoBehaviour
+public class endSIDE : MonoBehaviour
 {
     public cameramovementscript cammovescr;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (gameObject.name == "Top")
+            if (gameObject.name == "ENDSIDE")
             {
-                cammovescr.TopArea();
+                cammovescr.ENDSIDE();
             }
-            //else if (gameObject.name == "Bottom")
-            //{
-            //    cammovescr.BottomArea();
-            //}
+
         }
     }
 
@@ -22,14 +19,11 @@ public class heavenCameraChange : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (gameObject.name == "Top")
+            if (gameObject.name == "ENDSIDE")
             {
-                
-                cammovescr.BottomArea();
+                cammovescr.ENDSIDEOUT();
             }
 
         }
     }
-
-
 }

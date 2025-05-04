@@ -111,10 +111,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
+        width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -131,12 +131,12 @@ TextureImporter:
       name: tennis_1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 11
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 9
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: tennis_2
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 17
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 525159b79c2631541a9555aa8c848657
     internalID: 0
     vertices: []
     indices: 

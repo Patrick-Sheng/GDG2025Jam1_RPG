@@ -12,7 +12,7 @@ public class talkToGod : MonoBehaviour
         if (StaticManager.talkedtogood == false)
         {
             StaticManager.talkedtogood = true;
-            cam.orthographicSize = 3.25f;
+            cam.orthographicSize = 2.8f;
             DialogueManager.GetInstance().EnterDialogueMode(godspeaks);
 
 
@@ -22,7 +22,7 @@ public class talkToGod : MonoBehaviour
     {
         if (StaticManager.godDiologueEnd)
         {
-            if (cam.orthographicSize < 8.45f)
+            if (cam.orthographicSize < 5.97f)
             {
                 cam.orthographicSize = cam.orthographicSize + 0.1f;
 

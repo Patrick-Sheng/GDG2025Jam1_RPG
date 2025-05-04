@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    
+    private bool playerdeadonthefloor;
 
     public static bool dodio;
 
@@ -31,6 +31,15 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+
+        if (StaticManager.PlayerDead == true && playerdeadonthefloor == false)
+        {
+            anim.Play("dead");
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x + 2f, gameObject.transform.position.y - 0.8f);
+            playerdeadonthefloor = true;
+        }
+
+
 
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
@@ -57,15 +66,22 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context) 
     {
-        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!StaticManager.carHit)
         {
-            input = context.ReadValue<Vector2>() * moveSpeed;
-
+            if (!DialogueManager.GetInstance().dialogueIsPlaying)
+            {
+                input = context.ReadValue<Vector2>() * moveSpeed;
+            }
+            else
+            {
+                input = Vector2.zero;
+            }
         }
         else
         {
             input = Vector2.zero;
         }
+
     }
     private void GetInput()
     {
@@ -82,35 +98,40 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
-        if (input.magnitude > 0.1f || input.magnitude < -0.1f)
+        if (StaticManager.PlayerDead == false)
         {
-            moving = true;
-        }
-        else
-        {
-            moving = false;
-        }
-
-        if (moving)
-        {
-            if (input.x != 0)
+            if (input.magnitude > 0.1f || input.magnitude < -0.1f)
             {
-                anim.SetFloat("X", input.x);
-                anim.SetFloat("Y", 0f);
+                moving = true;
             }
             else
             {
-                anim.SetFloat("X", 0f);
-                anim.SetFloat("Y", input.y);
+                moving = false;
             }
 
-            //old Version
-            //anim.SetFloat("X", x);
-            //anim.SetFloat("Y", y); 
+            if (moving)
+            {
+                if (input.x != 0)
+                {
+                    anim.SetFloat("X", input.x);
+                    anim.SetFloat("Y", 0f);
+                }
+                else
+                {
+                    anim.SetFloat("X", 0f);
+                    anim.SetFloat("Y", input.y);
+                }
 
+                //old Version
+                //anim.SetFloat("X", x);
+                //anim.SetFloat("Y", y); 
+
+            }
+
+            anim.SetBool("Moving", moving);
         }
 
-        anim.SetBool("Moving", moving);
+
 
     }
 

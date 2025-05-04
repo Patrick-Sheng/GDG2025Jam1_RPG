@@ -1,9 +1,39 @@
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class StaticManager : MonoBehaviour
 {
+
+    public static bool wallCracked;
+    public static int pushTimes;
+    public static bool PlayerDead;
+    public static bool carHit;
+
+    public static bool pickedUpBone;
+    public static bool pickedUpTruffle;
+    public static bool pickedUpRuby;
+
+    public static bool firstTime_pickedUpBone;
+    public static bool firstTime_pickedUpTruffle;
+    public static bool firstTime_pickedUpRuby;
+
+    public static bool placedDogBone = false;
+    public static bool placedTruffle = false;
+    public static bool placedRuby = false;
+
+    public static bool moleRoom1Visited;
+
+    public static int currentInteractingStoneTable = 0;
+    public static bool completedPressurePlatePuzzle;
+    public static int numberOfCorrect;
+    // public static bool indio;
+    public static bool carmove; 
+
+    public static bool canOpenGate;
+
     public static bool noguard;
 
     public static bool DisableGuardOnRoomEntry;
@@ -29,9 +59,74 @@ public class StaticManager : MonoBehaviour
     public static bool YouWinArcade;
     public static bool YouLoseArcade;
 
+    public static bool talkedToOldMan;
     public static bool resettrigger;
     public static string nextScene;
 
+    public static int couchPosition;
+
+    public static List<Item> inventory = new List<Item>();
+
+    public static void UpdateVariable(string varName, string value) {
+      bool result;
+      int intResult;
+
+      switch(varName)
+      {
+        case "talkedToOldMan":
+          if(bool.TryParse(value, out result))
+            talkedToOldMan = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "canOpenGate":
+          if(bool.TryParse(value, out result))
+            canOpenGate = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "pushTimes":
+          if(int.TryParse(value, out intResult))
+            pushTimes += intResult;
+            print($"Updated {varName} to {pushTimes}");
+          break;
+        case "pickedUpBone":
+          if(bool.TryParse(value, out result))
+            pickedUpBone = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "pickedUpTruffle":
+          if(bool.TryParse(value, out result))
+            pickedUpTruffle = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "pickedUpRuby":
+          if(bool.TryParse(value, out result))
+            pickedUpRuby = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "placedDogBone":
+          if(bool.TryParse(value, out result))
+            placedDogBone = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "placedTruffle":
+          if(bool.TryParse(value, out result))
+            placedTruffle = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "placedRuby":
+          if(bool.TryParse(value, out result))
+            placedRuby = result;
+            print($"Updated {varName} to {value}");
+          break;
+        case "currentInteractingStoneTable":
+          if(int.TryParse(value, out intResult))
+            currentInteractingStoneTable = intResult;
+            print($"Updated {varName} to {currentInteractingStoneTable}");
+          break;
+      }
+      
+      
+    }
     public static int licked;
     public static bool CanLick;
     public static bool licked6times;
@@ -40,11 +135,6 @@ public class StaticManager : MonoBehaviour
 
     private void Update()
     {
-
-
-
-
-
         if (NumDollars > 0)
         {
             hasmoney = true;

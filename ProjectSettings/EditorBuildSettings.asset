@@ -12,8 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/2.unity
     guid: bf804ef7306bd5743ad624198cd5f7d5
   - enabled: 1
-    path: Assets/Scenes/HeavenGate.unity
-    guid: b112f762f71fcaa4b94e71d5749e0ea8
+    path: Assets/Scenes/MoleRoom/MoleRoom2.unity
+    guid: 29bd8baaa15c9fa4787b5b2c6440ac98
+  - enabled: 1
+    path: Assets/Scenes/MoleRoom/MoleRoom1.unity
+    guid: 9819262a6dd50c64ba65b48908309548
+  - enabled: 1
+    path: Assets/Scenes/MoleRoom/MoleRoom3.unity
+    guid: 40c06a1ba128bf940896630b9f4d5fa4
+  - enabled: 1
+    path: Assets/Scenes/MoleRoom/MoleRoom4.unity
+    guid: 73da4b34aaf39d249be8226a5cb4b01d
   - enabled: 1
     path: Assets/Scenes/TestArcade.unity
     guid: 8250fe430b1d3ee4d8e65a6c74d7998a

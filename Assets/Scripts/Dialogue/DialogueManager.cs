@@ -137,19 +137,24 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
+        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
+        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
+
 
 
         currentStory.ChoosePathString(knotName);
 
         dialogueIsPlaying = true;
 
-        // ——— UI boilerplate you had in EnterDialogueMode ———
+        // ï¿½ï¿½ï¿½ UI boilerplate you had in EnterDialogueMode ï¿½ï¿½ï¿½
         displayNameText.text = "???";
         portraitAnimator.Play("default");
         layoutAnimator.Play("default");
         dialoguePanel.SetActive(true);
         Canvas.ForceUpdateCanvases();
-        // ————————————————————————————————————————————————
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         ContinueStory();
     }
@@ -166,8 +171,10 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
-
-
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
+        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
+        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
 
         dialogueIsPlaying = true;
 
@@ -236,6 +243,8 @@ public class DialogueManager : MonoBehaviour
 
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
+            HandleTags(currentStory.currentTags);
+            CheckForVariableUpdate();
             //chat gpt told me to move this somewhere else 
             //HandleTags(currentStory.currentTags);
 
@@ -467,7 +476,32 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
 
         }
+    }
 
+    private void CheckForVariableUpdate() {
+      foreach(string tag in currentStory.currentTags)
+        {
+            if(tag.StartsWith("UPDATE_VAR:"))
+            {
+                ProcessVariableUpdate(tag);
+            }
+        }
+    }
+
+    private void ProcessVariableUpdate(string tag) {
+        // Remove the "UPDATE_VAR:" prefix
+        string content = tag.Substring(11);
+        
+        // Split into variable name and value
+        string[] parts = content.Split(',');
+        if(parts.Length == 2)
+        {
+            string varName = parts[0];
+            string varValue = parts[1];
+            
+            // Update the static manager
+            StaticManager.UpdateVariable(varName, varValue);
+        }
     }
 
 }

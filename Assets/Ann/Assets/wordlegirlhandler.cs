@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class wordlegirlhandler : MonoBehaviour
 {
+    public cameraMovementALL came;
 
     public GameObject nexttogirl;
     public TextAsset YouWin;
@@ -24,11 +25,12 @@ public class wordlegirlhandler : MonoBehaviour
                 keycanvas.SetActive(true);
                 StaticManager.haswordleKey = true;
                 DialogueManager.GetInstance().EnterDialogueMode(YouWin);
-
+                came.OutSideOfBounds();
                 //enter diologue where shes like wow you won heres a key
             }
             else
             {
+                came.OutSideOfBounds();
                 StaticManager.bucketend = false;
                 Player.transform.position = nexttogirl.transform.position;
                 cam.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, -10) ;

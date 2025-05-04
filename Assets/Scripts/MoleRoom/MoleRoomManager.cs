@@ -69,6 +69,7 @@ public class MoleRoomManager : MonoBehaviour
 
     void Update()
     {
+      // Debugging: Press Q, W, E, R to add items
       if (Input.GetKeyDown(KeyCode.Q)) {
         ToggleItem(Item.DOG_BONE);
       }
@@ -170,16 +171,34 @@ public class MoleRoomManager : MonoBehaviour
         switch (item)
         {
           case Item.DOG_BONE:
-            itemPlaceableSlot1.SetActive(true);
-            itemPlaceableSlot1.GetComponent<SpriteRenderer>().sprite = dogBoneSprite;
+            PlaceItemOnTable(dogBoneSprite);
             break;
           case Item.TRUFFLE:
-            itemPlaceableSlot2.SetActive(true);
-            itemPlaceableSlot2.GetComponent<SpriteRenderer>().sprite = truffleSprite;
+            PlaceItemOnTable(truffleSprite);
             break;
           case Item.RUBY:
+            PlaceItemOnTable(rubySprite);
+            break;
+        }
+    }
+
+    private void PlaceItemOnTable(Sprite sprite)
+    {
+      Debug.Log($"Placing {sprite.ToString()} on table: {StaticManager.currentInteractingStoneTable}");
+        switch (StaticManager.currentInteractingStoneTable) {
+          case 1:
+            itemPlaceableSlot1.SetActive(true);
+            itemPlaceableSlot1.GetComponent<SpriteRenderer>().sprite = sprite;
+            break;
+          case 2:
+            itemPlaceableSlot2.SetActive(true);
+            itemPlaceableSlot2.GetComponent<SpriteRenderer>().sprite = sprite;
+            break;
+          case 3:
             itemPlaceableSlot3.SetActive(true);
-            itemPlaceableSlot3.GetComponent<SpriteRenderer>().sprite = rubySprite;
+            itemPlaceableSlot3.GetComponent<SpriteRenderer>().sprite = sprite;
+            break;
+          default:
             break;
         }
     }

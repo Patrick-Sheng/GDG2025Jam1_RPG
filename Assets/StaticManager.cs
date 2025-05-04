@@ -26,6 +26,7 @@ public class StaticManager : MonoBehaviour
 
     public static bool moleRoom1Visited;
 
+    public static int currentInteractingStoneTable = 0;
     public static bool completedPressurePlatePuzzle;
     public static int numberOfCorrect;
     // public static bool indio;
@@ -116,6 +117,11 @@ public class StaticManager : MonoBehaviour
           if(bool.TryParse(value, out result))
             placedRuby = result;
             print($"Updated {varName} to {value}");
+          break;
+        case "currentInteractingStoneTable":
+          if(int.TryParse(value, out intResult))
+            currentInteractingStoneTable = intResult;
+            print($"Updated {varName} to {currentInteractingStoneTable}");
           break;
       }
       

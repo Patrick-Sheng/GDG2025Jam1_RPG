@@ -7,6 +7,7 @@ EXTERNAL hasRuby()
 === main ===
 
 "Two are twins, but one has gleam— Find the one that caught a dream." #layout:default
+#UPDATE_VAR:currentInteractingStoneTable,2
 
 { hasDogBone() or hasTruffle() or hasRuby():
     + [Place something here]

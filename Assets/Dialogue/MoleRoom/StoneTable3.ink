@@ -7,6 +7,7 @@ EXTERNAL hasRuby()
 === main ===
 
 "In earthen skin a secret sleeps, where cracked and dry, the red heart peeps." #layout:default
+#UPDATE_VAR:currentInteractingStoneTable,3
 
 { hasDogBone() or hasTruffle() or hasRuby():
     + [Place something here]

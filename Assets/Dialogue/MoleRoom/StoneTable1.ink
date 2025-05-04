@@ -7,6 +7,7 @@ EXTERNAL hasRuby()
 === main ===
 
 "Left by one who once would bark, now it lies where teeth made mark."
+#UPDATE_VAR:currentInteractingStoneTable,1
 
 { hasDogBone() or hasTruffle() or hasRuby():
     + [Place something here]

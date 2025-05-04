@@ -135,19 +135,26 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
         currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
+        currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
+        currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
+        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
+        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
+
 
 
         currentStory.ChoosePathString(knotName);
 
         dialogueIsPlaying = true;
 
-        // ——— UI boilerplate you had in EnterDialogueMode ———
+        // ï¿½ï¿½ï¿½ UI boilerplate you had in EnterDialogueMode ï¿½ï¿½ï¿½
         displayNameText.text = "???";
         portraitAnimator.Play("default");
         layoutAnimator.Play("default");
         dialoguePanel.SetActive(true);
         Canvas.ForceUpdateCanvases();
-        // ————————————————————————————————————————————————
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         ContinueStory();
     }
@@ -162,8 +169,12 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("Licked6times", () => StaticManager.licked6times);
         currentStory.BindExternalFunction("canbuypancake", () => StaticManager.canbuypancake);
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
-
-
+        currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
+        currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
+        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
+        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
 
         dialogueIsPlaying = true;
 
@@ -195,7 +206,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -233,6 +244,9 @@ public class DialogueManager : MonoBehaviour
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
             HandleTags(currentStory.currentTags);
+            CheckForVariableUpdate();
+            //chat gpt told me to move this somewhere else 
+            //HandleTags(currentStory.currentTags);
 
 
             //dialogueText.text = nextLine;
@@ -300,6 +314,9 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
+        if (currentStory.currentTags.Count > 0)
+            HandleTags(currentStory.currentTags);
+
         DisplayChoices();
 
         canContinueToNextLine = true;
@@ -350,10 +367,37 @@ public class DialogueManager : MonoBehaviour
                 StaticManager.Plus1Pancake = true;
                 continue;
             }
+            if (tag.Trim() == "stealpancakes")
+            {
+                StaticManager.stealpancakes = true;
+                continue;
+            }
+            if (tag.Trim() == "stealmoney")
+            {
+                StaticManager.stealmoney = true;
+                continue;
+            }
+            if (tag.Trim() == "runaway")
+            {
+                StaticManager.runaway = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "laydown")
+            {
+                StaticManager.layDown = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "justpancakerun")
+            {
+                StaticManager.justpancakerun = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
 
 
-
-
+            
 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
@@ -432,7 +476,32 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
 
         }
+    }
 
+    private void CheckForVariableUpdate() {
+      foreach(string tag in currentStory.currentTags)
+        {
+            if(tag.StartsWith("UPDATE_VAR:"))
+            {
+                ProcessVariableUpdate(tag);
+            }
+        }
+    }
+
+    private void ProcessVariableUpdate(string tag) {
+        // Remove the "UPDATE_VAR:" prefix
+        string content = tag.Substring(11);
+        
+        // Split into variable name and value
+        string[] parts = content.Split(',');
+        if(parts.Length == 2)
+        {
+            string varName = parts[0];
+            string varValue = parts[1];
+            
+            // Update the static manager
+            StaticManager.UpdateVariable(varName, varValue);
+        }
     }
 
 }

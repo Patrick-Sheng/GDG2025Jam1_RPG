@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[[{"->":"main"},["done",{"#f":5,"#n":"g-1"}],{"#f":5,"#n":"g-0"}],null],"done",{"main":[["^Lay Down?","#","^layout:default","/#","\n","ev","str","^yes","/str","/ev",{"*":".^.c-0","flg":4},"ev","str","^no","/str","/ev",{"*":".^.c-1","flg":4},{"c-0":["#","^laydown","/#","\n","end",{"#f":5}],"c-1":["end","\n",{"#f":5}]}],{"#f":1}],"#f":1}],"listDefs":{}}

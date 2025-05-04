@@ -117,10 +117,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 14
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: wwww_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 16
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 14
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: wwww_2
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 16
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 14
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: wwww_3
       rect:
         serializedVersion: 2
-        x: 95
+        x: 96
         y: 0
-        width: 16
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 14
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: wwww_4
       rect:
         serializedVersion: 2
-        x: 127
+        x: 128
         y: 0
-        width: 16
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 14
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e0d7db0e9b1808441b2d85855e89d400
     internalID: 0
     vertices: []
     indices: 

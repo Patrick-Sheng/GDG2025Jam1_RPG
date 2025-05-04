@@ -130,9 +130,11 @@ GameObject:
   - component: {fileID: 172762329}
   - component: {fileID: 172762331}
   - component: {fileID: 172762330}
+  - component: {fileID: 172762333}
+  - component: {fileID: 172762332}
   m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: CombatRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -2060,6 +2062,64 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &172762332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172762328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70d2a2204f64ab44a6c48c67f77b65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &172762333
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172762328}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 5.5, y: -1.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 27, y: 9}
+  m_EdgeRadius: 0
 --- !u!1001 &227136180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2268,18 +2328,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 578446998759155323, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
-      propertyPath: obstacleLayer.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1353710889811320015, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1353710889811320015, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 2086827407
-      objectReference: {fileID: 0}
     - target: {fileID: 4502415887676860815, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.83
@@ -2320,21 +2368,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6807177512241628628, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
-      propertyPath: ObstacleLayer.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929848245035099307, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
-      propertyPath: obstacleMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8028690719972247161, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
       propertyPath: m_Name
       value: Angel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8028690719972247161, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3480,18 +3516,6 @@ PrefabInstance:
     - target: {fileID: 3462267786297087903, guid: 7915166796cc76d418d1c769193849b5, type: 3}
       propertyPath: m_Name
       value: Soul
-      objectReference: {fileID: 0}
-    - target: {fileID: 3462267786297087903, guid: 7915166796cc76d418d1c769193849b5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3573559443574643961, guid: 7915166796cc76d418d1c769193849b5, type: 3}
-      propertyPath: obstacleLayer.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6502154939786794752, guid: 7915166796cc76d418d1c769193849b5, type: 3}
-      propertyPath: obstacleMask.m_Bits
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8817697213309050424, guid: 7915166796cc76d418d1c769193849b5, type: 3}
       propertyPath: m_LocalPosition.x

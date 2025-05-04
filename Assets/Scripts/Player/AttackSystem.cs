@@ -52,12 +52,12 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (meleeAction.triggered && Time.time >= lastMeleeTime + meleeCooldown)
+        if (meleeAction.triggered && Time.time >= lastMeleeTime + meleeCooldown&&playerController.moving)
         {
             StartCoroutine(MeleeAttack());
         }
 
-        if (laserAction.triggered && Time.time >= lastLaserTime + laserCooldown)
+        if (laserAction.triggered && Time.time >= lastLaserTime + laserCooldown && playerController.moving)
         {
             lastLaserTime = Time.time;
             LaserAttack();

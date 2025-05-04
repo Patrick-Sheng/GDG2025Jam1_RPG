@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2478552861225232655}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 702589956385125041}
   - component: {fileID: 6929848245035099307}
   - component: {fileID: 6807177512241628628}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Angel
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 724138601
+  m_SortingLayerID: 2086827407
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 794005853264362711, guid: a85528353aff2764eb9f81143d09d9cc, type: 3}
@@ -253,7 +253,7 @@ MonoBehaviour:
   minDistanceCheck: 0.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   detectionRange: 0.6
 --- !u!114 &2837354795331660132
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
 --- !u!114 &6807177512241628628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,4 +317,4 @@ MonoBehaviour:
   Speed: 2
   ObstacleLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128

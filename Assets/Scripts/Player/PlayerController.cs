@@ -27,9 +27,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 input;
     private Vector2 latestInput;
-    private bool moving;
+    public bool moving { get; private set; }
     private bool playerdeadonthefloor;
-
+    private PlayerAttack attackSystem;
+    private bool isInCombatRoom;
     public static bool dodio;
 
     private void Start()
@@ -48,6 +49,9 @@ public class PlayerController : MonoBehaviour
         }
         currentSpeed = moveSpeed;
         detection = GetComponentInChildren<PlayerDetection>();
+
+        attackSystem = GetComponentInChildren<PlayerAttack>();
+        attackSystem.enabled = false;
     }
 
     private void Update()
@@ -79,7 +83,15 @@ public class PlayerController : MonoBehaviour
         }
         rb.linearVelocity = input.normalized * currentSpeed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CombatRoom"))
+        {
+            isInCombatRoom = true;
+            attackSystem.enabled = true;
+        }
 
+    }
     public void Move(InputAction.CallbackContext context)
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
@@ -94,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (!isInCooldown && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!isInCooldown && !DialogueManager.GetInstance().dialogueIsPlaying&&isInCombatRoom)
         {
             isDashing = true;
             StartCoroutine(PerformDash());

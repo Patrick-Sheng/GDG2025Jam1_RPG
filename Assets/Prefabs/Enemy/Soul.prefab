@@ -19,13 +19,13 @@ GameObject:
   - component: {fileID: 6429000077040156669}
   - component: {fileID: 6502154939786794752}
   - component: {fileID: 2181457862201208085}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Soul
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8817697213309050424
 Transform:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   minDistanceCheck: 0.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
   detectionRange: 0.6
 --- !u!114 &8663216634386058018
 MonoBehaviour:
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
 --- !u!114 &2181457862201208085
 MonoBehaviour:
   m_ObjectHideFlags: 0

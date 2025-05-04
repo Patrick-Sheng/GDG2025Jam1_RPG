@@ -17,6 +17,7 @@ TagManager:
   - LockedDoor
   - PlayerAttackPoint
   - Enemy
+  - CombatRoom
   layers:
   - Default
   - TransparentFX

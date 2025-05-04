@@ -413,6 +413,14 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "goToBucketCatchRoom")
+            {
+                StaticManager.enterWordle = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+
+            
 
 
             string[] splitTag = tag.Split(":");

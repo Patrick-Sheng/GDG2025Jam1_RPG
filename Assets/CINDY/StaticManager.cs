@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
+    public static bool haswordleKey;
+    public static bool bucketwin;
+    public static bool bucketend;
     public static bool YellowToHall;
 
     public static bool fromdoghall;

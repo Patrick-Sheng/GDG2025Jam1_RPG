@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     [Header("Config")]
-    [SerializeField] private int Health = 50;
+    [SerializeField] private int Health;
 
     private SpriteRenderer sprite;
     private int currentHealth;

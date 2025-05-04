@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BossProjectile : MonoBehaviour
+public class BossProjectile : MonoBehaviour, BossAttackInterface
 {
     [Header("Settings")]
     [SerializeField] private float chargeTime = 2f;
@@ -13,16 +13,19 @@ public class BossProjectile : MonoBehaviour
     private Transform player;
     private GameObject currentChargeEffect;
     private float currentChargeTime;
+    public bool isAttacking { get; set; }
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        isAttacking = false;
     }
 
-    public void ChargeAndFire()
+    public void Attack()
     {
         if (currentChargeEffect == null)
         {
+            isAttacking = true;
             StartCoroutine(ChargeAndFireRoutine());
         }
     }
@@ -46,6 +49,7 @@ public class BossProjectile : MonoBehaviour
         // Fire projectile
         Vector2 direction = (player.position - transform.position).normalized;
         EnergyOrb orb = Instantiate(energyOrbPrefab, transform.position, Quaternion.identity);
+        orb.parent = this;
         orb.Initialize(direction, projectileSpeed, damage);
 
         // Clean up

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arcade machine_0: -2669905148127373447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

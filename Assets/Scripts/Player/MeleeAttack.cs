@@ -20,6 +20,7 @@ public class MeleeAttack : MonoBehaviour
         {
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
             enemy.TakeDamage(damage);
+            Debug.Log("trigger");
         }
     }
     private IEnumerator Flip()

@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    public DialogueManager DialogueManager;
 
     public static bool dodio;
 

@@ -28995,7 +28995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee3f8935180f9c4c9768c2fe7d621d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 1033862038}
   anim: {fileID: 1636211709}
   moveSpeed: 2
 --- !u!50 &1552627038

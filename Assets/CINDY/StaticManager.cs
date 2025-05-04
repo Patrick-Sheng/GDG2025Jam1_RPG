@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class StaticManager : MonoBehaviour
 {
+    public static bool fromdoghall;
+    public static bool fromgirlroom;
+    public static bool enterWordle;
+    public static bool PlayerDead;
+    public static bool carHit;
+    public static int numberOfCorrect;
+    public static bool carmove;
+    public static bool canOpenGate;
+
+
+
     public static bool flowerWon;
     public static bool birdwon;
     public static bool flowerGameStart;
@@ -35,8 +46,7 @@ public class StaticManager : MonoBehaviour
     public static bool CanLick;
     public static bool licked6times;
     public static bool Plus1Dollar;
-
-
+    public static int couchPosition;
     private void Update()
     {
 

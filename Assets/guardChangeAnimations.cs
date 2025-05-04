@@ -21,7 +21,7 @@ public class guardChangeAnimations : MonoBehaviour
             {
                 StaticManager.DisableGuardOnRoomEntry = true;
                 gatediologue.NoGaurd();
-                anim.Play("runaway");
+                anim.Play("RunawayNocoin");
                 done = true;
                 Destroy(GuardNPC);
             }

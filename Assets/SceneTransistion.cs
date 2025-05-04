@@ -20,6 +20,16 @@ public class SceneTransistion : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
+            if (gameObject.tag == "doghall")
+            {
+                StaticManager.fromdoghall = true;
+                
+            }
+            if (gameObject.tag == "doghallfromdog")
+            {
+                StaticManager.fromdoghallfromdog = true;
+                
+            }
             if (gameObject.tag == "gotohevenmain")
             {
                 StaticManager.gatetoheaven = true;

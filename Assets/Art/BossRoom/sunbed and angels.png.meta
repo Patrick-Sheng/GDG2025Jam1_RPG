@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sunbed and angels_0: -2841272874943681031
+      sunbed and angels_1: 989791796330614823
+      sunbed and angels_2: 5810492362731057089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

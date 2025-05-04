@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 4880971043881389342}
   - component: {fileID: 7666876851680285091}
   m_Layer: 8
-  m_Name: Player
+  m_Name: PlayerFight
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,8 +393,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -820224783
-  m_SortingLayer: 6
+  m_SortingLayerID: 1185586321
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -8176384082149141480, guid: 787342aaa109a7a468a780f1b7504201, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -69,22 +69,6 @@
 
       void Update()
       {
-        // Debugging: Press Q, W, E, R to add items
-        if (Input.GetKeyDown(KeyCode.Q)) {
-          ToggleItem(Item.DOG_BONE);
-        }
-        if (Input.GetKeyDown(KeyCode.W)) {
-          ToggleItem(Item.TRUFFLE);
-        }
-        if (Input.GetKeyDown(KeyCode.E)) {
-          ToggleItem(Item.RUBY);
-        }
-        if (Input.GetKeyDown(KeyCode.R)) {
-          AddItem(Item.DOG_BONE);
-          AddItem(Item.TRUFFLE);
-          AddItem(Item.RUBY);
-        }
-
         if (StaticManager.pushTimes >= 3) {
           StaticManager.wallCracked = true;
         }

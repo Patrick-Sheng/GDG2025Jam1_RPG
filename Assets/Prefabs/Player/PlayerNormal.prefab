@@ -424,7 +424,7 @@ MonoBehaviour:
   dashTime: 0.1
   transparency: 0.1
   cooldown: 1
-  moveSpeed: 2
+  moveSpeed: 3
   attackPoint: {fileID: 2073385395421749023}
 --- !u!50 &6452477975462096472
 Rigidbody2D:

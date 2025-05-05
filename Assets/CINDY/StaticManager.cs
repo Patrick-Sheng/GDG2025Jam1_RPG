@@ -144,8 +144,6 @@ public class StaticManager : MonoBehaviour
             print($"Updated {varName} to {currentInteractingStoneTable}");
           break;
       }
-      
-      
     }
     public static int licked;
     public static bool CanLick;

@@ -172,9 +172,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
-    currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
-    currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
-    currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
+        currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+        currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
+        currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
 
         dialogueIsPlaying = true;
 

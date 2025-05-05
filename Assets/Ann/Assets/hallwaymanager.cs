@@ -9,8 +9,19 @@ public class hallwaymanager : MonoBehaviour
 
     public GameObject fromgirlpos;
     public GameObject fromYellow;
+    public GameObject Lockeddoor;
     void Start()
     {
+        if ( GameObject.FindGameObjectWithTag("moneyholder") != null)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("moneyholder"));
+
+        }
+
+        if (StaticManager.haswordleKey)
+        {
+            Lockeddoor.SetActive(false);
+        }
 
         cammovesc.OutSideOfBounds();
 

@@ -21420,7 +21420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4235286120977226543, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4235286120977226543, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_SortingOrder
@@ -21456,7 +21456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_SortingOrder
@@ -21471,7 +21471,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8294514573563362950, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
@@ -23539,7 +23540,7 @@ PrefabInstance:
     - target: {fileID: 4428389432907984837, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 9d48f987f04c7794fb3fddd3fd1b740b, type: 3}
+      objectReference: {fileID: 4900000, guid: 00de2a729639b3044878c81eccc50b15, type: 3}
     - target: {fileID: 4585796667502441057, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Name
       value: NPC (13)
@@ -23635,9 +23636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  Player: {fileID: 1552627034}
+  Player: {fileID: 1931121726}
   CamScript: {fileID: 519420033}
-  winLoseDialogueInk: {fileID: 4900000, guid: e574a5cd9b8db504f8fd0f0d24b6f9a4, type: 3}
+  winLoseDialogueInk: {fileID: 4900000, guid: 7c50b6b6abb66f44793fc8c1d4d9b66b, type: 3}
   CoinCanvas: {fileID: 638855842}
 --- !u!1 &1288664468
 GameObject:
@@ -23683,7 +23684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c189373526b51c343a128d28391a03e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1552627034}
+  Player: {fileID: 1931121726}
   HeavenFromGate: {fileID: 1288664468}
   cam: {fileID: 519420028}
 --- !u!1 &1301031790
@@ -24766,7 +24767,7 @@ PrefabInstance:
     - target: {fileID: 4428389432907984837, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: aff0d705a5518ef4b9a40e2a1611b4fb, type: 3}
+      objectReference: {fileID: 4900000, guid: 83ed1a55bd1d2304b84fffbab2a692cb, type: 3}
     - target: {fileID: 4585796667502441057, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Name
       value: NPC (6)
@@ -28459,12 +28460,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28504,6 +28513,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3745418767110241919, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602699953933726119, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336268425584816651, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -29235,14 +29252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ee4be31b94a9447b75e6ef79fba826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerdeadonthefloor: 0
-  anim: {fileID: 1636211709}
-  moveSpeed: 2
-  x: 0
-  y: 0
-  input: {x: 0, y: 0}
-  rb: {fileID: 0}
-  moving: 0
 --- !u!1 &1573972740
 GameObject:
   m_ObjectHideFlags: 0
@@ -30516,7 +30525,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1749330376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962e2f731b243d64b863a78ab74a9b25, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c891bc04f4193a419b157cc3cef042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1760169656
@@ -30893,7 +30902,7 @@ PrefabInstance:
     - target: {fileID: 4428389432907984837, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 3e32124d6c905324590fc4bd0d0efeb2, type: 3}
+      objectReference: {fileID: 4900000, guid: 24f1b75c27e918d45a6d495f22f66419, type: 3}
     - target: {fileID: 4585796667502441057, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Name
       value: NPC (5)
@@ -37068,7 +37077,7 @@ PrefabInstance:
     - target: {fileID: 4428389432907984837, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 12bea52f91d5b0c4fbb1b98b100e3b44, type: 3}
+      objectReference: {fileID: 4900000, guid: d284871fa35a89d44a067d7c4fc67d4b, type: 3}
     - target: {fileID: 4585796667502441057, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Name
       value: NPC (2)

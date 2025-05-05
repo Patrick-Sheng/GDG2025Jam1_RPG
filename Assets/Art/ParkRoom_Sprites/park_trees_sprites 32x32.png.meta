@@ -109,133 +109,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: park_trees_sprites_0
+      name: park_trees_sprites 32x32_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 32
-        width: 28
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51757, y: 0.002}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be498512dec508f46af4ce9bd3142ca7
-      internalID: -1148133839
+      spriteID: ea73cf5013d38a24ba69d8bbe7a2f526
+      internalID: 804623918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_trees_sprites_1
+      name: park_trees_sprites 32x32_1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 32
-        width: 28
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51757, y: 0.002}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d10292b4401b14428fbdbb02665de89
-      internalID: 1402689843
+      spriteID: 2d816178e28b3d549b55f3b857c2185d
+      internalID: -1784782756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_trees_sprites_2
+      name: park_trees_sprites 32x32_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 64
         y: 32
-        width: 28
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51757, y: 0.002}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c67171167fad1647b8503799ca199a2
-      internalID: -965464588
+      spriteID: 7d5b66493bc0f5e47bd5c47b8cbf7955
+      internalID: 1785331787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_trees_sprites_3
+      name: park_trees_sprites 32x32_3
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 0
-        width: 19
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.51757, y: 0.002}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 087566fcf355ec549a413ab27de5248d
-      internalID: 1708992517
+      spriteID: ac921777fba2d9545a66b87fc9c9c94b
+      internalID: 2096768080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_trees_sprites_4
+      name: park_trees_sprites 32x32_4
       rect:
         serializedVersion: 2
-        x: 43
+        x: 32
         y: 0
-        width: 10
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51757, y: 0.002}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 878ff0a200e1ec3489ab233d3de4a821
-      internalID: -403785229
+      spriteID: 17f6ffbb9afc14f41bb893ab126cdd47
+      internalID: -1743002352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: park_trees_sprites_5
+      name: park_trees_sprites 32x32_5
       rect:
         serializedVersion: 2
-        x: 75
+        x: 64
         y: 0
-        width: 10
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51757, y: 0.002}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1428f4e3eebe5c24599cfc07968d812c
-      internalID: 2024809411
+      spriteID: 4d805c9adb76f9e4ab97e4937da0061e
+      internalID: 886344132
       vertices: []
       indices: 
       edges: []
@@ -254,12 +254,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      park_trees_sprites_0: -1148133839
-      park_trees_sprites_1: 1402689843
-      park_trees_sprites_2: -965464588
-      park_trees_sprites_3: 1708992517
-      park_trees_sprites_4: -403785229
-      park_trees_sprites_5: 2024809411
+      park_trees_sprites 32x32_0: 804623918
+      park_trees_sprites 32x32_1: -1784782756
+      park_trees_sprites 32x32_2: 1785331787
+      park_trees_sprites 32x32_3: 2096768080
+      park_trees_sprites 32x32_4: -1743002352
+      park_trees_sprites 32x32_5: 886344132
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

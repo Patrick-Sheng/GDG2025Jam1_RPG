@@ -1,9 +1,10 @@
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class carMove : MonoBehaviour
 {
+    public GameObject dead;
     private float timer = 0.2f;
     private bool timerstart;
 
@@ -18,6 +19,8 @@ public class carMove : MonoBehaviour
 
     public AudioSource carhit;
     public Animator anim;
+    private bool timer3start;
+    private float timer3;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,7 +57,21 @@ public class carMove : MonoBehaviour
                 timer2start = false;
                 StaticManager.PlayerDead = true;
 
+                var sr = Player.GetComponent<SpriteRenderer>();
+                sr.enabled = false;
 
+                timer3start = true;
+
+            }
+        }
+
+        if (timer3start)
+        {
+            timer3 = timer3 + Time.deltaTime;
+            if (timer3 > 4)
+            {
+                StaticManager.PlayerDead = false;
+                SceneManager.LoadScene("TITLE");
             }
         }
 
@@ -63,6 +80,10 @@ public class carMove : MonoBehaviour
             
             if (!StaticManager.PlayerDead)
             {
+                dead.SetActive(true);
+                var sr = Player.GetComponent<SpriteRenderer>();
+                sr.enabled = false;
+                //gameObject.transform.localScale = new Vector3(1, 1, 1);
                 gameObject.transform.position = new Vector2(Player.transform.position.x, gameObject.transform.position.y);
 
             }

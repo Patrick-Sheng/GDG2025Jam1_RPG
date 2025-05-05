@@ -138,7 +138,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
-    currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+        currentStory.BindExternalFunction("hasbone", () => StaticManager.hasbone);
+
+        currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
     currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
     currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
 
@@ -172,7 +174,11 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
-    currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+        currentStory.BindExternalFunction("hasbone", () => StaticManager.hasbone);
+
+
+
+        currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
     currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
     currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
 
@@ -428,8 +434,19 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "dogMovesToLeft")
+            {
+                StaticManager.givenbone = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "StartFlowerGame")
+            {
+                StaticManager.hasbone = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
 
-            
 
 
             string[] splitTag = tag.Split(":");

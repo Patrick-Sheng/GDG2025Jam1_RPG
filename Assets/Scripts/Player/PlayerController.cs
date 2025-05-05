@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         rb.linearVelocity = input.normalized * currentSpeed;
     }
     private void OnTriggerEnter2D(Collider2D collision)

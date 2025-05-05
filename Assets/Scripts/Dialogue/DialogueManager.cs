@@ -137,6 +137,11 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+    currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+    currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
+    currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
+
 
 
         currentStory.ChoosePathString(knotName);
@@ -166,8 +171,10 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("boughtpancake", () => StaticManager.hasPancake);
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
-
-
+        currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
+    currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+    currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
+    currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
 
         dialogueIsPlaying = true;
 
@@ -199,7 +206,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -236,6 +243,8 @@ public class DialogueManager : MonoBehaviour
 
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
+            HandleTags(currentStory.currentTags);
+            CheckForVariableUpdate();
             //chat gpt told me to move this somewhere else 
             //HandleTags(currentStory.currentTags);
 
@@ -500,7 +509,32 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
 
         }
+    }
 
+    private void CheckForVariableUpdate() {
+      foreach(string tag in currentStory.currentTags)
+        {
+            if(tag.StartsWith("UPDATE_VAR:"))
+            {
+                ProcessVariableUpdate(tag);
+            }
+        }
+    }
+
+    private void ProcessVariableUpdate(string tag) {
+        // Remove the "UPDATE_VAR:" prefix
+        string content = tag.Substring(11);
+        
+        // Split into variable name and value
+        string[] parts = content.Split(',');
+        if(parts.Length == 2)
+        {
+            string varName = parts[0];
+            string varValue = parts[1];
+            
+            // Update the static manager
+            StaticManager.UpdateVariable(varName, varValue);
+        }
     }
 
 }

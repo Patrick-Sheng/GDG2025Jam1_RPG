@@ -8783,7 +8783,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 7394394511545753181, guid: b0d22a95444bc944e82732858d7dc270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9314,7 +9314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &494865326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9400,6 +9400,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 129193f7-c4c3-4054-85c5-21aac30463d1
+    m_ActionName: 'Player/Dash[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8f1124b-eed9-435b-a4a7-5a34d1cadcc4
+    m_ActionName: 'Player/Melee[/Keyboard/z]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 432f53ed-a166-46c2-9240-5279b09c55a0
+    m_ActionName: 'Player/Ranged[/Keyboard/x]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -9490,8 +9502,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee3f8935180f9c4c9768c2fe7d621d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 2056702840}
+  dashSpeed: 15
+  dashTime: 0.1
+  transparency: 0.1
+  cooldown: 1
   moveSpeed: 2
+  attackPoint: {fileID: 0}
 --- !u!4 &494865330
 Transform:
   m_ObjectHideFlags: 0
@@ -10450,7 +10466,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 5457266681764177437, guid: b0d22a95444bc944e82732858d7dc270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10601,7 +10617,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 1135619873572007795, guid: f3db37bd890b1ca458a73733ee343987, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11732,7 +11748,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -4640251487877671067, guid: 87ce7fde18cb5c44abc8da44775f1903, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11972,6 +11988,63 @@ Transform:
   - {fileID: 1684760898}
   m_Father: {fileID: 1056693837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1128065668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745418767110241919, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      propertyPath: m_Name
+      value: PlayerNormal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
 --- !u!1 &1162311004
 GameObject:
   m_ObjectHideFlags: 0
@@ -12838,7 +12911,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 7152930139536384079, guid: d98918da46858d844a10d5743cd099b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12878,8 +12951,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee3f8935180f9c4c9768c2fe7d621d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1552627040}
+  dashSpeed: 15
+  dashTime: 0.1
+  transparency: 0.1
+  cooldown: 1
   moveSpeed: 2
+  attackPoint: {fileID: 0}
 --- !u!50 &1552627038
 Rigidbody2D:
   serializedVersion: 5
@@ -13060,6 +13137,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 129193f7-c4c3-4054-85c5-21aac30463d1
+    m_ActionName: 'Player/Dash[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8f1124b-eed9-435b-a4a7-5a34d1cadcc4
+    m_ActionName: 'Player/Melee[/Keyboard/z]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 432f53ed-a166-46c2-9240-5279b09c55a0
+    m_ActionName: 'Player/Ranged[/Keyboard/x]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -13262,7 +13351,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 1808033393, guid: b0d22a95444bc944e82732858d7dc270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14182,7 +14271,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.97735846, g: 0.9756942, b: 0.27107865, a: 0}
@@ -15173,7 +15262,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 107450391, guid: b0d22a95444bc944e82732858d7dc270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17600,7 +17689,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -8176384082149141480, guid: 787342aaa109a7a468a780f1b7504201, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18072,3 +18161,4 @@ SceneRoots:
   - {fileID: 1162311008}
   - {fileID: 422857838}
   - {fileID: 1431254056}
+  - {fileID: 1128065668}

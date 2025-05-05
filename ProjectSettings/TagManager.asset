@@ -6,10 +6,19 @@ TagManager:
   tags:
   - test
   - Fade
+  - CorrectButton
+  - ConfirmButton
+  - Gate
+  - OldMan
+  - Key
   - moneyholder
   - pancakeholder
   - gotohevenmain
   - pancake
+  - LockedDoor
+  - PlayerAttackPoint
+  - Enemy
+  - CombatRoom
   layers:
   - Default
   - TransparentFX
@@ -17,10 +26,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Obstacle
+  - CameraBounds
+  - Enemy
   - 
   - 
   - 
@@ -50,8 +59,26 @@ TagManager:
   - name: Backround
     uniqueID: 1610596905
     locked: 0
-  - name: Forground
+  - name: Wall
+    uniqueID: 4190034115
+    locked: 0
+  - name: Foreground
     uniqueID: 1264486351
+    locked: 0
+  - name: Enemy
+    uniqueID: 2086827407
+    locked: 0
+  - name: Character
+    uniqueID: 1185586321
+    locked: 0
+  - name: Player
+    uniqueID: 3474742513
+    locked: 0
+  - name: Buttons
+    uniqueID: 654853859
+    locked: 0
+  - name: Instruction
+    uniqueID: 1577660717
     locked: 0
   m_RenderingLayers:
   - Default

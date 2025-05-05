@@ -8229,6 +8229,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1666040428}
+    - target: {fileID: 7020644921359547962, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: SoulPrefab
+      value: 
+      objectReference: {fileID: 3462267786297087903, guid: 7915166796cc76d418d1c769193849b5, type: 3}
+    - target: {fileID: 7020644921359547962, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: AngelPrefab
+      value: 
+      objectReference: {fileID: 8028690719972247161, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+    - target: {fileID: 7020644921359547962, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: AngelPrefab2
+      value: 
+      objectReference: {fileID: 8028690719972247161, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+    - target: {fileID: 7020644921359547962, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606022586726176821, guid: 37d804185248de4429b09a5507b4d217, type: 3}
+      propertyPath: Health
+      value: 9999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8244,11 +8264,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1411684935709781159, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.18
+      value: 3.73
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.4
+      value: 36.08
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_LocalPosition.z

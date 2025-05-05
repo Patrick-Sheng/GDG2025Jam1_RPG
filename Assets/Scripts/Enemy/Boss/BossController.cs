@@ -12,6 +12,9 @@ public class BossController : MonoBehaviour
     [SerializeField] private float wanderSpeed;
     [SerializeField] private Vector2 moveRange;
     [SerializeField] private float minDistanceCheck = 0.5f;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private GameObject SoulPrefab;
+    [SerializeField] private GameObject AngelPrefab;
 
     [Header("Obstacle Detection")]
     [SerializeField] private LayerMask obstacleLayer;
@@ -24,6 +27,8 @@ public class BossController : MonoBehaviour
     private float lastAttackTime = 0;
     private Rigidbody2D rb;
     private bool banAttack;
+    private float adsSpawnCooldown = 20;
+    private float lastAdsSpawnTime;
 
     private BossAttackInterface[] attacks;
     private int id;
@@ -40,17 +45,22 @@ public class BossController : MonoBehaviour
         attacks[1] = GetComponent<BossProjectile>();
         attacks[2] = GetComponent<BossSpecial>();
         banMovement = false;
+        lastAdsSpawnTime = 0;
+        SpawnAds();
+
+
     }
 
     void Update()
     {
         attemptAttacking();
-        if (!banMovement)
-        {
-            attemptMoving();
-        }
-        if(isAttackInProgress == false) {banMovement = false;}
 
+        attemptMoving();
+
+        if(lastAdsSpawnTime+adsSpawnCooldown < Time.time)
+        {
+            SpawnAds();
+        }
             //if (Input.GetKeyDown(KeyCode.S))
             //{
             //    Debug.Log(attacks[1].isAttacking);
@@ -58,7 +68,13 @@ public class BossController : MonoBehaviour
             //    Debug.Log(attacks[1].isAttacking);
             //}
 
-        }
+    }
+    private void SpawnAds()
+    {
+        Instantiate(SoulPrefab, transform.position, Quaternion.identity);
+        Instantiate(AngelPrefab, transform.position, Quaternion.identity);
+        lastAdsSpawnTime = Time.time;
+    }
     public bool IsMoving()
     {
         return rb.linearVelocity.magnitude > 0;
@@ -81,17 +97,7 @@ public class BossController : MonoBehaviour
         if (!isAttacking()&&lastAttackTime+attackCooldown<Time.time&&!banAttack)
         {
             id = Random.Range(0, attacks.Length);
-            if (attacks[id] != null)
-            {
-                isMoving = IsMoving();
-                if (id == 1 && !isMoving) { banMovement = true;  attacks[id].Attack(); }
-                else
-                {
-                    attacks[id].Attack();
-                }
-                //Debug.Log("Executing attack: " + attacks[id].GetType().Name);
-            }
-
+            attacks[id].Attack();         
         }
     }
     private void attemptMoving()
@@ -114,14 +120,26 @@ public class BossController : MonoBehaviour
         {
             return true;
         }
-        Collider2D collider = Physics2D.OverlapCircle(transform.position,
-            detectionRange, obstacleLayer);
-        if (collider != null)
+
+        // Raycast that ignores projectiles
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position,
+            moveDirection,
+            detectionRange,
+            obstacleLayer & ~enemyLayer // This excludes projectile layer
+        );
+
+        // Debug visualization (obstacles = red, projectiles = green)
+        Debug.DrawRay(transform.position, moveDirection * detectionRange,
+                     hit.collider ? Color.red : Color.green);
+        if (hit.collider != null && hit.collider.GetComponentInParent<EnergyOrb>() == null)
         {
+            
             Vector3 oppositeDirection = -moveDirection;
             transform.position += oppositeDirection * 0.1f;
             return true;
         }
+
         return false;
     }
     private void GetNewMoveDirection()

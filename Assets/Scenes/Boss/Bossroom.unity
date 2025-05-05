@@ -5254,6 +5254,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 39, y: 46}
   m_EdgeRadius: 0
+--- !u!1 &608163690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4269695653404447922, guid: e09f680977a8ecc4d9f83b2887566de7, type: 3}
+  m_PrefabInstance: {fileID: 1291902851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &608163692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608163690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af05a25093fc4c04daa6cee3827f4418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &729752538 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8492818448199600885, guid: 13a4864cc9524204692906d943d300aa, type: 3}
@@ -8148,7 +8165,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5423213935012682916, guid: e09f680977a8ecc4d9f83b2887566de7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1532855638}
+    - targetCorrespondingSourceObject: {fileID: 4269695653404447922, guid: e09f680977a8ecc4d9f83b2887566de7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 608163692}
   m_SourcePrefab: {fileID: 100100000, guid: e09f680977a8ecc4d9f83b2887566de7, type: 3}
 --- !u!1001 &1432097846
 PrefabInstance:
@@ -8272,6 +8295,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
+--- !u!1 &1532855636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5423213935012682916, guid: e09f680977a8ecc4d9f83b2887566de7, type: 3}
+  m_PrefabInstance: {fileID: 1291902851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532855638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532855636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6217b64ff5d1c7a468966d09d03153b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typing: {fileID: 0}
+  typingSpeed: 0.04
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  displayNameText: {fileID: 0}
+  portraitAnimator: {fileID: 0}
+  choices: []
 --- !u!1 &1544690783
 GameObject:
   m_ObjectHideFlags: 0

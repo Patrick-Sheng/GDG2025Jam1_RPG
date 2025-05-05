@@ -15,6 +15,8 @@ public class BossController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private GameObject SoulPrefab;
     [SerializeField] private GameObject AngelPrefab;
+    [SerializeField] private Transform AngelSpawnPoint;
+    [SerializeField] private Transform SoulSpawnPoint;
 
     [Header("Obstacle Detection")]
     [SerializeField] private LayerMask obstacleLayer;
@@ -71,8 +73,8 @@ public class BossController : MonoBehaviour
     }
     private void SpawnAds()
     {
-        Instantiate(SoulPrefab, transform.position, Quaternion.identity);
-        Instantiate(AngelPrefab, transform.position, Quaternion.identity);
+        Instantiate(SoulPrefab, SoulSpawnPoint.position, Quaternion.identity);
+        Instantiate(AngelPrefab, AngelSpawnPoint.position, Quaternion.identity);
         lastAdsSpawnTime = Time.time;
     }
     public bool IsMoving()

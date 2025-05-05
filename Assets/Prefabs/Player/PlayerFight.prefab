@@ -659,7 +659,7 @@ MonoBehaviour:
   melee: {fileID: 8126127987927508384, guid: b1a23fc19d8f39f41aec249a72c3a554, type: 3}
   meleeCooldown: 0.5
   laser: {fileID: 1095580457895500119, guid: abe3c96e11dea0743ab5d658249a99a6, type: 3}
-  laserCooldown: 0.5
+  laserCooldown: 3
   laserDamage: 100
   laserLine: {fileID: 7666876851680285091}
   laserWidth: 0.5

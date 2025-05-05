@@ -170,6 +170,37 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &3586023930993102715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6878490707517279053}
+  m_Layer: 9
+  m_Name: Angel Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6878490707517279053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3586023930993102715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -0.73, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5947651729212661004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5160096487186067939
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +243,8 @@ Transform:
   - {fileID: 561786577473889041}
   - {fileID: 3307428901823297876}
   - {fileID: 7773512039972534277}
+  - {fileID: 6026323934555923509}
+  - {fileID: 6878490707517279053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8254817192363790171
@@ -503,6 +536,13 @@ MonoBehaviour:
   wanderSpeed: 1
   moveRange: {x: 0.5, y: 0.5}
   minDistanceCheck: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  SoulPrefab: {fileID: 3462267786297087903, guid: 7915166796cc76d418d1c769193849b5, type: 3}
+  AngelPrefab: {fileID: 8028690719972247161, guid: 95fae4b2340031a46a447d11f61e5c82, type: 3}
+  AngelSpawnPoint: {fileID: 6878490707517279053}
+  SoulSpawnPoint: {fileID: 6026323934555923509}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -519,7 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d51014cf8940ee42930eb2cbe103003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2000
+  Health: 9999
 --- !u!114 &8037848321191924487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,3 +762,34 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &8757401583788607296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6026323934555923509}
+  m_Layer: 9
+  m_Name: Soul Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6026323934555923509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757401583788607296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.05, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5947651729212661004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

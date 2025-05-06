@@ -138,9 +138,11 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
-        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
-        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
-        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
+        currentStory.BindExternalFunction("hasbone", () => StaticManager.hasbone);
+
+        currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+    currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
+    currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
 
 
 
@@ -172,9 +174,13 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("hasmoney", () => StaticManager.hasmoney);
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
-        currentStory.BindExternalFunction("hasDogBone", () => StaticManager.inventory.Contains(Item.DOG_BONE));
-        currentStory.BindExternalFunction("hasTruffle", () => StaticManager.inventory.Contains(Item.TRUFFLE));
-        currentStory.BindExternalFunction("hasRuby", () => StaticManager.inventory.Contains(Item.RUBY));
+        currentStory.BindExternalFunction("hasbone", () => StaticManager.hasbone);
+
+
+
+        currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
+    currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
+    currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
 
         dialogueIsPlaying = true;
 
@@ -395,9 +401,53 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "StartFlowerGame")
+            {
+                StaticManager.flowerGameStart = true;
+                continue;
+            }
+            if (tag.Trim() == "StartBirdGame")
+            {
+                StaticManager.birdGameStart = true;
+                continue;
+            }
+            if (tag.Trim() == "deleteKey")
+            {
+                StaticManager.birdwon = false;
+                continue;
+            }
+            if (tag.Trim() == "GodDiolgueEnd")
+            {
+                StaticManager.godDiologueEnd = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "PlayWordle")
+            {
+                StaticManager.enterWordle = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "goToBucketCatchRoom")
+            {
+                StaticManager.enterWordle = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "dogMovesToLeft")
+            {
+                StaticManager.givenbone = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
+            if (tag.Trim() == "StartFlowerGame")
+            {
+                StaticManager.hasbone = true;
+                Debug.Log("runawaynow");
+                continue;
+            }
 
 
-            
 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)

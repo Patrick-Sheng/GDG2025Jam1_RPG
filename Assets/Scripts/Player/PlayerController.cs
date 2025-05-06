@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 input;
     private Vector2 latestInput;
-    private bool moving;
-
+    public bool moving { get; private set; }
+    private bool playerdeadonthefloor;
+    private PlayerAttack attackSystem;
+    private bool isInCombatRoom;
     public static bool dodio;
 
     private void Start()
@@ -47,10 +49,20 @@ public class PlayerController : MonoBehaviour
         }
         currentSpeed = moveSpeed;
         detection = GetComponentInChildren<PlayerDetection>();
+
+        attackSystem = GetComponentInChildren<PlayerAttack>();
+        attackSystem.enabled = false;
     }
 
     private void Update()
     {
+        if (StaticManager.PlayerDead == true && playerdeadonthefloor == false)
+        {
+            anim.Play("dead");
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x + 2f, gameObject.transform.position.y - 0.8f);
+            playerdeadonthefloor = true;
+        }
+
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
             Animate();
@@ -69,9 +81,18 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         rb.linearVelocity = input.normalized * currentSpeed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CombatRoom"))
+        {
+            isInCombatRoom = true;
+            attackSystem.enabled = true;
+        }
 
+    }
     public void Move(InputAction.CallbackContext context)
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
@@ -86,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (!isInCooldown && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!isInCooldown && !DialogueManager.GetInstance().dialogueIsPlaying&&isInCombatRoom)
         {
             isDashing = true;
             StartCoroutine(PerformDash());
@@ -131,20 +152,24 @@ public class PlayerController : MonoBehaviour
     }
     private void Animate()
     {
-        if (anim == null) return;
+        if (StaticManager.PlayerDead == false) {
+            if (anim == null) return;
 
-        moving = input.magnitude > 0.1f;
-        anim.SetBool("Moving", moving);
+            moving = input.magnitude > 0.1f || input.magnitude < -0.1f;
+            anim.SetBool("Moving", moving);
 
-        if (moving&& detection.EnemyTarget == null) // If no enemies, face in player input
-        {
-            anim.SetFloat("X", input.x);
-            anim.SetFloat("Y", input.y);
+            if (moving && detection.EnemyTarget == null) // If no enemies, face in player input
+            {
+                anim.SetFloat("X", input.x);
+                anim.SetFloat("Y", input.y);
+            }
+            else
+            {
+                FaceEnemy();
+            }
+            anim.SetBool("Moving", moving);
         }
-        else
-        {
-            FaceEnemy();
-        }
+            
     }
     public Vector2 GetInput()
     {

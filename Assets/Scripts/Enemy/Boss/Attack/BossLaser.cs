@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class BossLaser : MonoBehaviour
+public class BossLaser : MonoBehaviour, BossAttackInterface
 {
     [Header("Laser Settings")]
     [SerializeField] private float chargeTime = 2f;
@@ -18,6 +19,7 @@ public class BossLaser : MonoBehaviour
     private Vector2[] lockedDirections;
     private LineRenderer[] warningLasers;
     private LineRenderer[] activeLasers;
+    public bool isAttacking { get; set; }
 
     void Start()
     {
@@ -26,17 +28,19 @@ public class BossLaser : MonoBehaviour
         lockedDirections = new Vector2[laserAmount];
         warningLasers = new LineRenderer[laserAmount];
         activeLasers = new LineRenderer[laserAmount];
+        isAttacking = false;
 }
 
-    public void FireLasers()
+    public void Attack()
     {
         if (!isCharging && !isFiring)
         {
+            isAttacking = true;
             StartCoroutine(LaserSequence());
         }
     }
 
-    private System.Collections.IEnumerator LaserSequence()
+    private IEnumerator LaserSequence()
     {
         // Phase 1: Charging and showing warning
         isCharging = true;
@@ -111,6 +115,7 @@ public class BossLaser : MonoBehaviour
         }
 
         isFiring = false;
+        isAttacking = false;
     }
 
     private void UpdateLaserVisual(LineRenderer laser, Vector2 direction, Color color)

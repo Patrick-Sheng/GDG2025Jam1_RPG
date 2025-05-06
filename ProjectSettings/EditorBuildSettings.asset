@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ParkRoom.unity
+    guid: b0bf6019f0b53454d9b25c1332776b32
+  - enabled: 1
     path: Assets/Scenes/heavenMain.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/2.unity
+    path: Assets/Scenes/GardenRoom.unity
     guid: bf804ef7306bd5743ad624198cd5f7d5
   - enabled: 1
     path: Assets/Scenes/MoleRoom/MoleRoom2.unity
@@ -26,6 +29,45 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestArcade.unity
     guid: 8250fe430b1d3ee4d8e65a6c74d7998a
+  - enabled: 1
+    path: Assets/CINDY/BloomingLight/Scenes/MenuScene_BloomingLight.unity
+    guid: 8dd9140d338ed4abab6a1d2a32a2bf81
+  - enabled: 1
+    path: Assets/CINDY/BloomingLight/Scenes/MenuScene_Bird.unity
+    guid: 19fdf4d4e0db645ad91e6a0fd31144f9
+  - enabled: 1
+    path: Assets/CINDY/BloomingLight/Scenes/GameScene_BloomingLight.unity
+    guid: e30647961693743e6a82c8e489d2680b
+  - enabled: 1
+    path: Assets/CINDY/BloomingLight/Scenes/GameScene_Bird.unity
+    guid: 95378ae82c8de42c0b9c95e4457e6c26
+  - enabled: 1
+    path: Assets/CINDY/Scenes/Yellowyard.unity
+    guid: dd6ec191a0df44edb8293c06400a75c6
+  - enabled: 1
+    path: Assets/CINDY/Scenes/BirdRoom.unity
+    guid: 58f0db191815d4578a160dde7dacdc5f
+  - enabled: 1
+    path: Assets/CINDY/Scenes/Graveyard.unity
+    guid: c828d653fac8440648e8d58bd9926951
+  - enabled: 1
+    path: Assets/Ann/Assets/Tiles/Scenes/Anns Room/DogHallway.unity
+    guid: 3cf438d18a9264744bdb9455fa9063ef
+  - enabled: 1
+    path: Assets/Ann/Assets/Tiles/Scenes/Anns Room/DogRoom.unity
+    guid: a2bdc4352fccfc844996a50f28c54700
+  - enabled: 1
+    path: Assets/Ann/Assets/Tiles/Scenes/Anns Room/WordleRoom.unity
+    guid: 82abd95797197e84584616963afa54a1
+  - enabled: 1
+    path: Assets/Ann/Assets/Tiles/Scenes/Anns Room/Assets/Scenes/WaterGame.unity
+    guid: cdce9b1ea90218e44b3f2127ae4051a5
+  - enabled: 1
+    path: Assets/Ann/Assets/Tiles/Scenes/Anns Room/TunnelRoom.unity
+    guid: b6e94bce0dbe7854a95a187224ea8ab0
+  - enabled: 1
+    path: Assets/Scenes/Boss/Bossroom.unity
+    guid: 97da29668ed63cd4fa2f8b2028f5d30a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

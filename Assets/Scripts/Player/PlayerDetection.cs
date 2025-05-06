@@ -88,7 +88,7 @@ public class PlayerDetection : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-            enemyList.Add(enemy);
+            if (enemy != null) { enemyList.Add(enemy); }
         }
     }
 

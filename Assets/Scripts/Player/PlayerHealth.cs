@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -30,28 +32,51 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     public void TakeDamage(int amount)
-{
-    if (playerConfig.CurrentHealth > 0f)
     {
-        playerConfig.CurrentHealth = Mathf.Max(0, playerConfig.CurrentHealth - amount);
-        heartDisplay.UpdateHearts(); 
-        //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
-    }
-}
+        if (playerConfig.CurrentHealth > 0f)
+        {
+            playerConfig.CurrentHealth = Mathf.Max(0, playerConfig.CurrentHealth - amount);
+            heartDisplay.UpdateHearts();
 
-public void Heal(int amount)
-{
-    if (playerConfig.CurrentHealth < playerConfig.MaxHealth)
-    {
-        playerConfig.CurrentHealth = Mathf.Min(playerConfig.CurrentHealth + amount, playerConfig.MaxHealth);
-        heartDisplay.UpdateHearts(); 
-        //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
+        }
+        if (playerConfig.CurrentHealth == 0f) { PlayerDead(); }
+            
     }
-}
+
+    public void Heal(int amount)
+    {
+        if (playerConfig.CurrentHealth < playerConfig.MaxHealth)
+        {
+            playerConfig.CurrentHealth = Mathf.Min(playerConfig.CurrentHealth + amount, playerConfig.MaxHealth);
+            heartDisplay.UpdateHearts(); 
+            //OnHealthChanged?.Invoke(playerConfig.CurrentHealth);
+        }
+    }
 
 
     private void PlayerDead()
     {
-        Destroy(gameObject);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Destroy(gameObject);
+        StartCoroutine(DeathRoutine());
+    }
+    private IEnumerator DeathRoutine()
+    {
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<PlayerController>().enabled = false;
+
+        BossController boss = FindFirstObjectByType<BossController>();
+        if (boss != null)
+        {
+            boss.StopAllCoroutines(); // Kills any running attacks
+            boss.ResetAllStates();    // Custom reset method (see below)
+        }
+
+
+        yield return new WaitForSeconds(5);
+
+        // Reload scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

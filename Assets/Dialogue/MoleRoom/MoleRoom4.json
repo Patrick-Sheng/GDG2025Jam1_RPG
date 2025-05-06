@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":[["^Congratulations! You completed all my puzzles! ","#","^layout:default","/#","\n","^You can move on to the next room through this tunnel on the right.","\n","ev","str","^Leave","/str","/ev",{"*":".^.c-0","flg":4},{"c-0":["\n","end",{"#f":5}]}],{"#f":1}],"#f":1}],"listDefs":{}}

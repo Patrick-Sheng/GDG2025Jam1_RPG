@@ -30,7 +30,7 @@
       public GameObject itemPlaceableSlot3;
 
 
-      private List<Item> inventory = StaticManager.inventory;
+      private List<ItemEnum> inventory = StaticManager.inventory;
 
       void Start()
       {   
@@ -62,29 +62,19 @@
             Room3StoneWall.SetActive(true);
           }
 
-          itemPlaceableSlot1.SetActive(false);
-          itemPlaceableSlot2.SetActive(false);
-          itemPlaceableSlot3.SetActive(false);
+          if (itemPlaceableSlot1 != null) {
+            itemPlaceableSlot1.SetActive(false);
+          }
+          if (itemPlaceableSlot2 != null) {
+            itemPlaceableSlot2.SetActive(false);
+          }
+          if (itemPlaceableSlot3 != null) {
+            itemPlaceableSlot3.SetActive(false);
+          }
       }
 
       void Update()
       {
-        // Debugging: Press Q, W, E, R to add items
-        if (Input.GetKeyDown(KeyCode.Q)) {
-          ToggleItem(Item.DOG_BONE);
-        }
-        if (Input.GetKeyDown(KeyCode.W)) {
-          ToggleItem(Item.TRUFFLE);
-        }
-        if (Input.GetKeyDown(KeyCode.E)) {
-          ToggleItem(Item.RUBY);
-        }
-        if (Input.GetKeyDown(KeyCode.R)) {
-          AddItem(Item.DOG_BONE);
-          AddItem(Item.TRUFFLE);
-          AddItem(Item.RUBY);
-        }
-
         if (StaticManager.pushTimes >= 3) {
           StaticManager.wallCracked = true;
         }
@@ -94,7 +84,7 @@
           if (DogBone != null) {
             DogBone.SetActive(false);
           }
-          ToggleItem(Item.DOG_BONE);
+          ToggleItem(ItemEnum.DOG_BONE);
         }
         if (StaticManager.pickedUpTruffle) {
           StaticManager.pickedUpTruffle = false;
@@ -102,7 +92,7 @@
           if (Truffle != null) {
             Truffle.SetActive(false);
           }
-          ToggleItem(Item.TRUFFLE);
+          ToggleItem(ItemEnum.TRUFFLE);
         }
         if (StaticManager.pickedUpRuby) {
           StaticManager.pickedUpRuby = false;
@@ -110,7 +100,7 @@
           if (Ruby != null) {
             Ruby.SetActive(false);
           }
-          ToggleItem(Item.RUBY);
+          ToggleItem(ItemEnum.RUBY);
         }
         if (StaticManager.completedPressurePlatePuzzle) {
           if (Room2StoneWall != null) {
@@ -128,36 +118,40 @@
         if (StaticManager.placedDogBone)
         {
           StaticManager.placedDogBone = false;
-          StartCoroutine(PlaceItemNextFrame(Item.DOG_BONE));
+          StartCoroutine(PlaceItemNextFrame(ItemEnum.DOG_BONE));
         }
 
         if (StaticManager.placedTruffle)
         {
           StaticManager.placedTruffle = false;
-          StartCoroutine(PlaceItemNextFrame(Item.TRUFFLE));
+          StartCoroutine(PlaceItemNextFrame(ItemEnum.TRUFFLE));
         }
 
         if (StaticManager.placedRuby)
         {
           StaticManager.placedRuby = false;
-          StartCoroutine(PlaceItemNextFrame(Item.RUBY));
+          StartCoroutine(PlaceItemNextFrame(ItemEnum.RUBY));
         }
       }
 
       public bool IsCorrectItemPlacement()
       {
-          SpriteRenderer sr1 = itemPlaceableSlot1.GetComponent<SpriteRenderer>();
-          SpriteRenderer sr2 = itemPlaceableSlot2.GetComponent<SpriteRenderer>();
-          SpriteRenderer sr3 = itemPlaceableSlot3.GetComponent<SpriteRenderer>();
+        if (itemPlaceableSlot1 == null || itemPlaceableSlot2 == null || itemPlaceableSlot3 == null) {
+          return false; // Safety check
+        }
+          
+        SpriteRenderer sr1 = itemPlaceableSlot1.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr2 = itemPlaceableSlot2.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr3 = itemPlaceableSlot3.GetComponent<SpriteRenderer>();
 
-          bool table1Correct = itemPlaceableSlot1.activeSelf && sr1.sprite == dogBoneSprite;
-          bool table2Correct = itemPlaceableSlot2.activeSelf && sr2.sprite == truffleSprite;
-          bool table3Correct = itemPlaceableSlot3.activeSelf && sr3.sprite == rubySprite;
+        bool table1Correct = itemPlaceableSlot1.activeSelf && sr1.sprite == dogBoneSprite;
+        bool table2Correct = itemPlaceableSlot2.activeSelf && sr2.sprite == truffleSprite;
+        bool table3Correct = itemPlaceableSlot3.activeSelf && sr3.sprite == rubySprite;
 
-          return table1Correct && table2Correct && table3Correct;
+        return table1Correct && table2Correct && table3Correct;
       }
 
-      private void ToggleItem(Item item)
+      private void ToggleItem(ItemEnum item)
       {
           if (inventory.Contains(item))
               RemoveItem(item);
@@ -165,7 +159,7 @@
               AddItem(item);
       }
 
-      private void AddItem(Item item)
+      private void AddItem(ItemEnum item)
       {
           if (inventory.Count >= slots.Length)
           {
@@ -177,7 +171,7 @@
           UpdateUI();
       }
 
-      private void RemoveItem(Item item)
+      private void RemoveItem(ItemEnum item)
       {
           if (!inventory.Contains(item))
           {
@@ -190,13 +184,13 @@
 
           switch (item)
           {
-            case Item.DOG_BONE:
+            case ItemEnum.DOG_BONE:
               PlaceItemOnTable(dogBoneSprite);
               break;
-            case Item.TRUFFLE:
+            case ItemEnum.TRUFFLE:
               PlaceItemOnTable(truffleSprite);
               break;
-            case Item.RUBY:
+            case ItemEnum.RUBY:
               PlaceItemOnTable(rubySprite);
               break;
           }
@@ -223,7 +217,7 @@
           }
       }
 
-      private System.Collections.IEnumerator PlaceItemNextFrame(Item item)
+      private System.Collections.IEnumerator PlaceItemNextFrame(ItemEnum item)
       {
           yield return null; // Wait for one frame
           RemoveItem(item);  // Now the inventory and UI are ready
@@ -247,13 +241,13 @@
           }
       }
 
-      private Sprite GetSpriteForItem(Item item)
+      private Sprite GetSpriteForItem(ItemEnum item)
       {
           switch (item)
           {
-              case Item.DOG_BONE: return dogBoneSprite;
-              case Item.TRUFFLE: return truffleSprite;
-              case Item.RUBY: return rubySprite;
+              case ItemEnum.DOG_BONE: return dogBoneSprite;
+              case ItemEnum.TRUFFLE: return truffleSprite;
+              case ItemEnum.RUBY: return rubySprite;
               default: return null;
           }
       }

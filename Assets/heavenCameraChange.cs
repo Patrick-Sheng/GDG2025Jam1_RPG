@@ -24,6 +24,7 @@ public class heavenCameraChange : MonoBehaviour
         {
             if (gameObject.name == "Top")
             {
+                
                 cammovescr.BottomArea();
             }
 

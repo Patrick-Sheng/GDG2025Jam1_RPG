@@ -100,7 +100,6 @@ public class BossSpecial : MonoBehaviour, BossAttackInterface
                     player.GetComponent<PlayerHealth>().Heal(1);
                     hasHealed = true;
                 }
-
             }
 
             yield return null;

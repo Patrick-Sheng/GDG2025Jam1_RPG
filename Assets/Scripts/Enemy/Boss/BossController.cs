@@ -134,6 +134,8 @@ public class BossController : MonoBehaviour
         // Debug visualization (obstacles = red, projectiles = green)
         Debug.DrawRay(transform.position, moveDirection * detectionRange,
                      hit.collider ? Color.red : Color.green);
+
+        // Move opposite to obstacles and make sure Enemy does not think projectiles are Obstacles
         if (hit.collider != null && hit.collider.GetComponentInParent<EnergyOrb>() == null)
         {
             

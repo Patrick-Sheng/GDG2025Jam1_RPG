@@ -56,14 +56,28 @@ public class WanderAction : AbstractEnemyAction
         {
             return true;
         }
-        Collider2D collider = Physics2D.OverlapCircle(transform.position,
-            detectionRange, obstacleLayer);
-        if (collider != null)
+
+        // Raycast that ignores projectiles
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position,
+            moveDirection,
+            detectionRange,
+            obstacleLayer // This excludes projectile layer
+        );
+
+        // Debug visualization (obstacles = red, projectiles = green)
+        Debug.DrawRay(transform.position, moveDirection * detectionRange,
+                     hit.collider ? Color.red : Color.green);
+
+        // Move opposite to obstacles and make sure Enemy does not think projectiles are Obstacles
+        if (hit.collider != null && hit.collider.GetComponentInParent<EnergyOrb>() == null)
         {
+
             Vector3 oppositeDirection = -moveDirection;
             transform.position += oppositeDirection * 0.1f;
             return true;
         }
+
         return false;
     }
 

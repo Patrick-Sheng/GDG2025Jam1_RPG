@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6429000077040156669}
   - component: {fileID: 6502154939786794752}
   - component: {fileID: 2181457862201208085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Soul
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1610596905
-  m_SortingLayer: 1
+  m_SortingLayerID: 2086827407
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7260111474371800604, guid: cafec62b5879e064580dbeb52fa0bf5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Laser Attack")]
     [SerializeField] private LaserAttack laser;
-    [SerializeField] private float laserCooldown = 0.01f;
+    [SerializeField] private float laserCooldown;
     [SerializeField] private int laserDamage;
     private float lastLaserTime;
 
@@ -39,7 +39,9 @@ public class PlayerAttack : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         meleeAction = playerInput.actions["Melee"];
         laserAction = playerInput.actions["Ranged"];
-        
+        lastLaserTime = laserCooldown;
+
+
 
     }
 
@@ -172,5 +174,22 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         laserLine.enabled = false;
+    }
+    float temp;
+    bool hasSet = false;
+    public void PlayerInSafeZone()
+    {
+        if (!hasSet)
+        {
+            temp = laserCooldown;
+            hasSet = true;
+        }
+
+        laserCooldown = 0.1f;
+    }
+    public void SafeZoneEnded()
+    {
+        laserCooldown = temp;
+        hasSet = false;
     }
 }

@@ -79,6 +79,7 @@ public class BossSpecial : MonoBehaviour, BossAttackInterface
         lavaSpreadSpeed = temp;
         // Damage phase
         float lavaTimer = 0f;
+        bool hasHealed = false;
         while (lavaTimer < lavaDuration)
         {
             lavaTimer += Time.deltaTime;
@@ -89,11 +90,22 @@ public class BossSpecial : MonoBehaviour, BossAttackInterface
             {
                 player.GetComponent<PlayerHealth>().TakeDamage(lavaDamage);
                 damageTimer = 0f;
+                player.GetComponent<PlayerAttack>().SafeZoneEnded();
+            }
+            else
+            {
+                player.GetComponent<PlayerAttack>().PlayerInSafeZone();
+                if (!hasHealed)
+                {
+                    player.GetComponent<PlayerHealth>().Heal(1);
+                    hasHealed = true;
+                }
+
             }
 
             yield return null;
         }
-
+        player.GetComponent<PlayerAttack>().SafeZoneEnded();
         // Clean up
         Destroy(lavaEffect);
         Destroy(safeArea);

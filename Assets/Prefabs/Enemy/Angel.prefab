@@ -158,7 +158,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   minDistanceCheck: 0.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   detectionRange: 0.6
 --- !u!114 &2837354795331660132
 MonoBehaviour:

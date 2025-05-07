@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class StaticManager : MonoBehaviour
 {
+    public static bool takeBone;
+
     public static bool givenbone;
     public static bool hasbone;
     public static bool haswordleKey;

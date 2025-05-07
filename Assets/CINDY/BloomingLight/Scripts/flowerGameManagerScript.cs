@@ -20,6 +20,7 @@ public class flowerGameManagerScript : MonoBehaviour
         }
 
         if (StaticManager.flowerWon) {
+            StaticManager.hasbone = true; 
             dogbone.SetActive(true);
         }
     }

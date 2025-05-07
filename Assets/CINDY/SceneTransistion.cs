@@ -17,8 +17,18 @@ public class SceneTransistion : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+
+
         if (collision.gameObject.tag == "Player")
         {
+            if (gameObject.name == "toCindy")
+            {
+                if (GameObject.FindGameObjectWithTag("WordleKey") != null)
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("WordleKey"));
+                }
+            }
+
             if (gameObject.name == "yellowToHallway")
             {
                 StaticManager.YellowToHall = true;

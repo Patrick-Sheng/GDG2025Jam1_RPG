@@ -24,7 +24,13 @@ public class wordlegirlhandler : MonoBehaviour
                 cam.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, -10);
                 keycanvas.SetActive(true);
                 StaticManager.haswordleKey = true;
+
+
                 DialogueManager.GetInstance().EnterDialogueMode(YouWin);
+                
+
+
+
                 came.OutSideOfBounds();
                 //enter diologue where shes like wow you won heres a key
             }

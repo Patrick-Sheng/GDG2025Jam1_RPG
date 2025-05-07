@@ -446,6 +446,11 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("runawaynow");
                 continue;
             }
+            if (tag.Trim() == "takeBone")
+            {
+                StaticManager.takeBone = true;
+                continue;
+            }
 
 
 

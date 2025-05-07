@@ -19,6 +19,11 @@ TagManager:
   - PlayerAttackPoint
   - Enemy
   - CombatRoom
+  - Droplet
+  - gofromgraveyard
+  - toCindy
+  - WordleKey
+  - bone
   layers:
   - Default
   - TransparentFX

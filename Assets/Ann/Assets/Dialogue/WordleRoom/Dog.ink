@@ -9,10 +9,10 @@ Ruff ruff!
 Ya got any snacks? 
 + [Yup, take this!]
     { hasbone():
-    (Ooooh thanks so much!)
+    (Ooooh thanks so much!) #takeBone
     scoff scoff* #dogMovesToLeft 
     -> DONE
-- else:
+    - else:
         HEY! Where's my snack??
         -> DONE
 }

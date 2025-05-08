@@ -14,17 +14,23 @@
     :
 
         + [How did you manage to get a water leak in a water temple?]
-            Honestly, I wonder myself. Who knows what the guy upstairs is doing. 
-            -> DONE
+            -> a1
+
+        === a1 ===
+        Honestly, I wonder myself. Who knows what the guy upstairs is doing.
+        :
 
         + [You should file a complaint.]
-            You're right, I really should. 
-            Well we better hurry, the leaks not getting any smaller!
-            -> DONE
-            
+            -> a2
+
+        === a2 ===
+        You're right, I really should.
+        Well we better hurry, the leak's not getting any smaller!
+        :
+
         + [Let's go!]
-            #goToBucketCatchRoom
-                -> DONE
+        #goToBucketCatchRoom
+            -> DONE
           //  + [Sorry, I got to go.]
          //   Sigh, I guess I'll be having a leaky night.
             //-> END

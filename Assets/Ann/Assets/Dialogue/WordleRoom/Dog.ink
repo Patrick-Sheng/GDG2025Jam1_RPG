@@ -18,5 +18,4 @@ Ya got any snacks?
 }
 + [No sorry]
     Oh, okay. 
-    (tail stops wagging and ears flop down)
     -> DONE

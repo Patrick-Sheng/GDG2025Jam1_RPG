@@ -1290,7 +1290,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 0.15686275}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_Origin: {x: 0, y: 0, z: 0}
   m_Size: {x: 40, y: 5, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -8095,6 +8095,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 18, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 19, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -8280,6 +8290,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 18, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8497,7 +8517,7 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: bcdee174f0c72b644aca869174deb2de, type: 2}
   - m_RefCount: 19
     m_Data: {fileID: 11400000, guid: 729dad425a25a32439c6846e686d283c, type: 2}
@@ -8507,7 +8527,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d60f961844a1d34428955369e510b31f, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 64d05f1787a919145a06bbe2b164e72a, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 9287553b562873940ae16f489f3e6835, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 290703e648878d24095e02fb220b21ba, type: 2}
@@ -8526,7 +8546,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9cb1e45006c9f624582f1fb6a46382c4, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: -2129382945, guid: 1b52264ff6d17fd479d3ec1a2941e4f8, type: 3}
   - m_RefCount: 19
     m_Data: {fileID: -621360262, guid: c513c5ff18d976842b7cae3e208a44f6, type: 3}
@@ -8534,7 +8554,7 @@ Tilemap:
     m_Data: {fileID: 4269108728175869260, guid: 1b52264ff6d17fd479d3ec1a2941e4f8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -377749537, guid: c513c5ff18d976842b7cae3e208a44f6, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 480948538, guid: 1b52264ff6d17fd479d3ec1a2941e4f8, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 1484956536, guid: 1b52264ff6d17fd479d3ec1a2941e4f8, type: 3}
@@ -8555,7 +8575,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 110004987, guid: c513c5ff18d976842b7cae3e208a44f6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 65
+  - m_RefCount: 67
     m_Data:
       e00: 1
       e01: 0
@@ -8574,7 +8594,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 65
+  - m_RefCount: 67
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -10889,8 +10909,8 @@ Transform:
   m_GameObject: {fileID: 1005833065}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.48, y: -3.83, z: -0.89}
-  m_LocalScale: {x: 1, y: 1.352078, z: 1}
+  m_LocalPosition: {x: -22.85, y: -4.07, z: -0.89}
+  m_LocalScale: {x: 1.053, y: 1.423738, z: 1.053}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 756885864}
@@ -12018,7 +12038,7 @@ Transform:
   m_GameObject: {fileID: 1345620165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.78, y: 7.18, z: -0.033512834}
+  m_LocalPosition: {x: 24.78, y: 7.09, z: -0.033512834}
   m_LocalScale: {x: 22.241488, y: 4.703234, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

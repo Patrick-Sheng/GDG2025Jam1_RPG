@@ -24,6 +24,7 @@ TagManager:
   - toCindy
   - WordleKey
   - bone
+  - Killer
   layers:
   - Default
   - TransparentFX

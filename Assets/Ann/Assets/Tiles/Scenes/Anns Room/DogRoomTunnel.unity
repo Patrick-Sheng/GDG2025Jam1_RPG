@@ -433,7 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: DogHallway
 --- !u!61 &24599464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -926,7 +925,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 385406225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641d7d07833f40d438b13dacde81647f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c891bc04f4193a419b157cc3cef042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &386543984
@@ -977,7 +976,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 386543984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641d7d07833f40d438b13dacde81647f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c891bc04f4193a419b157cc3cef042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &386543987
@@ -2378,7 +2377,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 972407951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5aa788e6d394748a39f65453ee105e, type: 3}
+  m_Script: {fileID: 11500000, guid: af05a25093fc4c04daa6cee3827f4418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1011921698 stripped
@@ -2427,7 +2426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1033862036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee363bfffe24af24180b06e8de2a87f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6217b64ff5d1c7a468966d09d03153b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   typing: {fileID: 1951422404}
@@ -2771,6 +2770,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+--- !u!1 &1249783505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249783507}
+  - component: {fileID: 1249783506}
+  m_Layer: 0
+  m_Name: DiologueOnStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1249783506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249783505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6355366bfc82d4bb9a64d482b8eefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DogAfterBone: {fileID: 4900000, guid: d54905a62fd8e254db1f02a5616dab3f, type: 3}
+--- !u!4 &1249783507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249783505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.71979, y: 12.93511, z: -0.017930392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358714736
 GameObject:
   m_ObjectHideFlags: 0
@@ -5323,10 +5367,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5137255
       objectReference: {fileID: 0}
+    - target: {fileID: 4235286120977226543, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4428389432907984837, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 57bb90ef14160f0468c47425aa36730a, type: 3}
+      objectReference: {fileID: 4900000, guid: d54905a62fd8e254db1f02a5616dab3f, type: 3}
     - target: {fileID: 4549105521710958520, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.7486339
@@ -5357,11 +5405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4699335412734101662, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5654
+      value: 6.09
       objectReference: {fileID: 0}
     - target: {fileID: 4699335412734101662, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.78
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Size.x
@@ -5394,6 +5442,10 @@ PrefabInstance:
     - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5502,7 +5554,7 @@ Transform:
   m_GameObject: {fileID: 1463647395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.83, y: -4.56, z: -0.033512834}
+  m_LocalPosition: {x: 21.9, y: -4.01, z: -0.033512834}
   m_LocalScale: {x: 8.63225, y: 1.5459281, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6524,8 +6576,8 @@ Transform:
   m_GameObject: {fileID: 1650686005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.53, y: -4.5, z: -0.033512834}
-  m_LocalScale: {x: 8.63225, y: 1.5459281, z: 1}
+  m_LocalPosition: {x: 30.436, y: -4.05, z: -0.033512834}
+  m_LocalScale: {x: 12.720484, y: 1.5459281, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111985226}
@@ -7029,7 +7081,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1856491591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283b5b6763611344b8f031bf9ba87fc2, type: 3}
+  m_Script: {fileID: 11500000, guid: a8f2bdec65877be4ca7d623919cf1e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: TunnelRoom
@@ -7097,8 +7149,8 @@ Transform:
   m_GameObject: {fileID: 1856491591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.01, y: 11.79, z: 0}
-  m_LocalScale: {x: 1.9325647, y: 1.873289, z: 1}
+  m_LocalPosition: {x: 37.2149, y: 12.3288, z: 0}
+  m_LocalScale: {x: 1.7626923, y: 1.3767253, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8521,3 +8573,4 @@ SceneRoots:
   - {fileID: 149587490}
   - {fileID: 1856491595}
   - {fileID: 452745918}
+  - {fileID: 1249783507}

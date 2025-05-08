@@ -30,7 +30,12 @@ public class boxscript : MonoBehaviour
             if (timer < 0)
             {
 
-                SceneManager.LoadScene("DogRoomTunnel");
+                StaticManager.nextScene = "DogRoomTunnel";
+
+                GameObject FadeObj = GameObject.FindGameObjectWithTag("Fade");
+                Animator animator = FadeObj.GetComponent<Animator>();
+                animator.Play("FadeIn");
+                
             }
         }
         

@@ -6,6 +6,17 @@ using System.Collections.Generic;
 
 public class StaticManager : MonoBehaviour
 {
+
+    public static bool fulltankmore;
+    public static bool fullhandsfalse;
+
+    public static bool fountaindone;
+    public static bool FireHDone;
+
+
+
+    public static bool pickUpWater;
+    public static bool FishPlayed;
     public static bool takeBone;
 
     public static bool givenbone;
@@ -153,9 +164,40 @@ public class StaticManager : MonoBehaviour
     public static bool CanLick;
     public static bool licked6times;
     public static bool Plus1Dollar;
+
+    public static bool FullHands;
+    public static bool ponddone;
+    public static int fulltank;
+
+
+
+    public static bool tankisfull;
     // public static int couchPosition;
     private void Update()
     {
+        if (fullhandsfalse)
+        {
+            fullhandsfalse = false;
+            FullHands = false;
+        }
+        if (fulltankmore)
+        {
+            fulltank++;
+            if (fulltank == 3)
+            {
+                tankisfull = true;
+            }
+        }
+
+
+        if (pickUpWater)
+        {
+            FullHands = true;
+            pickUpWater = false;
+        }
+
+
+
         if (NumDollars > 0)
         {
             hasmoney = true;

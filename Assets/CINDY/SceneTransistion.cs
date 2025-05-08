@@ -65,9 +65,6 @@ public class SceneTransistion : MonoBehaviour
 
             GameObject FadeObj = GameObject.FindGameObjectWithTag("Fade");
             Animator animator = FadeObj.GetComponent<Animator>();
-
-            
-
             animator.Play("FadeIn");
         }
         

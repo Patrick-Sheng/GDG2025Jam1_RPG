@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Net.NetworkInformation;
 using System.Linq;
 
 
@@ -139,6 +138,11 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
         currentStory.BindExternalFunction("hasbone", () => StaticManager.hasbone);
+        currentStory.BindExternalFunction("FishPlayed", () => StaticManager.FishPlayed);
+        currentStory.BindExternalFunction("FullHands", () => StaticManager.FullHands);
+        currentStory.BindExternalFunction("ponddone", () => StaticManager.ponddone);
+        currentStory.BindExternalFunction("fountaindone", () => StaticManager.fountaindone);
+        currentStory.BindExternalFunction("FireHDone", () => StaticManager.FireHDone);
 
         currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
     currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
@@ -175,6 +179,11 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("moneynumber", () => StaticManager.NumDollars);
         currentStory.BindExternalFunction("wallCracked", () => StaticManager.wallCracked);
         currentStory.BindExternalFunction("hasbone", () => StaticManager.hasbone);
+        currentStory.BindExternalFunction("FishPlayed", () => StaticManager.FishPlayed);
+        currentStory.BindExternalFunction("FullHands", () => StaticManager.FullHands);
+        currentStory.BindExternalFunction("ponddone", () => StaticManager.ponddone);
+        currentStory.BindExternalFunction("fountaindone", () => StaticManager.fountaindone);
+        currentStory.BindExternalFunction("FireHDone", () => StaticManager.FireHDone);
 
 
 
@@ -451,8 +460,42 @@ public class DialogueManager : MonoBehaviour
                 StaticManager.takeBone = true;
                 continue;
             }
+            if (tag.Trim() == "FishPlayed")
+            {
+                StaticManager.FishPlayed = true;
+                continue;
+            }
+            if (tag.Trim() == "pickUpWater")
+            {
+                StaticManager.pickUpWater = true;
+                continue;
+            }
+            if (tag.Trim() == "ponddone")
+            {
+                StaticManager.ponddone = true;
+                continue;
+            }
+            if (tag.Trim() == "fulltankmore")
+            {
+                StaticManager.fulltankmore = true;
+                continue;
+            }
+            if (tag.Trim() == "fullhandsfalse")
+            {
+                StaticManager.fullhandsfalse = true;
+                continue;
+            }
+            if (tag.Trim() == "fountaindone")
+            {
+                StaticManager.fountaindone = true;
+                continue;
+            }
+            if (tag.Trim() == "FireHDone")
+            {
 
-
+                StaticManager.FireHDone = true;
+                continue;
+            }
 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)

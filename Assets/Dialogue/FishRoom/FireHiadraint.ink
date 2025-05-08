@@ -1,20 +1,20 @@
 EXTERNAL FishPlayed()
 EXTERNAL FullHands()
-EXTERNAL ponddone()
+EXTERNAL FireHDone()
 -> start
 
 === start ===
 { FishPlayed():
 
-    {ponddone():
-        You have already taken from this source
+    {FireHDone():
+        You have already taken from this fire hidrant
         ->DONE
     -else:
         {FullHands():
         You are already holding water
         ->DONE
         -else:
-        You pick up some water with your hands #pickUpWater #ponddone
+        You pick up some water with your hands #pickUpWater #FireHDone
         ->DONE
         }
     
@@ -24,6 +24,6 @@ EXTERNAL ponddone()
 
 
 -else:
-Its a pond
+Its a fire hidrant
     -> END
 }

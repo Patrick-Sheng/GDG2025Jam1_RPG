@@ -143,6 +143,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("ponddone", () => StaticManager.ponddone);
         currentStory.BindExternalFunction("fountaindone", () => StaticManager.fountaindone);
         currentStory.BindExternalFunction("FireHDone", () => StaticManager.FireHDone);
+        currentStory.BindExternalFunction("tankisfull", () => StaticManager.tankisfull);
+        currentStory.BindExternalFunction("changePond", () => StaticManager.changePond);
+        currentStory.BindExternalFunction("thankyou", () => StaticManager.thankyou);
 
         currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
     currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
@@ -184,7 +187,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("ponddone", () => StaticManager.ponddone);
         currentStory.BindExternalFunction("fountaindone", () => StaticManager.fountaindone);
         currentStory.BindExternalFunction("FireHDone", () => StaticManager.FireHDone);
-
+        currentStory.BindExternalFunction("tankisfull", () => StaticManager.tankisfull);
+        currentStory.BindExternalFunction("changePond", () => StaticManager.changePond);
+        currentStory.BindExternalFunction("thankyou", () => StaticManager.thankyou);
 
 
         currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
@@ -330,6 +335,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         if (currentStory.currentTags.Count > 0)
+            //CHAT GPT TOLD ME TO TAKE THIS OUT LOL
             HandleTags(currentStory.currentTags);
 
         DisplayChoices();
@@ -496,6 +502,20 @@ public class DialogueManager : MonoBehaviour
                 StaticManager.FireHDone = true;
                 continue;
             }
+            if (tag.Trim() == "changePond")
+            {
+
+                StaticManager.changePond = true;
+                continue;
+            }
+
+            if (tag.Trim() == "thankyou")
+            {
+
+                StaticManager.thankyou = true;
+                continue;
+            }
+            
 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)

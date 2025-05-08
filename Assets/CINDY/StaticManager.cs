@@ -168,6 +168,10 @@ public class StaticManager : MonoBehaviour
     public static bool FullHands;
     public static bool ponddone;
     public static int fulltank;
+    private float smalltimer;
+    public static bool changePond;
+
+    public static bool thankyou;
 
 
 
@@ -175,6 +179,11 @@ public class StaticManager : MonoBehaviour
     // public static int couchPosition;
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            print(fulltank);
+        }
+
         if (fullhandsfalse)
         {
             fullhandsfalse = false;
@@ -182,8 +191,9 @@ public class StaticManager : MonoBehaviour
         }
         if (fulltankmore)
         {
-            fulltank++;
-            if (fulltank == 3)
+            fulltankmore = false;
+            fulltank = fulltank + 1;
+            if (fulltank == 2)
             {
                 tankisfull = true;
             }

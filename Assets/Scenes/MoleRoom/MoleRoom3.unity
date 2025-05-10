@@ -5512,7 +5512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.52
+      value: -16.29
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5546,6 +5546,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.12030238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.19327936
+      objectReference: {fileID: 0}
     - target: {fileID: 4428389432907984837, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: inkJSON
       value: 
@@ -5554,21 +5562,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 4699335412734101662, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.49
+      objectReference: {fileID: 0}
     - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Size.x
-      value: 1.6553952
+      value: 1.6314454
       objectReference: {fileID: 0}
     - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Size.y
-      value: 1.443435
+      value: 2.1699324
       objectReference: {fileID: 0}
     - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Offset.x
-      value: 0.06344372
+      value: 0.05146882
       objectReference: {fileID: 0}
     - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Offset.y
-      value: -0.87771297
+      value: 0.2439636
       objectReference: {fileID: 0}
     - target: {fileID: 6395300055054905475, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalScale.y
@@ -5580,6 +5592,14 @@ PrefabInstance:
       objectReference: {fileID: 4045559817890000336, guid: f5052d47c96849e428b0723ee5ec98c8, type: 3}
     - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

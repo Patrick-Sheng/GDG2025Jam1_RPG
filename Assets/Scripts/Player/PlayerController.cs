@@ -77,10 +77,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (gameObject.name != "PlayerFight")
         {
-            return;
+            if (DialogueManager.GetInstance().dialogueIsPlaying)
+            {
+                return;
+            }
         }
+
 
         rb.linearVelocity = input.normalized * currentSpeed;
     }

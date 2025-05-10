@@ -3724,7 +3724,7 @@ PrefabInstance:
       objectReference: {fileID: 1852878239}
     - target: {fileID: 3745418767110241919, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: PlayerFight
       objectReference: {fileID: 0}
     - target: {fileID: 4880971043881389342, guid: 4d48d3719ba7a56409d67aa208e8493c, type: 3}
       propertyPath: attackFixedPoint

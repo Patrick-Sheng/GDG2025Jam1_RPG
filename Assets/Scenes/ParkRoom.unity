@@ -12419,7 +12419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typing: {fileID: 1951422404}
-  typingSpeed: 0.01
+  typingSpeed: 0.02
   dialoguePanel: {fileID: 696671829}
   dialogueText: {fileID: 1616034227}
   displayNameText: {fileID: 1616034227}

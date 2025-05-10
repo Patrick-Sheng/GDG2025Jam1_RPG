@@ -99,7 +99,11 @@ public class PlayerController : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext context)
     {
-        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!DialogueManager.GetInstance().dialogueIsPlaying && StaticManager.PlayerDead == false)
+        {
+            input = context.ReadValue<Vector2>();
+        }
+        else if (StaticManager.PlayerDead == false && !isDashing && isInCombatRoom)
         {
             input = context.ReadValue<Vector2>();
         }

@@ -177,12 +177,28 @@ public class StaticManager : MonoBehaviour
 
     public static bool thankyou;
 
-
+    public static bool fadeaway;
+    public static bool stickmangone;
+    public static bool fadeaway2;
+    public static bool stickmangone2;
+    float dofulltalk;
+    bool dofulltalkstart;
 
     public static bool tankisfull;
     // public static int couchPosition;
     private void Update()
     {
+        if (dofulltalkstart)
+        {
+            dofulltalk = dofulltalk - Time.deltaTime;
+            if (dofulltalk < 0)
+            {
+                fulltank = fulltank + 1;
+                dofulltalkstart = false;
+            }
+        }
+
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             print(fulltank);
@@ -196,7 +212,9 @@ public class StaticManager : MonoBehaviour
         if (fulltankmore)
         {
             fulltankmore = false;
-            fulltank = fulltank + 1;
+            dofulltalkstart = true;
+            // ADD HERE
+            dofulltalk = 0.1f;
             if (fulltank == 2)
             {
                 tankisfull = true;

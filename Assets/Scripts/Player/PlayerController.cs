@@ -77,10 +77,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (gameObject.name != "PlayerFight")
         {
-            return;
+            if (DialogueManager.GetInstance().dialogueIsPlaying)
+            {
+                return;
+            }
         }
+
 
         rb.linearVelocity = input.normalized * currentSpeed;
     }
@@ -160,8 +164,17 @@ public class PlayerController : MonoBehaviour
 
             if (moving && detection.EnemyTarget == null) // If no enemies, face in player input
             {
-                anim.SetFloat("X", input.x);
-                anim.SetFloat("Y", input.y);
+                // horizontal has priority
+                if (input.x != 0f)
+                {
+                    anim.SetFloat("X", input.x);
+                    anim.SetFloat("Y", 0f);
+                }
+                else
+                {
+                    anim.SetFloat("X", 0f);
+                    anim.SetFloat("Y", input.y);
+                }
             }
             else
             {

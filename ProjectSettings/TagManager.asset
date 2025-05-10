@@ -25,6 +25,13 @@ TagManager:
   - WordleKey
   - bone
   - Killer
+  - goingtobirdroom
+  - flowerKey
+  - goingFromMoleRoom1
+  - goingFromMoleRoom2
+  - goingFromMoleRoom3
+  - goingFromMoleRoom4
+  - goingFromGardenRoom
   layers:
   - Default
   - TransparentFX

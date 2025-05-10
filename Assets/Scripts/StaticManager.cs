@@ -47,6 +47,13 @@ public class StaticManager : MonoBehaviour
     public static bool placedTruffleOnTable = false;
     public static bool placedRubyOnTable = false;
 
+    public static bool goingFromMoleRoom1 = false;
+    public static bool goingFromMoleRoom2 = false;
+    public static bool goingFromMoleRoom3 = false;
+    public static bool goingFromMoleRoom4 = false;
+
+    public static bool goingFromGardenRoom = false;
+
     public static bool moleRoom1Visited;
 
     public static int currentInteractingStoneTable = 0;

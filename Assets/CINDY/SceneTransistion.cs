@@ -61,6 +61,27 @@ public class SceneTransistion : MonoBehaviour
                 StaticManager.gofromgraveyard = true;
             }
 
+            if (gameObject.tag == "goingFromMoleRoom1")
+            {
+                StaticManager.goingFromMoleRoom1 = true;
+            }
+            if (gameObject.tag == "goingFromMoleRoom2")
+            {
+                StaticManager.goingFromMoleRoom2 = true;
+            }
+            if (gameObject.tag == "goingFromMoleRoom3")
+            {
+                StaticManager.goingFromMoleRoom3 = true;
+            }
+            if (gameObject.tag == "goingFromMoleRoom4")
+            {
+                StaticManager.goingFromMoleRoom4 = true;
+            }
+            if (gameObject.tag == "goingFromGardenRoom")
+            {
+                StaticManager.goingFromGardenRoom = true;
+            }
+
             StaticManager.nextScene = SceneName;
 
             GameObject FadeObj = GameObject.FindGameObjectWithTag("Fade");

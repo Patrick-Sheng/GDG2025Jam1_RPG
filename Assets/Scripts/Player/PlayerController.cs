@@ -160,8 +160,17 @@ public class PlayerController : MonoBehaviour
 
             if (moving && detection.EnemyTarget == null) // If no enemies, face in player input
             {
-                anim.SetFloat("X", input.x);
-                anim.SetFloat("Y", input.y);
+                // horizontal has priority
+                if (input.x != 0f)
+                {
+                    anim.SetFloat("X", input.x);
+                    anim.SetFloat("Y", 0f);
+                }
+                else
+                {
+                    anim.SetFloat("X", 0f);
+                    anim.SetFloat("Y", input.y);
+                }
             }
             else
             {

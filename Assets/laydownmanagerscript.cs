@@ -14,16 +14,22 @@ public class laydownmanagerscript : MonoBehaviour
     public DialogueManager dM;
     private bool dmend;
     private bool movedback;
+
+    private bool timerstart;
+    private float timer = 0.4f;
     void Update()
     {
         if (StaticManager.layDown)
         {
-            if (movedback == false)
-            {
-                REALplayer.transform.position = spawn.transform.position;
-                movedback = true;
+            timer = timer - Time.deltaTime;
 
-            }
+            REALplayer.SetActive(false);
+            //if (movedback == false)
+            //{
+            //    REALplayer.transform.position = spawn.transform.position;
+            //    movedback = true;
+
+            //}
 
             if (dmend == false)
             {
@@ -35,18 +41,22 @@ public class laydownmanagerscript : MonoBehaviour
             Player.SetActive(false);
             LayDownSprite.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.C))
+
+            if (timer < 0)
             {
-                movedback = false;
-                Player.SetActive(true);
-                StaticManager.LayingDownRightnow = false;
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    timer = 0.4f;
+                    movedback = false;
+                    REALplayer.SetActive(true);
+                    StaticManager.LayingDownRightnow = false;
+                    REALplayer.transform.position = spawn.transform.position;
 
-
-                LayDownSprite.SetActive(false);
-                StaticManager.layDown = false;
-                dmend = false;
+                    LayDownSprite.SetActive(false);
+                    StaticManager.layDown = false;
+                    dmend = false;
+                }
             }
-
         }
     }
 }

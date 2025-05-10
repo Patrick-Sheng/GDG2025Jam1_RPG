@@ -515,6 +515,18 @@ public class DialogueManager : MonoBehaviour
                 StaticManager.thankyou = true;
                 continue;
             }
+            if (tag.Trim() == "fadeaway")
+            {
+
+                StaticManager.fadeaway = true;
+                continue;
+            }
+            if (tag.Trim() == "fadeaway2")
+            {
+
+                StaticManager.fadeaway2 = true;
+                continue;
+            }
             
 
             string[] splitTag = tag.Split(":");

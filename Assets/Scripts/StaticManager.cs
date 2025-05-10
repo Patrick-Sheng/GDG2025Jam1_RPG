@@ -43,6 +43,10 @@ public class StaticManager : MonoBehaviour
     public static bool placedTruffle = false;
     public static bool placedRuby = false;
 
+    public static bool placedDogBoneOnTable = false;
+    public static bool placedTruffleOnTable = false;
+    public static bool placedRubyOnTable = false;
+
     public static bool moleRoom1Visited;
 
     public static int currentInteractingStoneTable = 0;

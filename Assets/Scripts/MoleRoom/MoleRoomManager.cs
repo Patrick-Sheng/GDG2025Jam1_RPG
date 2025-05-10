@@ -29,6 +29,10 @@
       public GameObject itemPlaceableSlot2;
       public GameObject itemPlaceableSlot3;
 
+      public GameObject StoneTableNPC1;
+      public GameObject StoneTableNPC2;
+      public GameObject StoneTableNPC3;
+
 
       private List<ItemEnum> inventory = StaticManager.inventory;
 
@@ -63,21 +67,36 @@
           }
 
           if (itemPlaceableSlot1 != null) {
-            itemPlaceableSlot1.SetActive(false);
+            if (StaticManager.placedDogBoneOnTable) {
+              itemPlaceableSlot1.SetActive(true);
+              itemPlaceableSlot1.GetComponent<SpriteRenderer>().sprite = dogBoneSprite;
+              StoneTableNPC1.SetActive(false);
+            }
           }
           if (itemPlaceableSlot2 != null) {
-            itemPlaceableSlot2.SetActive(false);
+            if (StaticManager.placedTruffleOnTable) {
+              itemPlaceableSlot2.SetActive(true);
+              itemPlaceableSlot2.GetComponent<SpriteRenderer>().sprite = truffleSprite;
+              StoneTableNPC2.SetActive(false);
+            }
           }
           if (itemPlaceableSlot3 != null) {
-            itemPlaceableSlot3.SetActive(false);
+            if (StaticManager.placedRubyOnTable) {
+              itemPlaceableSlot3.SetActive(true);
+              itemPlaceableSlot3.GetComponent<SpriteRenderer>().sprite = rubySprite;
+              StoneTableNPC3.SetActive(false);
+            }
           }
       }
 
       void Update()
       {
+        // MoleRoom1 items 
         if (StaticManager.pushTimes >= 3) {
           StaticManager.wallCracked = true;
         }
+
+        // MoleRoom1 and MoleRoom3 uses the following statements
         if (StaticManager.pickedUpBone) {
           StaticManager.pickedUpBone = false;
           StaticManager.firstTime_pickedUpBone = true;
@@ -98,16 +117,20 @@
           StaticManager.pickedUpRuby = false;
           StaticManager.firstTime_pickedUpRuby = true;
           if (Ruby != null) {
+
             Ruby.SetActive(false);
           }
           ToggleItem(ItemEnum.RUBY);
         }
+
+        // MoleRoom2 condition to pass the level
         if (StaticManager.completedPressurePlatePuzzle) {
           if (Room2StoneWall != null) {
             Room2StoneWall.SetActive(false);
           }
         }
 
+        // MoleRoom3 condition to pass the level
         if (IsCorrectItemPlacement())
         {
           if (Room3StoneWall != null) {
@@ -203,14 +226,20 @@
             case 1:
               itemPlaceableSlot1.SetActive(true);
               itemPlaceableSlot1.GetComponent<SpriteRenderer>().sprite = sprite;
+              StoneTableNPC1.SetActive(false);
+              StaticManager.placedDogBoneOnTable = true;
               break;
             case 2:
               itemPlaceableSlot2.SetActive(true);
               itemPlaceableSlot2.GetComponent<SpriteRenderer>().sprite = sprite;
+              StoneTableNPC2.SetActive(false);
+              StaticManager.placedTruffleOnTable = true;
               break;
             case 3:
               itemPlaceableSlot3.SetActive(true);
               itemPlaceableSlot3.GetComponent<SpriteRenderer>().sprite = sprite;
+              StoneTableNPC3.SetActive(false);
+              StaticManager.placedRubyOnTable = true;
               break;
             default:
               break;

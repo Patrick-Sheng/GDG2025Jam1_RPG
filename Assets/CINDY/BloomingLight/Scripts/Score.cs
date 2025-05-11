@@ -20,7 +20,7 @@ public sealed class Score : MonoBehaviour
 
             scoreText.SetText($"Score: {_score}");
 
-            if (_score >= 50) {
+            if (_score >= 20) {
                 OnWin?.Invoke(); // Fire win event
             }
         }

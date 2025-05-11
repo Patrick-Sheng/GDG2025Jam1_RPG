@@ -12,7 +12,8 @@ Do you like my garden? #layout:default
 === next ===
 Anyway, are you ready to receive another quest?
 + [What quest?]
-    Matching my favourite flowers.#StartFlowerGame
+    Matching my favourite flowers.
+    #StartFlowerGame
     -> DONE
 
 + [Probably not.]

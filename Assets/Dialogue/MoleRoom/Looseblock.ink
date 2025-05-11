@@ -15,7 +15,7 @@ Seems like something is behind it. #layout:default
 === repush ===
 
 { wallCracked():
-    Something winks in the dim light! It's a ruby! #layout:default
+    It's a ruby! #layout:default
     ++ [Pick up]
         You picked up the ruby.
         #UPDATE_VAR:pickedUpRuby,TRUE
@@ -23,7 +23,8 @@ Seems like something is behind it. #layout:default
     -> DONE
 - else:
     #UPDATE_VAR:pushTimes,1
-    You push the brick. It shifts slightly...
+    You push the brick. It shifts slightly... 
+    You see red glint behind the bricks
     + [Push the wall]
         -> repush
     + [Leave]

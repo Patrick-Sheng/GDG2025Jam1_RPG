@@ -132,6 +132,15 @@ public class StaticManager : MonoBehaviour
         case "pushTimes":
           if(int.TryParse(value, out intResult))
             pushTimes += intResult;
+            UncoveringRuby uncoveringRubyInstance = FindObjectOfType<UncoveringRuby>();
+            if (uncoveringRubyInstance != null)
+            {
+                uncoveringRubyInstance.UpdateImage();
+            }
+            else
+            {
+                Debug.LogError("UncoveringRuby instance not found in the scene.");
+            }
             print($"Updated {varName} to {pushTimes}");
           break;
         case "pickedUpBone":

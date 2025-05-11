@@ -6641,8 +6641,8 @@ Transform:
   m_GameObject: {fileID: 388408401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8553, y: 4.4284, z: -0.033512834}
-  m_LocalScale: {x: 5.850531, y: 4.898529, z: 1}
+  m_LocalPosition: {x: 2.7918, y: 4.4386, z: -0.033512834}
+  m_LocalScale: {x: 5.9774876, y: 4.953825, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111985226}
@@ -14578,8 +14578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2074881320}
-  minCameraPos: {x: -100, y: -100}
-  maxCameraPos: {x: 100, y: 100}
+  minCameraPos: {x: -12, y: -6}
+  maxCameraPos: {x: 13, y: 8}
   smoothTime: 0.2
 --- !u!1001 &8085369239510754849
 PrefabInstance:

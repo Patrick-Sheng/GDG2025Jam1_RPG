@@ -2,6 +2,6 @@
 
 ===main===
 
-This tuffle isn't shinny.
+This truffle isn't shinny.
     +[Leave]
         -> END

@@ -8277,7 +8277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &519420029
 AudioListener:
   m_ObjectHideFlags: 0
@@ -14484,7 +14484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 322581090222672520, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
       propertyPath: m_LocalScale.x
@@ -14545,13 +14545,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 322581090222672520, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2074881322}
   m_SourcePrefab: {fileID: 100100000, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
 --- !u!1 &2074881319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3745418767110241919, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
   m_PrefabInstance: {fileID: 2074881318}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2074881320 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1411684935709781159, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+  m_PrefabInstance: {fileID: 2074881318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2074881321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 322581090222672520, guid: d6fdf38e9089ac74d903b37482c88ba6, type: 3}
+  m_PrefabInstance: {fileID: 2074881318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2074881322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074881321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666dd315257c3e44a9b301cc3cb0b344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2074881320}
+  minCameraPos: {x: -100, y: -100}
+  maxCameraPos: {x: 100, y: 100}
+  smoothTime: 0.2
 --- !u!1001 &8085369239510754849
 PrefabInstance:
   m_ObjectHideFlags: 0

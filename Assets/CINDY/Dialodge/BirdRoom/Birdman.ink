@@ -1,3 +1,12 @@
+EXTERNAL winBirdgame()
+
+{winBirdgame():
+Hahaha you won
+you can keep the flower key, I wasnt using it anyway
+
+-else:
+
+
 Welcome to my world, you trapped soul.
 
 How did you get here? #speaker:Ms. Yellow #portrait:ms_yellow_neutral #layout:default
@@ -8,6 +17,8 @@ How did you get here? #speaker:Ms. Yellow #portrait:ms_yellow_neutral #layout:de
 + [I don't know.]
     You silly humanbeing, what do you know?
     -> next
+    
+}
 
 === next ===
 
@@ -26,4 +37,7 @@ And I have just the task for a wandering soul like you.
     -> DONE
     
 ->END
-    
+
+
+
+

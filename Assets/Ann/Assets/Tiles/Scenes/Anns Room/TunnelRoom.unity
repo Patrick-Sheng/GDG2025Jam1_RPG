@@ -2384,6 +2384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GuyDiologue1: {fileID: 4900000, guid: 3f79e342dc28c494da00898d0280497a, type: 3}
+  guySprite: {fileID: 1312296012}
 --- !u!1 &496165383
 GameObject:
   m_ObjectHideFlags: 0
@@ -8861,7 +8862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1312296014
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8926,7 +8927,7 @@ Transform:
   m_GameObject: {fileID: 1312296012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.79, y: 0.17, z: 0}
+  m_LocalPosition: {x: 14.19, y: 1.38, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

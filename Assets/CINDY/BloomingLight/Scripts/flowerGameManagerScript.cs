@@ -4,9 +4,21 @@ using UnityEngine.SceneManagement;
 public class flowerGameManagerScript : MonoBehaviour
 {
     public GameObject dogbone;
-    
+    public GameObject Player;
+    public GameObject GameEndSpawn;
+    private void Start()
+    {
+        if (StaticManager.graveYard && StaticManager.onetimeGraveyard == false)
+        {
+            StaticManager.onetimeGraveyard = true;
+            Player.transform.position = GameEndSpawn.transform.position;
+        }
+    }
     void Update()
     {
+
+
+
         if (StaticManager.birdwon == false)
         {
             if (GameObject.FindGameObjectWithTag("flowerKey") != null)

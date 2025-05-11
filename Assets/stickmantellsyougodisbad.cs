@@ -23,10 +23,11 @@ public class stickmantellsyougodisbad : MonoBehaviour
         
         if (timerstart == true)
         {
-            guysprite.SetActive(true);
+            
             timer = timer - Time.deltaTime;
             if (timer < 0f)
             {
+                guysprite.SetActive(true);
                 DialogueManager.GetInstance().EnterDialogueMode(GuyDiologue1);
                 timerstart = false;
                 timer = 1f;

@@ -6,6 +6,11 @@ using System.Collections.Generic;
 
 public class StaticManager : MonoBehaviour
 {
+    public static bool onetimeGraveyard;
+    public static bool onetimebirdspawn;
+    public static bool winBirdgame;
+    public static bool graveYard;
+
 
     public static bool fulltankmore;
     public static bool fullhandsfalse;
@@ -231,7 +236,7 @@ public class StaticManager : MonoBehaviour
             dofulltalkstart = true;
             // ADD HERE
             dofulltalk = 0.1f;
-            if (fulltank == 2)
+            if (fulltank > 1)
             {
                 tankisfull = true;
             }

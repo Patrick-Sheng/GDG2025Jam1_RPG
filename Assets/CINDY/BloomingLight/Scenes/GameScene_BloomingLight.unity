@@ -2816,7 +2816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1858623621
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4444,6 +4444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 2067215598}
   clickSound: {fileID: 8300000, guid: 07d92e3d9158347179211b10d2cb9167, type: 3}
+  flowerStartSound: {fileID: 0}
+  birdStartSound: {fileID: 0}
 --- !u!4 &2067215600
 Transform:
   m_ObjectHideFlags: 0

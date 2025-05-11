@@ -28,6 +28,11 @@ public class SceneTransistion : MonoBehaviour
                     Destroy(GameObject.FindGameObjectWithTag("WordleKey"));
                 }
             }
+            
+            if (gameObject.name == "fromyellowtodog")
+            {
+                StaticManager.YellowToHall = true;
+            }
 
             if (gameObject.name == "yellowToHallway")
             {

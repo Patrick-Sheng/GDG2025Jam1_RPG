@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
+        StaticManager.graveYard = true;
         StartCoroutine(PlayClickThen(() => SceneManager.LoadScene("Graveyard")));
         Debug.Log("Quit Game");
     }
@@ -27,6 +28,7 @@ public class MenuManager : MonoBehaviour
 
        public void ExitBirdGame()
     {
+        StaticManager.winBirdgame = true;
         StartCoroutine(PlayClickThen(() => SceneManager.LoadScene("Birdroom")));
         Debug.Log("Quit Game");
     }

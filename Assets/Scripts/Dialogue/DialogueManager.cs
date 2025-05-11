@@ -146,7 +146,10 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("tankisfull", () => StaticManager.tankisfull);
         currentStory.BindExternalFunction("changePond", () => StaticManager.changePond);
         currentStory.BindExternalFunction("thankyou", () => StaticManager.thankyou);
-
+        currentStory.BindExternalFunction("winBirdgame", () => StaticManager.winBirdgame);
+        currentStory.BindExternalFunction("winBirdgame", () => StaticManager.winBirdgame);
+        currentStory.BindExternalFunction("graveYard", () => StaticManager.graveYard);
+        
         currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
     currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));
     currentStory.BindExternalFunction("hasRuby", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.RUBY)));
@@ -190,7 +193,8 @@ public class DialogueManager : MonoBehaviour
         currentStory.BindExternalFunction("tankisfull", () => StaticManager.tankisfull);
         currentStory.BindExternalFunction("changePond", () => StaticManager.changePond);
         currentStory.BindExternalFunction("thankyou", () => StaticManager.thankyou);
-
+        currentStory.BindExternalFunction("winBirdgame", () => StaticManager.winBirdgame);
+        currentStory.BindExternalFunction("graveYard", () => StaticManager.graveYard);
 
         currentStory.BindExternalFunction("hasDogBone", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.DOG_BONE)));
     currentStory.BindExternalFunction("hasTruffle", (System.Func<object>)(() => StaticManager.inventory.Contains(ItemEnum.TRUFFLE)));

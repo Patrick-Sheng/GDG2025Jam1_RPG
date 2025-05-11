@@ -1,3 +1,11 @@
+EXTERNAL graveYard()
+
+
+{graveYard():
+Thank you for matching my favourite flowers!
+I hope you enjoy the bone
+
+-else:
 Seems like you got the key to enter my place. #deleteKey
 
 Do you like my garden? #layout:default
@@ -8,7 +16,7 @@ Do you like my garden? #layout:default
 + [No, it is ugly.]
     Hmmm... maybe you need to go check your eyes instead.
     -> next
-
+}
 === next ===
 Anyway, are you ready to receive another quest?
 + [What quest?]
@@ -19,3 +27,8 @@ Anyway, are you ready to receive another quest?
 + [Probably not.]
     Ok, bye for now then.
     -> DONE
+
+
+
+
+

@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 24599463}
   - component: {fileID: 24599464}
   m_Layer: 0
-  m_Name: SceneTrans
+  m_Name: yellowToHallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6507,7 +6507,7 @@ Transform:
   m_GameObject: {fileID: 368172267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.6318, y: 0.41, z: -0.033512834}
+  m_LocalPosition: {x: 14.04, y: 7.65, z: -0.033512834}
   m_LocalScale: {x: 0.5055841, y: 1.323141, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6775,7 +6775,7 @@ Transform:
   m_GameObject: {fileID: 408354439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.0743, y: -3.34, z: -0.033512834}
+  m_LocalPosition: {x: -19.81, y: -5.38, z: -0.033512834}
   m_LocalScale: {x: 1.503599, y: 1.0631224, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

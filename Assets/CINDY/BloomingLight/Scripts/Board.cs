@@ -40,12 +40,11 @@ public sealed class Board : MonoBehaviour
             //connectedTile.icon.transform.DOScale(1.25f, TweenDuration).Play();
         //}
 
-        if(Input.GetKeyDown(KeyCode.W)) {
-            Debug.Log($"Manual win triggered. Has won? {_hasWon}");
-            Score.Instance.ScoreCount = 50;
-            HandleWin();
-        }
-
+       // if(Input.GetKeyDown(KeyCode.W)) {
+         //   Debug.Log($"Manual win triggered. Has won? {_hasWon}");
+           // Score.Instance.ScoreCount = 50;
+            // HandleWin();
+        //}
     }
 
     private void Start() {
@@ -212,7 +211,7 @@ public sealed class Board : MonoBehaviour
         } while (foundMatches);
 
         // AFTER all animations and loops are done
-        if (Score.Instance.ScoreCount >= 50 && !_hasWon) {
+        if (Score.Instance.ScoreCount >= 20 && !_hasWon) {
             await Task.Delay(500); // Optional dramatic pause
             HandleWin();
         }

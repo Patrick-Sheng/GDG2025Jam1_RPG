@@ -24,11 +24,11 @@ public class LogicManagerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            tutorialText.gameObject.SetActive(false);
-            showWinScreen();
-        }
+       // if (Input.GetKeyDown(KeyCode.W))
+        //{
+          //  tutorialText.gameObject.SetActive(false);
+            //showWinScreen();
+       // }
     }
 
     //[ContextMenu("Increase Score")]

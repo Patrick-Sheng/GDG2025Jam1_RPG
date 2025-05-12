@@ -91,6 +91,11 @@
 
       void Update()
       {
+
+        if (IsCorrectItemPlacement())
+        {
+            StaticManager.PlacedAll = true;
+        }
         // MoleRoom1 items 
         if (StaticManager.pushTimes >= 3) {
           StaticManager.wallCracked = true;

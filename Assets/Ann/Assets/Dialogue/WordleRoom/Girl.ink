@@ -1,8 +1,13 @@
 //EXTERNAL inventory stuff
+EXTERNAL WonGame()
 
 -> main
 === main === 
 
+{WonGame():
+Thank you! now i can finally be happy
+ ->DONE
+-else:
 //{ hasKey():
   //  Thanks so much for helping me!
     //I better file that complaint soon. 
@@ -15,7 +20,7 @@
 
         + [How did you manage to get a water leak in a water temple?]
             -> a1
-
+}
         === a1 ===
         Honestly, I wonder myself. Who knows what the guy upstairs is doing.
         :

@@ -1,10 +1,21 @@
+EXTERNAL PlacedAll()
+
 -> main
 
 === main ===
 
+
+{PlacedAll():
+How did you know where to place which items ??????
+->DONE
+-else:
+
 Well hello again!
 This is a riddle puzzle room.
 You'll need to solve these riddles, and bring the riddle items to the table to move on.
+
+
+}
 -> options
 
 === options ===

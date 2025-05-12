@@ -38,6 +38,7 @@ public class carMove : MonoBehaviour
             timer = timer - Time.deltaTime;
             if (timer < 0)
             {
+                StaticManager.stopforeva = true;
                 black.SetActive(true);
                 anim.Play("carAnim");
 
@@ -75,6 +76,7 @@ public class carMove : MonoBehaviour
             }
         }
 
+        
         if (StaticManager.carmove == true && hitPlayer == true)
         {
             
@@ -84,14 +86,22 @@ public class carMove : MonoBehaviour
                 var sr = Player.GetComponent<SpriteRenderer>();
                 sr.enabled = false;
                 //gameObject.transform.localScale = new Vector3(1, 1, 1);
-                gameObject.transform.position = new Vector2(Player.transform.position.x, gameObject.transform.position.y);
+                if (StaticManager.stopforeva == false)
+                {
+                    gameObject.transform.position = new Vector2(Player.transform.position.x, gameObject.transform.position.y);
+
+                }
 
             }
         }
 
         if (StaticManager.carmove == true && hitPlayer == false)
         {
-            gameObject.transform.position = new Vector2(gameObject.transform.position.x + Speed * Time.deltaTime, gameObject.transform.position.y);
+            if (StaticManager.stopforeva == false)
+            {
+                gameObject.transform.position = new Vector2(gameObject.transform.position.x + Speed * Time.deltaTime, gameObject.transform.position.y);
+
+            }
         }
     }
 }

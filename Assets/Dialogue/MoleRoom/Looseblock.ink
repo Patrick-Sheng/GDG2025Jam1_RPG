@@ -17,8 +17,7 @@ Seems like something is behind it. #layout:default
 { wallCracked():
     It's a ruby! #layout:default
     ++ [Pick up]
-        You picked up the ruby.
-        #UPDATE_VAR:pickedUpRuby,TRUE
+        You picked up the ruby.#UPDATE_VAR:pickedUpRuby,TRUE
         -> END
     -> DONE
 - else:

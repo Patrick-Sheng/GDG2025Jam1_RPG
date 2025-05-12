@@ -8,8 +8,7 @@ Place item for riddle 1 here:
 
 { hasDogBone():
     + [Place the Dog Bone]
-        You placed the Dog Bone on the table.
-        #UPDATE_VAR:placedDogBone,true
+        You placed the Dog Bone on the table.  #UPDATE_VAR:placedDogBone,true
         -> END
     + [Leave]
     -> END

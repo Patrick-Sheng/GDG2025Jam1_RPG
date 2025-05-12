@@ -663,7 +663,7 @@ Transform:
   m_GameObject: {fileID: 149587488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.91, y: 12.28, z: 0}
+  m_LocalPosition: {x: 36.91, y: 11.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1193,7 +1193,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.627451, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1432,7 +1432,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &607814509
 Transform:
   m_ObjectHideFlags: 0
@@ -1786,7 +1786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &827567448
 Transform:
   m_ObjectHideFlags: 0
@@ -2580,8 +2580,8 @@ Transform:
   m_GameObject: {fileID: 1122166098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.14, y: 18.08, z: -0.033512834}
-  m_LocalScale: {x: 8.060326, y: 1.831056, z: 1}
+  m_LocalPosition: {x: 29.14, y: 18.3561, z: -0.033512834}
+  m_LocalScale: {x: 8.060326, y: 1.2789925, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111985226}
@@ -2733,7 +2733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.136882
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 1930351722000259199, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2766,6 +2766,22 @@ PrefabInstance:
     - target: {fileID: 1930351722000259199, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Size.x
+      value: 2.7957964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.044213414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.053388834
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.777801
       objectReference: {fileID: 0}
     - target: {fileID: 4235286120977226543, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Color.b
@@ -2826,6 +2842,22 @@ PrefabInstance:
     - target: {fileID: 4699335412734101662, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8137784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.23200005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.07444501
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736277751628794490, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.69322157
       objectReference: {fileID: 0}
     - target: {fileID: 7652016473096653770, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Color.b
@@ -5429,8 +5461,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.75204235
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Size.y
       value: 0.13048506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.048956722
       objectReference: {fileID: 0}
     - target: {fileID: 4214715457392658456, guid: 839b98118ce15f8478a0d0840dc5a6dc, type: 3}
       propertyPath: m_Offset.y
@@ -5769,8 +5809,8 @@ Transform:
   m_GameObject: {fileID: 1546208481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.92, y: 7.3653, z: -0.033512834}
-  m_LocalScale: {x: 1.8413501, y: 24.948172, z: 1}
+  m_LocalPosition: {x: 33.9132, y: 7.3653, z: -0.033512834}
+  m_LocalScale: {x: 1.8549762, y: 24.948172, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111985226}
@@ -6248,7 +6288,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1264486351
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 9118213209582376027, guid: 05852c462b118924386fedb45888b4f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6259,7 +6299,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &1561820287
 Transform:
   m_ObjectHideFlags: 0
@@ -7230,7 +7270,7 @@ Transform:
   m_GameObject: {fileID: 1856491591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.2149, y: 12.3288, z: 0}
+  m_LocalPosition: {x: 37.17, y: 12.27, z: 0}
   m_LocalScale: {x: 1.7626923, y: 1.3767253, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

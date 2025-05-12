@@ -17,6 +17,7 @@ public class WaterGameManager : MonoBehaviour
     {
         if (score >= 10) // Check if the score is already at the maximum
         {
+            StaticManager.WonGame = true;
             StaticManager.bucketend = true;
             StaticManager.bucketwin = true;
             SceneManager.LoadScene("WordleRoom");

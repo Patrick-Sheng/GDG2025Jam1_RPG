@@ -6,6 +6,10 @@ using System.Collections.Generic;
 
 public class StaticManager : MonoBehaviour
 {
+    public static bool stopforeva;
+
+    public static bool PlacedAll;
+    public static bool WonGame;
     public static bool onetimeGraveyard;
     public static bool onetimebirdspawn;
     public static bool winBirdgame;

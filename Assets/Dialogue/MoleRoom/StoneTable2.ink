@@ -8,8 +8,8 @@ Place item for riddle 2 here: #layout:default
 
 { hasTruffle():
     + [Place the Truffle]
-        You placed the Truffle on the table.
-        #UPDATE_VAR:placedTruffle,true
+        You placed the Truffle on the table. #UPDATE_VAR:placedTruffle,true
+
         -> END
     + [Leave]
     -> END

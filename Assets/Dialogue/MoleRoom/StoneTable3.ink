@@ -9,8 +9,8 @@ Place item for riddle 3 here:
 
 { hasRuby():
     + [Place the Ruby]
-        You placed the Ruby on the table.
-        #UPDATE_VAR:placedRuby,true
+        You placed the Ruby on the table. #UPDATE_VAR:placedRuby,true
+
         -> END
     + [Leave]
         -> END

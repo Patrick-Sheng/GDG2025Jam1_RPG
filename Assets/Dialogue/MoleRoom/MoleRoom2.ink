@@ -1,6 +1,13 @@
+EXTERNAL completedPressurePlatePuzzle()
+
 -->main
 
 ===main===
+
+{completedPressurePlatePuzzle():
+Noone has ever completed it before...
+->DONE
+-else:
 
 Well hello again!
 This room has one of my favourite pressure plate puzzle
@@ -14,3 +21,4 @@ Do you need a hint?
 +[No]
     Ok bye.
     -> END
+}

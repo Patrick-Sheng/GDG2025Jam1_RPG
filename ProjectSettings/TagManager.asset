@@ -32,6 +32,7 @@ TagManager:
   - goingFromMoleRoom3
   - goingFromMoleRoom4
   - goingFromGardenRoom
+  - instructionPanel
   layers:
   - Default
   - TransparentFX

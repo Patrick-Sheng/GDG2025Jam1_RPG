@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using TMPro;
 
 public class StaticManager : MonoBehaviour
 {
@@ -209,10 +210,37 @@ public class StaticManager : MonoBehaviour
     float dofulltalk;
     bool dofulltalkstart;
 
+    float escHoldTime = 0f;
+    float requiredHoldTime = 3f;
+
+    public TextMeshProUGUI exitingText;
+
     public static bool tankisfull;
     // public static int couchPosition;
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Escape)) {
+
+            escHoldTime += Time.deltaTime;
+            Debug.Log("Esc hold time: " + escHoldTime);
+
+            if (escHoldTime % 0.9f < 0.3f) {
+                exitingText.text = "Exiting.";
+            } else if (escHoldTime % 0.9f < 0.6f) {
+                exitingText.text = "Exiting..";
+            } else if (escHoldTime % 0.9f < 0.9f) {
+                exitingText.text = "Exiting...";
+            }
+
+            if (escHoldTime >= requiredHoldTime) {
+                QuitGame();
+            }
+        } else {
+            exitingText.text = "";
+            // Reset if the key is released before the hold time is reached
+            escHoldTime = 0f;
+        }
+
         if (dofulltalkstart)
         {
             dofulltalk = dofulltalk - Time.deltaTime;
@@ -304,5 +332,14 @@ public class StaticManager : MonoBehaviour
 
 
 
+    }
+
+    private void QuitGame()
+    {
+      #if UNITY_EDITOR
+          UnityEditor.EditorApplication.isPlaying = false;
+      #else
+          Application.Quit();
+      #endif
     }
 }

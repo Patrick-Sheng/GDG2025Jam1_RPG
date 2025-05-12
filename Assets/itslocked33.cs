@@ -8,8 +8,8 @@ public class itslocked33 : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2
-                (GameObject.FindGameObjectWithTag("Player").transform.position.x - 0.3f,
-                GameObject.FindGameObjectWithTag("Player").transform.position.y );
+                (GameObject.FindGameObjectWithTag("Player").transform.position.x,
+                GameObject.FindGameObjectWithTag("Player").transform.position.y + 0.3f );
             DialogueManager.GetInstance().EnterDialogueMode(itsLocked);
 
         }

@@ -55,6 +55,11 @@ public class TutorialManager : MonoBehaviour
             updateInstruction();
           }
           break;
+        case 5:
+          if(StaticManager.PlayerDead) {
+            GameObject.FindGameObjectWithTag("instructionPanel").SetActive(false);
+          }
+          break;
         default:
           break;
       }

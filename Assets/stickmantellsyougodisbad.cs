@@ -25,7 +25,7 @@ public class stickmantellsyougodisbad : MonoBehaviour
         {
             
             timer = timer - Time.deltaTime;
-            if (timer < 0f)
+            if (timer <= 0f)
             {
                 guysprite.SetActive(true);
                 DialogueManager.GetInstance().EnterDialogueMode(GuyDiologue1);

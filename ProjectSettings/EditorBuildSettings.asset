@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/firstscnee.unity
+    guid: db5fd543a7dd8b54cbe94862f9637689
+  - enabled: 1
     path: Assets/Scenes/ParkRoom.unity
     guid: b0bf6019f0b53454d9b25c1332776b32
   - enabled: 1
@@ -80,6 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalRoomTemp.unity
     guid: 3e466e744cf8b534f9394f724c09bb86
+  - enabled: 1
+    path: Assets/Scenes/bro what.unity
+    guid: 604cec934620ee64bb3cdf95ffd0611a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

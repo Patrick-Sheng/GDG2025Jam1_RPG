@@ -33,6 +33,10 @@ TagManager:
   - goingFromMoleRoom4
   - goingFromGardenRoom
   - instructionPanel
+  - AnnRoomSound
+  - New tag
+  - HeavenMusic
+  - Patrick
   layers:
   - Default
   - TransparentFX

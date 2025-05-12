@@ -7,6 +7,8 @@ using TMPro;
 
 public class StaticManager : MonoBehaviour
 {
+
+    public static bool GODSHITDIDEND;
     public static bool stopforeva;
 
     public static bool PlacedAll;
@@ -109,7 +111,7 @@ public class StaticManager : MonoBehaviour
     public static bool Plus1Pancake;
     public static bool hasPancake;
     public static bool canbuypancake;
-    public static int NumDollars;
+    public static float NumDollars;
     public static bool YouWinArcade;
     public static bool YouLoseArcade;
     public static bool resettrigger;
@@ -296,7 +298,7 @@ public class StaticManager : MonoBehaviour
 
         if (Plus1Pancake)
         {
-            NumDollars = NumDollars - 21;
+            NumDollars = NumDollars - 11;
             if (NumDollars < 0)
             {
                 NumDollars = 0;
@@ -313,7 +315,7 @@ public class StaticManager : MonoBehaviour
 
 
 
-        if (licked > 5)
+        if (licked >  10)
         {
             licked6times = true;
         }
@@ -325,7 +327,7 @@ public class StaticManager : MonoBehaviour
             licked = 0;
             CanLick = false;
             licked6times = false;
-            NumDollars++;
+            NumDollars = NumDollars + 0.5f;
             Plus1Dollar = false;
         }
 
